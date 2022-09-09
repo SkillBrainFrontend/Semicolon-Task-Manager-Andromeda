@@ -1,12 +1,12 @@
 import React from "react";
-import { Container, Typography } from "@mui/material";
+// import { Typography } from "@mui/material";
+// import PageContainer from "../components/shared/page-container/PageContainer"
+import RegisterContainer from "../components/shared/register-container/RegisterContainer";
 
 function Tasks() {
 	return (
 		<div>
-			<Container>
-				<Typography variant="h1">Tasks</Typography>
-			</Container>
+			<RegisterContainer/>
 		</div>
 	);
 }

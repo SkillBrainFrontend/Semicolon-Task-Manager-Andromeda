@@ -43,6 +43,8 @@
     ]
   },
   "devDependencies": {
+    "@svgr/cli": "^6.3.1",
+    "@svgr/core": "^6.3.1",
     "eslint": "^8.23.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
