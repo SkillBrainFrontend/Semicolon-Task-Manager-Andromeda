@@ -27,17 +27,22 @@ function LoginPage() {
 				sx={{
 					display: "flex",
 					justifyContent: "center",
-					alignItems: "center",
+					alignItems: "stretch",
+					padding: "20px",
 				}}
 			>
 				<Box
 					sx={{
 						flex: 1,
-						height: "98%",
 						backgroundColor: "#3754DB",
 						borderRadius: "32px",
+						display: "flex",
+						justifyContent: "center",
+						alingItems: "stretch",
 					}}
-				/>
+				>
+					<Typography>Test</Typography>
+				</Box>
 			</Grid>
 			<Grid item xs={12} sm={8} md={6} component={Paper} elevation={6} square>
 				<Box
