@@ -6,7 +6,7 @@ import RegisterContainer from "../components/shared/register-container/RegisterC
 function Tasks() {
 	return (
 		<div>
-			<RegisterContainer/>
+			<RegisterContainer />
 		</div>
 	);
 }
