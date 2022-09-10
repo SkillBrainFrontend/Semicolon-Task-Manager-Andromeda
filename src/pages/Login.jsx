@@ -10,6 +10,7 @@ function LoginPage() {
 				container
 				spacing={0}
 				columns={12}
+				sx={{ flexGrow: 1 }}
 			>
 				<Grid xs={6}>
 					<Container>
