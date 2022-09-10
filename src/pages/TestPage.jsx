@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Paper, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Button from "../components/shared/button/Button";
+import Chip from "../components/shared/badges/Chip";
 
 function Test() {
 	const theme = useTheme();
@@ -70,6 +71,29 @@ function Test() {
 				<Button disabled size="small" variant="contained">
 					Test
 				</Button>
+				<Typography variant="h2" gutterBottom />
+				<Chip label="23" size="small1" />
+				<Chip label="23" size="small2" />
+				<Typography variant="h2" gutterBottom />
+				<Chip label="Some Text Yunno" size="large1" />
+				<Typography variant="h2" gutterBottom />
+				<Chip label="23" size="small3" />
+				<Chip label="23" size="small4" />
+				<Typography variant="h2" gutterBottom />
+				<Chip label="Some Text Yunno" size="large2" />
+				<Chip label="Some Text Yunno" size="large3" />
+				<Typography variant="h2" gutterBottom />
+				<Chip label="Pending" size="pending" />
+				<Typography variant="h2" gutterBottom />
+				<Chip label="In Progress" size="inProgress" />
+				<Typography variant="h2" gutterBottom />
+				<Chip label="In Review" size="inReview" />
+				<Typography variant="h2" gutterBottom />
+				<Chip label="Completed" size="completed" />
+				<Typography variant="h2" gutterBottom />
+				<Chip label="Unassigned" size="unassigned" />
+				<Typography variant="h2" gutterBottom />
+				<Chip label="Unassigned" size="unassigned2" />
 			</Container>
 		</div>
 	);

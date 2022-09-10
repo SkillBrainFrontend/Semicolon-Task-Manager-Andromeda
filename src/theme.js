@@ -25,6 +25,10 @@ const theme = createTheme({
 		success: {
 			main: "#00C271",
 		},
+		normal: {
+			main: "#FFF2F4",
+			light: "#FFFDF5",
+		},
 		text: {
 			primary: "#16171D",
 			secondary: "#62667E",
