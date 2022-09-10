@@ -3,7 +3,7 @@ import { Box, Grid, Container, Typography } from "@mui/material";
 
 function LoginPage() {
 	return (
-		<Box sx={{ flexGrow: 0 }}>
+		<Box sx={{ flexGrow: 1, border: "1px solid red" }}>
 			<Grid
 				justifyContent="center"
 				alignItems="stretch"
