@@ -105,8 +105,8 @@ function LoginPage() {
 								</Link>
 							</Grid>
 							<Grid item>
-								<Link href="/test" variant="body2">
-									Don&apos;t have an account? Sign Up
+								<Link href="/register" variant="body2">
+									Don`t have an account? Sign Up
 								</Link>
 							</Grid>
 						</Grid>

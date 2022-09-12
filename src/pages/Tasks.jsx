@@ -1,10 +1,10 @@
 import React from "react";
-import RegisterContainer from "../components/shared/register-container/RegisterContainer";
+import Register from "./Register"
 
 function Tasks() {
 	return (
 		<div>
-			<RegisterContainer />
+			<Register/>
 		</div>
 	);
 }

@@ -6,6 +6,7 @@ import Tasks from "./pages/Tasks";
 
 import LoginPage from "./pages/Login";
 import "./App.css";
+import RegisterPage from "./pages/Register";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 				<Route path="/" element={<Tasks />} />
 				<Route path="/test" element={<Test />} />
 				<Route path="/login" element={<LoginPage />} />
+				<Route path="/register" element={<RegisterPage/>} />
 			</Routes>
 		</Grid>
 	);
