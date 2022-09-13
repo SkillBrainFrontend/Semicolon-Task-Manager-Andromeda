@@ -1,14 +1,20 @@
-import React from "react";
-import { Container, Paper, Typography} from "@mui/material";
+import React, { useState } from "react";
+import {
+	Container,
+	Paper,
+	Typography,
+	InputAdornment,
+	IconButton,
+} from "@mui/material";
+import { VisibilityOff, Visibility } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
 // import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import Button from "../components/shared/button/Button";
-import StyledInput from "../components/shared/Input";
-
+import Input from "../components/shared/Input";
 
 function Test() {
 	const theme = useTheme();
-
+	const [showPassword, setShowPassword] = useState(false);
 	return (
 		<div>
 			<Container
@@ -74,13 +80,24 @@ function Test() {
 				<Button disabled size="small" variant="contained">
 					Test
 				</Button>
-				
-				<StyledInput />
-				<StyledInput disabled />
-				<StyledInput error="true"/>
-				<StyledInput type='password'/>
-				
-				
+
+				<Input />
+				<Input disabled />
+				<Input error="true" />
+				<Input
+					type="password"
+					endAdornment={
+						<InputAdornment position="end">
+							<IconButton
+								aria-label="toggle password visibility"
+								onClick={() => setShowPassword((prev) => !prev)}
+								edge="end"
+							>
+								{showPassword ? <VisibilityOff /> : <Visibility />}
+							</IconButton>
+						</InputAdornment>
+					}
+				/>
 			</Container>
 		</div>
 	);
