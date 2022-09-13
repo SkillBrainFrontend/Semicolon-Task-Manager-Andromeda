@@ -11,6 +11,73 @@
 		"ecmaVersion": "latest",
 		"sourceType": "module"
 	},
-	"plugins": ["react"],
-	"rules": {}
+	"plugins": ["react", "simple-import-sort"],
+	"rules": {
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": [".js", ".jsx"]
+			}
+		],
+		"react/prop-types": 1,
+		"no-underscore-dangle": 0,
+		"import/newline-after-import": "error",
+		"import/prefer-default-export": 0,
+		"semi": "error",
+		"jsx-props-no-spreading": "off",
+		"react/jsx-sort-props": [1, { "multiline": "last" }],
+		"react/require-default-props": [
+			1,
+			{
+				"forbidDefaultForRequired": true,
+				"classes": "ignore",
+				"functions": "ignore"
+				// @deprecated Use `functions` option instead.
+				// "ignoreFunctionalComponents": <boolean>,
+			}
+		],
+		"react/jsx-props-no-spreading": 0,
+		"simple-import-sort/imports": 1,
+		"simple-import-sort/exports": 1
+	},
+	"globals": {
+		"window": true,
+		"document": true,
+		"localStorage": true,
+		"FormData": true,
+		"FileReader": true,
+		"Blob": true,
+		"navigator": true,
+		"Headers": true,
+		"Request": true,
+		"fetch": true
+	},
+	"overrides": [
+		{
+			"files": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+			"rules": {
+				"simple-import-sort/imports": [
+					"error",
+					{
+						"groups": [
+							// `react` first, `next` second, then packages starting with a character
+							["^react$", "^next", "^[a-z]"],
+							// Packages starting with `@`
+							["^@"],
+							// Packages starting with `~`
+							["^~"],
+							// Imports starting with `../`
+							["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+							// Imports starting with `./`
+							["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+							// Style imports
+							["^.+\\.s?css$"],
+							// Side effect imports
+							["^\\u0000"]
+						]
+					}
+				]
+			}
+		}
+	]
 }

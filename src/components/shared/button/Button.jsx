@@ -1,23 +1,41 @@
-import { styled } from "@mui/material/styles";
 import { Button } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
 const StyledButton = styled(Button)(({ theme }) => ({
-	borderRadius: 12,
+	"&.MuiButton-root": {
+		borderRadius: 12,
+		fontSize: 16,
+		lineHeight: "19px",
+		fontWeight: 500,
+	},
 	"&.MuiButton-sizeLarge": {
-		padding: "19px 36px",
+		padding: theme.spacing(2.3, 9.2),
 	},
 	"&.MuiButton-sizeMedium": {
-		padding: "15px 30px",
+		padding: theme.spacing(2, 9.2),
 	},
 	"&.MuiButton-sizeSmall": {
-		padding: "11px 22px",
+		padding: theme.spacing(1.3, 9.2),
+		fontSize: 14,
 	},
 	"&.MuiButton-link": {
 		color: theme.palette.primary.main,
 	},
-	"&.Mui-disabled": {
+	"&.MuiButton-outlined": {
+		borderWidth: 1.7,
+		borderColor: theme.palette.primary.main,
+	},
+	"&.Mui-disabled.MuiButton-contained": {
 		color: "#FFFFFF",
 		backgroundColor: "#D7DDF8",
+	},
+	"&.Mui-disabled.MuiButton-outlined": {
+		color: "#D7DDF8",
+		borderColor: "#D7DDF8",
+	},
+	"&.Mui-disabled.MuiButton-text": {
+		color: "#D7DDF8",
+		borderColor: "#D7DDF8",
 	},
 }));
 
