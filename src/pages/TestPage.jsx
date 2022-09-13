@@ -1,10 +1,14 @@
 import React from "react";
-import { Container, Paper, Typography } from "@mui/material";
+import { Container, Paper, Typography} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+// import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import Button from "../components/shared/button/Button";
+import StyledInput from "../components/shared/Input";
+
 
 function Test() {
 	const theme = useTheme();
+
 	return (
 		<div>
 			<Container
@@ -70,6 +74,13 @@ function Test() {
 				<Button disabled size="small" variant="contained">
 					Test
 				</Button>
+				
+				<StyledInput />
+				<StyledInput disabled />
+				<StyledInput error="true"/>
+				<StyledInput type='password'/>
+				
+				
 			</Container>
 		</div>
 	);
