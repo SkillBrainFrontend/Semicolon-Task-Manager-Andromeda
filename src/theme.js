@@ -31,17 +31,17 @@ const theme = createTheme({
 			disabled: "#C2C4CF",
 		},
 		input: {
-			main: '#A8ABBD',
-			focused:{ 
-				border: '#2746D8',
-				background: '#FBFBFE'},
+			main: "#A8ABBD",
+			focused: {
+				border: "#2746D8",
+				background: "#FBFBFE",
+			},
 
-			disabled: '#F9FAFB',
+			disabled: "#F9FAFB",
 			error: {
-				background: '#FFFAFA',
-				text: '#B80020',
-			}
-
+				background: "#FFFAFA",
+				text: "#B80020",
+			},
 		},
 	},
 	typography: {
