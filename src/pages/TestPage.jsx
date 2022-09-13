@@ -1,14 +1,27 @@
-import React from "react";
+/* eslint-disable import/named */
+import React, { useState } from "react";
 
-import { AlertTitle, Container, Paper, Stack, Typography } from "@mui/material";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import {
+	AlertTitle,
+	Container,
+	IconButton,
+	InputAdornment,
+	Paper,
+	Stack,
+	Typography,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import { Alert, Button } from "../components/shared";
+import StyledInput from "../components/shared/input/Input";
 
 import BasicTabs from "./TabTest";
 
 function Test() {
 	const theme = useTheme();
+	const [showPassword, setShowPassword] = useState(false);
 
 	return (
 		<div>
@@ -183,6 +196,23 @@ function Test() {
 				</Stack>
 
 				<BasicTabs />
+
+				<StyledInput
+					type="password"
+					endAdornment={
+						<InputAdornment position="end">
+							<IconButton
+								aria-label="toggle password visibility"
+								edge="end"
+								onClick={() => setShowPassword((prev) => !prev)}
+							>
+								{showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+							</IconButton>
+						</InputAdornment>
+					}
+				/>
+
+				<StyledInput />
 			</Container>
 		</div>
 	);

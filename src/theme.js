@@ -47,10 +47,24 @@ const theme = createTheme({
 			paper: "#FFFFFF",
 			default: "#FFFFFF",
 		},
+		input: {
+			main: "#A8ABBD",
+			focused: {
+				border: "#2746D8",
+				background: "#FBFBFE",
+			},
+
+			disabled: "#F9FAFB",
+			error: {
+				background: "#FFFAFA",
+				text: "#B80020",
+			},
+		},
 	},
 	typography: {
 		fontFamily: "Gelion, Roboto, Arial",
 	},
+
 	components: {
 		MuiCssBaseline: {
 			styleOverrides: `
