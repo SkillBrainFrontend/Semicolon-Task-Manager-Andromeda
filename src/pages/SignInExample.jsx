@@ -88,7 +88,9 @@ export default function SignInSide() {
 						<TextField
 							autoComplete="email"
 							autoFocus
+							error
 							fullWidth
+							helperText="Error"
 							id="email"
 							label="Email Address"
 							margin="normal"

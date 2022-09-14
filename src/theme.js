@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createTheme } from "@mui/material/styles";
 
 import GelionBold from "./assets/fonts/Gelion Bold.woff";
@@ -91,10 +92,10 @@ const theme = createTheme({
 				disableElevation: true,
 			},
 			styleOverrides: {
-				root: ({ ownerState }) => ({
+				root: ({ ownerState, theme: appTheme }) => ({
 					"&:hover.MuiButton-contained": {
-						boxShadow: theme.shadows[5],
-						backgroundColor: theme.palette[ownerState.color].main,
+						boxShadow: appTheme.shadows[5],
+						backgroundColor: appTheme.palette[ownerState.color].main,
 					},
 				}),
 			},
@@ -106,6 +107,48 @@ const theme = createTheme({
 					marginBottom: 0,
 					fontSize: 18,
 					lineHeight: "21px",
+				},
+			},
+		},
+		MuiOutlinedInput: {
+			defaultProps: {
+				notched: false,
+			},
+			styleOverrides: {
+				root: {
+					borderRadius: `12px`,
+				},
+				input: ({ theme: appTheme }) => ({
+					fontWeight: 400,
+					fontSize: 16,
+					lineHeight: "21px",
+					padding: appTheme.spacing(2),
+					borderRadius: `12px`,
+					"&.MuiInputBase-inputSizeSmall": {
+						padding: "10px 14px",
+						"&.MuiInputBase-inputAdornedStart": {
+							paddingLeft: 0,
+						},
+					},
+				}),
+				inputAdornedStart: {
+					paddingLeft: 4,
+				},
+			},
+		},
+		MuiInputLabel: {
+			defaultProps: {
+				disableAnimation: true,
+				shrink: true,
+			},
+			styleOverrides: {
+				root: {
+					backgroundColor: "transparent",
+					position: "relative",
+					left: "-15px",
+					top: 10,
+					fontSize: 16,
+					fontWeight: 400,
 				},
 			},
 		},

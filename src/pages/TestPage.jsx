@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-import { Alert, Button } from "../components/shared";
+import { Alert, Button, Input } from "../components/shared";
 
 import BasicTabs from "./TabTest";
 
@@ -201,6 +201,7 @@ function Test() {
 					<Chip color="accent" label="Chip Outlined" />
 					<Chip color="accent" label="Chip Outlined" />
 				</Stack>
+				<Input error label="Worjidjasi" />
 			</Container>
 		</div>
 	);
