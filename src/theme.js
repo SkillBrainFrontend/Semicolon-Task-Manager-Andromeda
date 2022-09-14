@@ -115,9 +115,13 @@ const theme = createTheme({
 				notched: false,
 			},
 			styleOverrides: {
-				root: {
+				root: ({ theme: appTheme, ownerState }) => ({
 					borderRadius: `12px`,
-				},
+					background: ownerState.error ? "#FFFAFA" : "#FBFBFE",
+					"&.Mui-focused": {
+						background: "white",
+					},
+				}),
 				input: ({ theme: appTheme }) => ({
 					fontWeight: 400,
 					fontSize: 16,
@@ -149,6 +153,13 @@ const theme = createTheme({
 					top: 10,
 					fontSize: 16,
 					fontWeight: 400,
+				},
+			},
+		},
+		MuiFormHelperText: {
+			styleOverrides: {
+				root: {
+					margin: 0,
 				},
 			},
 		},
