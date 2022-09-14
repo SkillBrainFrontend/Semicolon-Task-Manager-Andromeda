@@ -18,12 +18,8 @@ const StyledButton = styled(Button)(({ theme }) => ({
 		padding: theme.spacing(1.3, 9.2),
 		fontSize: 14,
 	},
-	"&.MuiButton-link": {
-		color: theme.palette.primary.main,
-	},
 	"&.MuiButton-outlined": {
 		borderWidth: 1.7,
-		borderColor: theme.palette.primary.main,
 	},
 	"&.Mui-disabled.MuiButton-contained": {
 		color: "#FFFFFF",

@@ -1,15 +1,17 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Test from "./pages/TestPage";
-import Tasks from "./pages/Tasks";
+import { Route, Routes } from "react-router-dom";
+
+import { SingIn, Tasks, TestPage } from "./pages";
+
 import "./App.css";
 
 function App() {
 	return (
 		<div>
 			<Routes>
-				<Route path="/" element={<Tasks />} />
-				<Route path="/test" element={<Test />} />
+				<Route element={<Tasks />} path="/" />
+				<Route element={<TestPage />} path="/test" />
+				<Route element={<SingIn />} path="/login" />
 			</Routes>
 		</div>
 	);
