@@ -38,7 +38,8 @@
 		],
 		"react/jsx-props-no-spreading": 0,
 		"simple-import-sort/imports": 1,
-		"simple-import-sort/exports": 1
+		"simple-import-sort/exports": 1,
+		"jsx-a11y/anchor-is-valid": 1
 	},
 	"globals": {
 		"window": true,

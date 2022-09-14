@@ -1,6 +1,13 @@
 import React from "react";
 
-import { AlertTitle, Container, Paper, Stack, Typography } from "@mui/material";
+import {
+	AlertTitle,
+	Chip,
+	Container,
+	Paper,
+	Stack,
+	Typography,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import { Alert, Button } from "../components/shared";
@@ -87,7 +94,7 @@ function Test() {
 					<Button size="medium" variant="contained">
 						Medium
 					</Button>
-					<Button size="small" variant="contained">
+					<Button color="accent" size="small" variant="contained">
 						Small
 					</Button>
 					<Button disabled size="small" variant="contained">
@@ -107,7 +114,7 @@ function Test() {
 					<Button size="medium" variant="outlined">
 						Medium
 					</Button>
-					<Button size="small" variant="outlined">
+					<Button color="accent" size="small" variant="outlined">
 						Small
 					</Button>
 					<Button disabled size="small" variant="outlined">
@@ -127,7 +134,7 @@ function Test() {
 					<Button size="medium" variant="text">
 						Medium
 					</Button>
-					<Button size="small" variant="text">
+					<Button color="success" size="small" variant="text">
 						Small
 					</Button>
 					<Button disabled size="small" variant="text">
@@ -183,6 +190,17 @@ function Test() {
 				</Stack>
 
 				<BasicTabs />
+
+				<Stack
+					alignItems="center"
+					direction="row"
+					justifyContent="flex-start"
+					spacing={2}
+					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+				>
+					<Chip color="accent" label="Chip Outlined" />
+					<Chip color="accent" label="Chip Outlined" />
+				</Stack>
 			</Container>
 		</div>
 	);
