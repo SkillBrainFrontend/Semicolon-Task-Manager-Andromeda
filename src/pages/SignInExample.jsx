@@ -10,11 +10,10 @@ import {
 	Grid,
 	Link,
 	Paper,
-	TextField,
 	Typography,
 } from "@mui/material";
 
-import { Button } from "../components/shared";
+import { Button, Input } from "../components/shared";
 
 function Copyright(props) {
 	return (
@@ -85,17 +84,19 @@ export default function SignInSide() {
 						sx={{ mt: 1 }}
 					>
 						{/* <FormControlLabel>Test</FormControlLabel> */}
-						<TextField
+						<Input
 							autoComplete="email"
 							autoFocus
+							error
 							fullWidth
+							helperText="Error"
 							id="email"
 							label="Email Address"
 							margin="normal"
 							name="email"
 							required
 						/>
-						<TextField
+						<Input
 							autoComplete="current-password"
 							fullWidth
 							id="password"
