@@ -1,4 +1,4 @@
-import SingIn from "./SignInExample";
+import SingIn from "./login-page/SignInExample";
 import Tasks from "./Tasks";
 import TestPage from "./TestPage";
 
