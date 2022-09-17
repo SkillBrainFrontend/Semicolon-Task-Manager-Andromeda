@@ -23,150 +23,33 @@ export default function TaskStatusTabs() {
 				textTransform="none"
 				value={value}
 			>
-				<StyledTab
-					iconPosition="end"
-					label="Content"
-					value="one"
-					wrapped
-					icon={
-						<Box
-							sx={{
-								backgroundColor: "rgba(240, 240, 240, 1)",
-								borderRadius: "12px",
-								border: "1px solid rgba(240, 240, 240, 1)",
-								minHeight: "24px",
-								minWidth: "31px",
-								textAlign: "center",
-							}}
-						>
-							<Typography
-								sx={{ fontSize: "12px", padding: "2px", fontWeight: "500" }}
+				{["one", "two", "three", "four", "five"].map((item) => (
+					<StyledTab
+						iconPosition="end"
+						label="Content"
+						value={item}
+						wrapped
+						icon={
+							<Box
+								sx={{
+									backgroundColor: "rgba(240, 240, 240, 1)",
+									borderRadius: "12px",
+									border: "1px solid rgba(240, 240, 240, 1)",
+									minHeight: "24px",
+									minWidth: "31px",
+									textAlign: "center",
+								}}
 							>
-								1
-							</Typography>
-						</Box>
-					}
-				/>
-				<StyledTab
-					iconPosition="end"
-					label="Content"
-					value="two"
-					wrapped
-					icon={
-						<Box
-							sx={{
-								backgroundColor: "rgba(240, 240, 240, 1)",
-								borderRadius: "12px",
-								border: "1px solid rgba(240, 240, 240, 1)",
-								minHeight: "24px",
-								minWidth: "31px",
-								textAlign: "center",
-							}}
-						>
-							<Typography
-								sx={{ fontSize: "12px", padding: "2px", fontWeight: "500" }}
-							>
-								1
-							</Typography>
-						</Box>
-					}
-				/>
-				<StyledTab
-					iconPosition="end"
-					label="Content"
-					value="three"
-					wrapped
-					icon={
-						<Box
-							sx={{
-								backgroundColor: "rgba(240, 240, 240, 1)",
-								borderRadius: "12px",
-								border: "1px solid rgba(240, 240, 240, 1)",
-								minHeight: "24px",
-								minWidth: "31px",
-								textAlign: "center",
-							}}
-						>
-							<Typography
-								sx={{ fontSize: "12px", padding: "2px", fontWeight: "500" }}
-							>
-								1
-							</Typography>
-						</Box>
-					}
-				/>
-				<StyledTab
-					iconPosition="end"
-					label="Content"
-					value="four"
-					wrapped
-					icon={
-						<Box
-							sx={{
-								backgroundColor: "rgba(240, 240, 240, 1)",
-								borderRadius: "12px",
-								border: "1px solid rgba(240, 240, 240, 1)",
-								minHeight: "24px",
-								minWidth: "31px",
-								textAlign: "center",
-							}}
-						>
-							<Typography
-								sx={{ fontSize: "12px", padding: "2px", fontWeight: "500" }}
-							>
-								1
-							</Typography>
-						</Box>
-					}
-				/>
-				<StyledTab
-					iconPosition="end"
-					label="Content"
-					value="five"
-					wrapped
-					icon={
-						<Box
-							sx={{
-								backgroundColor: "rgba(240, 240, 240, 1)",
-								borderRadius: "12px",
-								border: "1px solid rgba(240, 240, 240, 1)",
-								minHeight: "24px",
-								minWidth: "31px",
-								textAlign: "center",
-							}}
-						>
-							<Typography
-								sx={{ fontSize: "12px", padding: "2px", fontWeight: "500" }}
-							>
-								1
-							</Typography>
-						</Box>
-					}
-				/>
-				<StyledTab
-					iconPosition="end"
-					label="Content"
-					value="six"
-					wrapped
-					icon={
-						<Box
-							sx={{
-								backgroundColor: "rgba(240, 240, 240, 1)",
-								borderRadius: "12px",
-								border: "1px solid rgba(240, 240, 240, 1)",
-								minHeight: "24px",
-								minWidth: "31px",
-								textAlign: "center",
-							}}
-						>
-							<Typography
-								sx={{ fontSize: "12px", padding: "2px", fontWeight: "500" }}
-							>
-								1
-							</Typography>
-						</Box>
-					}
-				/>
+								<Typography
+									sx={{ fontSize: "12px", padding: "2px", fontWeight: "500" }}
+								>
+									1
+								</Typography>
+							</Box>
+						}
+					/>
+				))}
+				;
 			</Tabs>
 		</Box>
 	);

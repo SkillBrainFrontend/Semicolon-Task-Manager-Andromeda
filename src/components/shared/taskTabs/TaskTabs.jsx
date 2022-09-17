@@ -22,14 +22,11 @@ export default function TaskTabs() {
 				textTransform="none"
 				value={value}
 			>
-				<StyledTab label="Tab Content" value="one" wrapped />
-				<StyledTab label="Tab Content" value="two" wrapped />
-				<StyledTab label="Tab Content" value="three" wrapped />
-				<StyledTab label="Tab Content" value="four" wrapped />
-				<StyledTab label="Tab Content" value="five" wrapped />
-				<StyledTab label="Tab Content" value="six" wrapped />
-				<StyledTab label="Tab Content" value="seven" wrapped />
-				<StyledTab label="Tab Content" value="eight" wrapped />
+				{["one", "two", "three", "four", "five", "six", "seven", "eight"].map(
+					(item) => (
+						<StyledTab label="Tab Content" value={item} wrapped />
+					)
+				)}
 			</Tabs>
 		</Box>
 	);
