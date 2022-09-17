@@ -14,3 +14,8 @@
 .MuiAlert-message>img {
     padding: 15px 0 0 100px;
 }
+
+.MuiPaper-root {
+    min-height: fit-content;
+    min-width: fit-content;
+}
