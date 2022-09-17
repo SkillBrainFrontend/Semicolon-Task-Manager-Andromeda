@@ -49,6 +49,10 @@
 		"*.{html,css,less,ejs}": [
 			"prettier --write",
 			"git add"
+		],
+		"*.{json}": [
+			"prettier --write",
+			"git add"
 		]
 	},
 	"browserslist": {
