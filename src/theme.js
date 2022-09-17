@@ -102,23 +102,6 @@ const theme = createTheme({
 				}),
 			},
 		},
-		MuiChip: {
-			styleOverrides: {
-				outlined: ({ ownerState, theme: appTheme }) => {
-					const extraColor =
-						ownerState.extraColor && appTheme.palette[ownerState.extraColor]
-							? appTheme.palette[ownerState.extraColor].main
-							: appTheme.palette.custom[ownerState.extraColor] ||
-							  appTheme.palette.default.main;
-
-					return {
-						background: alpha(extraColor, 0.1),
-						color: extraColor,
-						border: "none",
-					};
-				},
-			},
-		},
 		MuiAlertTitle: {
 			styleOverrides: {
 				root: {
