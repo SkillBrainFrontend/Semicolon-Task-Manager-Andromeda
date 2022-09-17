@@ -11,6 +11,8 @@ import {
 	Typography,
 } from "@mui/material";
 
+import PlacehoderBg from "../../assets/icons/screen-placeholder.svg";
+
 import LoginForm from "./components/LoginForm";
 
 function Copyright(props) {
@@ -40,14 +42,12 @@ export default function SignInSide() {
 				sm={4}
 				xs={false}
 				sx={{
-					backgroundImage: "url(https://source.unsplash.com/random)",
+					backgroundImage: `url(${PlacehoderBg})`,
 					backgroundRepeat: "no-repeat",
-					backgroundColor: (t) =>
-						t.palette.mode === "light"
-							? t.palette.grey[50]
-							: t.palette.grey[900],
+					backgroundColor: (t) => t.palette.primary.main,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
+					transform: "scaleX(-1)",
 				}}
 			/>
 			<Grid component={Paper} elevation={6} item md={5} sm={8} square xs={12}>
