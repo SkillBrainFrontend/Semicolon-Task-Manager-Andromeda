@@ -1,0 +1,16 @@
+.css-1ytlwq5-MuiAlert-icon {
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.MuiAlert-message {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 0 20px;
+}
+
+.MuiAlert-message>img {
+    padding: 15px 0 0 100px;
+}
