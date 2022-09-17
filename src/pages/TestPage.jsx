@@ -1,16 +1,9 @@
 import React from "react";
 
-import {
-	AlertTitle,
-	Chip,
-	Container,
-	Paper,
-	Stack,
-	Typography,
-} from "@mui/material";
+import { AlertTitle, Container, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-import { Alert, Badges, Button, Input  } from "../components/shared";
+import { Alert, Button, Chip, Input } from "../components/shared";
 
 import BasicTabs from "./TabTest";
 
@@ -202,17 +195,39 @@ function Test() {
 					<Chip color="accent" label="Chip Outlined" />
 				</Stack>
 				<Input error label="Worjidjasi" />
-				<Stack alignItems="center"
+				<Stack
+					alignItems="center"
 					direction="row"
 					justifyContent="flex-start"
 					spacing={2}
-					sx={{ width: "100%", padding: theme.spacing(3, 0) }}>
-					<Chip label="Chip Filled" />
-					<Chip label="Chip Outlined" variant="outlined" />
-					<Chip label="Chip Filled" size="large1" />
+					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+				>
+					<Chip
+						color="warning"
+						extraColor="success"
+						label="Chip Filled"
+						size="small"
+					/>
+					<Chip
+						extraColor="accent"
+						label="In Review"
+						size="small"
+						variant="outlined"
+					/>
+					<Chip
+						extraColor="success"
+						label="Completed"
+						size="small"
+						variant="outlined"
+					/>
+					<Chip
+						extraColor="tests"
+						label="Completed"
+						size="small"
+						variant="outlined"
+					/>
+					<Chip label="Chip Filled" size="large" />
 				</Stack>
-				<Badges />
-
 			</Container>
 		</div>
 	);

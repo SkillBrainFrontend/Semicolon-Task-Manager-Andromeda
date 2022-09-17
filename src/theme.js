@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { createTheme } from "@mui/material/styles";
+import { alpha, createTheme } from "@mui/material/styles";
 
 import GelionBold from "./assets/fonts/Gelion Bold.woff";
 import GelionLight from "./assets/fonts/Gelion Light.woff";
@@ -9,7 +9,6 @@ const theme = createTheme({
 	palette: {
 		primary: {
 			main: "#3754DB",
-			light: "#F5F7FE",
 		},
 		secondary: {
 			main: "#B80020",
@@ -47,6 +46,9 @@ const theme = createTheme({
 		},
 		neutral: {
 			main: "#999999",
+		},
+		default: {
+			main: "#808080",
 		},
 		background: {
 			surface: "#F5F7FE",
@@ -98,6 +100,23 @@ const theme = createTheme({
 						backgroundColor: appTheme.palette[ownerState.color].main,
 					},
 				}),
+			},
+		},
+		MuiChip: {
+			styleOverrides: {
+				outlined: ({ ownerState, theme: appTheme }) => {
+					const extraColor =
+						ownerState.extraColor && appTheme.palette[ownerState.extraColor]
+							? appTheme.palette[ownerState.extraColor].main
+							: appTheme.palette.custom[ownerState.extraColor] ||
+							  appTheme.palette.default.main;
+
+					return {
+						background: alpha(extraColor, 0.1),
+						color: extraColor,
+						border: "none",
+					};
+				},
 			},
 		},
 		MuiAlertTitle: {

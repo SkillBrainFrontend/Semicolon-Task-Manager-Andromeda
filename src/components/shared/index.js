@@ -1,8 +1,6 @@
 import Alert from "./alert/Alert";
-import Badges from "./badges/Badges";
 import Button from "./button/Button";
+import Chip from "./chip/Chip";
 import Input from "./input/Input";
 
-;
-
-export { Alert, Badges, Button, Input };
+export { Alert, Button, Chip, Input };
