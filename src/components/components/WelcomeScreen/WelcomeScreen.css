@@ -1,0 +1,17 @@
+.comtent {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.orientation{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.blueImg{
+    border-radius: 32px;
+    margin: 20px;
+    width: 45%;
+}
