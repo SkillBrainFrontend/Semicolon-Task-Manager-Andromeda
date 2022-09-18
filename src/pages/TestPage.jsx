@@ -142,7 +142,7 @@ function Test() {
 					</Button>
 				</Stack>
 
-				<Stack spacing={2} sx={{ width: "100%" }}>
+				<Stack direction="row" spacing={2} sx={{ width: "100%" }}>
 					<Alert
 						onClose={() => {}}
 						severity="error"
