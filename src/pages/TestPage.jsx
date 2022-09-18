@@ -144,7 +144,7 @@ function Test() {
 					</Button>
 				</Stack>
 
-				<Box sx={{ flexGrow: 1 }}>
+				<Box sx={{ flexGrow: 0 }}>
 					<Grid container direction="row" spacing={2} sx={{ width: "100%" }}>
 						<Grid item lg={3} md={6} sm={6} xs={12}>
 							<Alert
@@ -174,7 +174,7 @@ function Test() {
 							</Alert>
 						</Grid>
 
-						<Grid item lg={3} md={6} sm={6} xs={12}>
+						<Grid item lg={3} md={6} sm={6} xs={11}>
 							<Alert
 								onClose={() => {}}
 								severity="info"
