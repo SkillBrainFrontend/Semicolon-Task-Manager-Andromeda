@@ -195,6 +195,32 @@ function Test() {
 					<Chip color="accent" label="Chip Outlined" />
 				</Stack>
 				<Input error label="Worjidjasi" />
+
+				<Stack
+					alignItems="center"
+					direction="row"
+					justifyContent="flex-start"
+					spacing={2}
+					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+				>
+					<Chip extraColor="wine" label="23" size="small" variant="outlined" />
+					<Chip extraColor="primary" label="23" size="small" variant="outlined" />
+					<Chip extraColor="primary" label="Some Text Yunno" size="small" variant="outlined" />
+				</Stack>
+
+				<Stack
+					alignItems="center"
+					direction="row"
+					justifyContent="flex-start"
+					spacing={2}
+					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+				>
+					<Chip color="secondary" label="23" size="small" variant="contained"/>
+					<Chip color="primary" label="23" size="small"variant="contained"/>
+					<Chip color="secondary" label="Some Text Yunno" size="small" variant="contained"/>
+					<Chip color="primary" label="Some Text Yunno" size="small" variant="contained"/>
+				</Stack>
+			
 				<Stack
 					alignItems="center"
 					direction="row"
@@ -203,10 +229,16 @@ function Test() {
 					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
 				>
 					<Chip
-						color="warning"
-						extraColor="success"
-						label="Chip Filled"
+						extraColor="yellow"
+						label="Pending"
 						size="small"
+						variant="outlined"
+					/>
+					<Chip
+						extraColor="primary"
+						label="In Progress"
+						size="small"
+						variant="outlined"
 					/>
 					<Chip
 						extraColor="accent"
@@ -221,12 +253,17 @@ function Test() {
 						variant="outlined"
 					/>
 					<Chip
-						extraColor="tests"
-						label="Completed"
+						extraColor="wine"
+						label="Unassigned"
 						size="small"
 						variant="outlined"
 					/>
-					<Chip label="Chip Filled" size="large" />
+					<Chip
+						extraColor="gray"
+						label="Unassigned"
+						size="small"
+						variant="outlined"
+					/>
 				</Stack>
 			</Container>
 		</div>
