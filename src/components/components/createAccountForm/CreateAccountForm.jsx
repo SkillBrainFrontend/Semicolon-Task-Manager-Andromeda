@@ -2,7 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import { Box, Checkbox, FormControlLabel, Grid, Link } from "@mui/material";
+import { Box, Grid, Paper } from "@mui/material";
 
 import { Button, Input } from "../../shared";
 
