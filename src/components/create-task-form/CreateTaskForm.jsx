@@ -31,17 +31,16 @@ function SelectButton() {
 	return (
 		<Box sx={{ minWidth: 120 }}>
 			<FormControl fullWidth>
-				<InputLabel id="demo-simple-select-label">Task Priority</InputLabel>
+				<InputLabel>Task Priority</InputLabel>
 				<Select
 					id="demo-simple-select"
-					label="Age"
-					labelId="demo-simple-select-label"
+					label="Priority"
 					onChange={handleChange}
 					value={priority}
 				>
-					<MenuItem value={10}>Less Important</MenuItem>
-					<MenuItem value={20}>Important</MenuItem>
-					<MenuItem value={30}>Very important</MenuItem>
+					<MenuItem value="Less Important">Less Important</MenuItem>
+					<MenuItem value="Important">Important</MenuItem>
+					<MenuItem value="Very important">Very important</MenuItem>
 				</Select>
 			</FormControl>
 		</Box>
