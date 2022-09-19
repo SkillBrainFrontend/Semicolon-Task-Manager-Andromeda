@@ -2,18 +2,19 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import { Box, Checkbox, FormControlLabel, Grid, Link } from "@mui/material";
+import { Box } from "@mui/material";
 
-import { Button, Input } from "../../shared";
+import { Button, Input } from "../../../../components/shared";
 
 const LoginFormSchema = Yup.object().shape({
 	email: Yup.string().email("Invalid email").required("Required"),
 	password: Yup.string().min(8, "Min lenght is 8!").required("Required"),
 });
 
-function LoginForm() {
+function CreateAccountForm() {
 	const { handleChange, values, handleSubmit, errors, isValid } = useFormik({
 		initialValues: {
+			name: "",
 			email: "",
 			password: "",
 			rememberMe: false,
@@ -26,11 +27,21 @@ function LoginForm() {
 	});
 
 	return (
-		<Box
-			component="form"
-			onSubmit={handleSubmit}
-			sx={{ boxShadow: "none", mt: 1 }}
-		>
+		<Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+			<Input
+				autoComplete="name"
+				autoFocus
+				error={errors.name}
+				fullWidth
+				helperText={errors.name}
+				id="name"
+				label="Full name"
+				margin="normal"
+				name="name"
+				onChange={handleChange}
+				required
+				value={values.name}
+			/>
 			<Input
 				autoComplete="email"
 				autoFocus
@@ -59,18 +70,7 @@ function LoginForm() {
 				type="password"
 				value={values.password}
 			/>
-			<FormControlLabel
-				label="Remember me"
-				control={
-					<Checkbox
-						checked={values.rememberMe.checked}
-						color="primary"
-						name="rememberMe"
-						onChange={handleChange}
-						value="remember"
-					/>
-				}
-			/>
+
 			<Button
 				disabled={!isValid}
 				fullWidth
@@ -78,21 +78,9 @@ function LoginForm() {
 				type="submit"
 				variant="contained"
 			>
-				Sign In
+				Create Account
 			</Button>
-			<Grid container>
-				<Grid item xs>
-					<Link href="#" variant="body2">
-						Forgot password?
-					</Link>
-				</Grid>
-				<Grid item>
-					<Link href="#" variant="body2">
-						Don&apos;t have an account? Sign Up
-					</Link>
-				</Grid>
-			</Grid>
 		</Box>
 	);
 }
-export default LoginForm;
+export default CreateAccountForm;

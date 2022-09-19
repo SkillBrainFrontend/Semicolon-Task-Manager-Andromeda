@@ -1,41 +1,22 @@
 import * as React from "react";
 
-import { Box, CssBaseline, Grid, Paper, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
-import Placeholder from "../../../assets/images/Placeholder.png";
-import { Button } from "../../shared";
-import CreateAccountForm from "../createAccountForm/CreateAccountForm";
+import { WelcomePlaceholder } from "../../components";
+import { Button } from "../../components/shared";
+
+import CreateAccountForm from "./components/createAccountForm/CreateAccountForm";
 
 export default function WelcomeScreen() {
 	return (
-		<Grid
-			component="main"
-			container
-			sx={{ background: "default", height: "100vh" }}
-		>
-			<CssBaseline />
+		<Grid component="main" container sx={{ height: "100vh" }}>
+			<Grid item md={6} sm={5} xs={false}>
+				<WelcomePlaceholder />
+			</Grid>
 			<Grid
 				item
 				md={6}
-				sm={4}
-				xs={false}
-				sx={{
-					margin: 1.25,
-					backgroundImage: `url(${Placeholder})`,
-					backgroundRepeat: "no-repeat",
-					// backgroundColor: (t) => t.palette.primary.main,
-					backgroundSize: "cover",
-					backgroundPosition: "center",
-					borderRadius: 2,
-				}}
-			/>
-			<Grid
-				component={Paper}
-				elevation={6}
-				item
-				md={5}
-				sm={9}
-				square
+				sm={7}
 				xs={12}
 				sx={{
 					display: "flex",
@@ -44,12 +25,14 @@ export default function WelcomeScreen() {
 				}}
 			>
 				<Button
+					href="/login"
 					size="small"
 					sx={{ mx: 4, my: 2, fontWeight: 500 }}
 					variant="outlined"
 				>
 					Log In
 				</Button>
+
 				<Box
 					sx={{
 						my: 8,

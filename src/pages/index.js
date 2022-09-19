@@ -1,5 +1,6 @@
-import SingIn from "./login-page/SignInExample";
-import Tasks from "./Tasks";
+import SingInPage from "./login-page/SignInExample";
+import RegisterPage from "./register-screen/RegisterPage";
+import TasksPage from "./Tasks";
 import TestPage from "./TestPage";
 
-export { SingIn, Tasks, TestPage };
+export { RegisterPage, SingInPage, TasksPage, TestPage };
