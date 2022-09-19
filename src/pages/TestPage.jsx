@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
+import CreateTaskForm from "../components/create-task-form/CreateTaskForm";
 import { Alert, Button, Input } from "../components/shared";
 
 import BasicTabs from "./TabTest";
@@ -201,7 +202,18 @@ function Test() {
 					<Chip color="accent" label="Chip Outlined" />
 					<Chip color="accent" label="Chip Outlined" />
 				</Stack>
+
 				<Input error label="Worjidjasi" />
+
+				<Stack
+					alignItems="center"
+					direction="row"
+					justifyContent="flex-start"
+					spacing={2}
+					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+				>
+					<CreateTaskForm />
+				</Stack>
 			</Container>
 		</div>
 	);
