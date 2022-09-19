@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { SingIn, Tasks, TestPage } from "./pages";
+import { RegisterPage, SingInPage, TasksPage, TestPage } from "./pages";
 
 import "./App.css";
 
@@ -9,9 +9,11 @@ function App() {
 	return (
 		<div>
 			<Routes>
-				<Route element={<Tasks />} path="/" />
+				<Route element={<TasksPage />} path="/" />
+
 				<Route element={<TestPage />} path="/test" />
-				<Route element={<SingIn />} path="/login" />
+				<Route element={<SingInPage />} path="/login" />
+				<Route element={<RegisterPage />} path="/register" />
 			</Routes>
 		</div>
 	);
