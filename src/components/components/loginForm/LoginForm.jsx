@@ -4,7 +4,7 @@ import * as Yup from "yup";
 
 import { Box, Checkbox, FormControlLabel, Grid, Link } from "@mui/material";
 
-import { Button, Input } from "../../../components/shared";
+import { Button, Input } from "../../shared";
 
 const LoginFormSchema = Yup.object().shape({
 	email: Yup.string().email("Invalid email").required("Required"),
@@ -26,7 +26,11 @@ function LoginForm() {
 	});
 
 	return (
-		<Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+		<Box
+			component="form"
+			onSubmit={handleSubmit}
+			sx={{ boxShadow: "none", mt: 1 }}
+		>
 			<Input
 				autoComplete="email"
 				autoFocus
