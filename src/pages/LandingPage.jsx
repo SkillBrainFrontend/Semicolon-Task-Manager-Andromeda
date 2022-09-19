@@ -1,6 +1,6 @@
 import React from "react";
 
-import WelcomeScreen from "../components/components/WelcomeScreen/WelcomeScreen";
+import WelcomeScreen from "../components/components/welcomeScreen/WelcomeScreen";
 
 function LandingPage() {
 	return (

@@ -11,7 +11,7 @@ import {
 	Typography,
 } from "@mui/material";
 
-import LoginForm from "./components/LoginForm";
+import LoginForm from "../../components/components/loginForm/LoginForm";
 
 function Copyright(props) {
 	return (
