@@ -7,11 +7,20 @@ import { Button } from "../../components/shared";
 
 import CreateAccountForm from "./components/createAccountForm/CreateAccountForm";
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen(props) {
 	return (
 		<Grid component="main" container sx={{ height: "100vh" }}>
 			<Grid item md={6} sm={5} xs={false}>
-				<WelcomePlaceholder />
+				<WelcomePlaceholder
+					message="SkillBrain 2022 | All Right Reserved"
+					title="Take your productivity to the next level."
+					actionButton={{
+						buttonLabel: "Create account",
+						onActionClick: () => {
+							console.log("s-a dat click");
+						},
+					}}
+				/>
 			</Grid>
 			<Grid
 				item
@@ -27,7 +36,7 @@ export default function WelcomeScreen() {
 				<Button
 					href="/login"
 					size="small"
-					sx={{ mx: 4, my: 2, fontWeight: 500 }}
+					sx={{ mx: 4, my: 3, fontWeight: 500 }}
 					variant="outlined"
 				>
 					Log In

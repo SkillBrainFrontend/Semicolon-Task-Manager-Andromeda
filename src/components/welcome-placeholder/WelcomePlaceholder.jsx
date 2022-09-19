@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 import PlacehoderBg from "../../assets/icons/screen-placeholder.svg";
 
-function WelcomePlaceholder() {
+function WelcomePlaceholder(props) {
 	return (
 		<Box
 			sx={{
@@ -24,8 +24,36 @@ function WelcomePlaceholder() {
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 					transform: "scaleX(-1)",
+					position: "relative",
 				}}
 			/>
+			<Typography
+				component="h4"
+				variant="h4"
+				xs={false}
+				sx={{
+					position: "absolute",
+					top: "40%",
+					paddingLeft: "50px",
+					color: "white",
+					width: "40%",
+				}}
+			>
+				{props.message}
+			</Typography>
+			<Typography
+				component="h7"
+				variant="h7"
+				sx={{
+					position: "absolute",
+					top: "90%",
+					paddingLeft: "50px",
+					color: "white",
+					width: "40%",
+				}}
+			>
+				{props.right}
+			</Typography>
 		</Box>
 	);
 }
