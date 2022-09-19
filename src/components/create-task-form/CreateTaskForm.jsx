@@ -15,32 +15,40 @@ import { Stack } from "@mui/system";
 
 import { Button, Input } from "../shared";
 
+const priorityMock = [
+	{
+		id: 1,
+		priority: "Less important",
+	},
+
+	{
+		id: 2,
+		priority: "Important",
+	},
+
+	{
+		id: 3,
+		priority: "Very Important",
+	},
+];
+
 const LoginFormSchema = Yup.object().shape({
-	taskName: Yup.string().min(5, "Min lenght is 5!").required("Required"),
+	taskName: Yup.string().min(5).required("Required"),
 	taskPriority: Yup.string().required("Required"),
 	date: Yup.string().required("Required"),
-	description: Yup.string().min(5, "Min lenght is 5!").required("Required"),
+	description: Yup.string().min(5).required("Required"),
 });
 function SelectButton() {
-	const [priority, setPriority] = React.useState("");
-
-	const handleChange = (event) => {
-		setPriority(event.target.value);
-	};
-
 	return (
-		<Box sx={{ minWidth: 120 }}>
+		<Box sx={{ width: "auto" }}>
 			<FormControl fullWidth>
 				<InputLabel>Task Priority</InputLabel>
-				<Select
-					id="demo-simple-select"
-					label="Priority"
-					onChange={handleChange}
-					value={priority}
-				>
-					<MenuItem value="Less Important">Less Important</MenuItem>
-					<MenuItem value="Important">Important</MenuItem>
-					<MenuItem value="Very important">Very important</MenuItem>
+				<Select id="Priority" label="Priority">
+					{priorityMock.map((item) => (
+						<MenuItem id={item.id} key={item.id} value={item.id}>
+							{`${item.priority}`}
+						</MenuItem>
+					))}
 				</Select>
 			</FormControl>
 		</Box>
@@ -52,9 +60,9 @@ function CreateTaskForm() {
 	const { handleChange, values, handleSubmit, errors, isValid } = useFormik({
 		initialValues: {
 			taskName: "",
-			taskPriority: "",
 			date: "",
 			description: "",
+			isValid: true,
 		},
 
 		validationSchema: LoginFormSchema,
