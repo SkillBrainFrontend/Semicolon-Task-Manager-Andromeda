@@ -7,12 +7,13 @@ import { Button } from "../../components/shared";
 
 import CreateAccountForm from "./components/createAccountForm/CreateAccountForm";
 
-export default function WelcomeScreen(props) {
+export default function WelcomeScreen() {
+	const message = "THIS IS MESSAGE FOR REGISTER PAGE";
 	return (
 		<Grid component="main" container sx={{ height: "100vh" }}>
 			<Grid item md={6} sm={5} xs={false}>
 				<WelcomePlaceholder
-					message="SkillBrain 2022 | All Right Reserved"
+					message={message}
 					title="Take your productivity to the next level."
 					actionButton={{
 						buttonLabel: "Create account",
