@@ -2,12 +2,18 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import { Box, Typography } from "@mui/material";
+import {
+	Box,
+	FormControl,
+	InputLabel,
+	MenuItem,
+	Select,
+	Typography,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Stack } from "@mui/system";
 
 import { Button, Input } from "../shared";
-import { SelectButton } from "../shared/select-button/SelectButton";
 
 const LoginFormSchema = Yup.object().shape({
 	taskName: Yup.string().min(5, "Min lenght is 5!").required("Required"),
@@ -15,6 +21,32 @@ const LoginFormSchema = Yup.object().shape({
 	date: Yup.string().required("Required"),
 	description: Yup.string().min(5, "Min lenght is 5!").required("Required"),
 });
+function SelectButton() {
+	const [priority, setPriority] = React.useState("");
+
+	const handleChange = (event) => {
+		setPriority(event.target.value);
+	};
+
+	return (
+		<Box sx={{ minWidth: 120 }}>
+			<FormControl fullWidth>
+				<InputLabel id="demo-simple-select-label">Task Priority</InputLabel>
+				<Select
+					id="demo-simple-select"
+					label="Age"
+					labelId="demo-simple-select-label"
+					onChange={handleChange}
+					value={priority}
+				>
+					<MenuItem value={10}>Less Important</MenuItem>
+					<MenuItem value={20}>Important</MenuItem>
+					<MenuItem value={30}>Very important</MenuItem>
+				</Select>
+			</FormControl>
+		</Box>
+	);
+}
 
 function CreateTaskForm() {
 	const theme = useTheme();
