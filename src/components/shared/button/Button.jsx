@@ -10,7 +10,6 @@ const StyledButton = styled(Button)(({ theme }) => ({
 	},
 	"&.MuiButton-sizeLarge": {
 		padding: theme.spacing(2.3, 9.2),
-		fontWeight: 900,
 	},
 	"&.MuiButton-sizeMedium": {
 		padding: theme.spacing(2, 9.2),
