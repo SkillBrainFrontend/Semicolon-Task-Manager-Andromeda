@@ -4,6 +4,7 @@ import { AlertTitle, Container, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import { Alert, Button, Chip, Input } from "../components/shared";
+import ActionAreaCard from "../components/shared/card-component/CardComponent";
 
 import BasicTabs from "./TabTest";
 
@@ -204,8 +205,18 @@ function Test() {
 					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
 				>
 					<Chip extraColor="wine" label="23" size="small" variant="outlined" />
-					<Chip extraColor="primary" label="23" size="small" variant="outlined" />
-					<Chip extraColor="primary" label="Some Text Yunno" size="small" variant="outlined" />
+					<Chip
+						extraColor="primary"
+						label="23"
+						size="small"
+						variant="outlined"
+					/>
+					<Chip
+						extraColor="primary"
+						label="Some Text Yunno"
+						size="small"
+						variant="outlined"
+					/>
 				</Stack>
 
 				<Stack
@@ -215,12 +226,22 @@ function Test() {
 					spacing={2}
 					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
 				>
-					<Chip color="secondary" label="23" size="small" variant="contained"/>
-					<Chip color="primary" label="23" size="small"variant="contained"/>
-					<Chip color="secondary" label="Some Text Yunno" size="small" variant="contained"/>
-					<Chip color="primary" label="Some Text Yunno" size="small" variant="contained"/>
+					<Chip color="secondary" label="23" size="small" variant="contained" />
+					<Chip color="primary" label="23" size="small" variant="contained" />
+					<Chip
+						color="secondary"
+						label="Some Text Yunno"
+						size="small"
+						variant="contained"
+					/>
+					<Chip
+						color="primary"
+						label="Some Text Yunno"
+						size="small"
+						variant="contained"
+					/>
 				</Stack>
-			
+
 				<Stack
 					alignItems="center"
 					direction="row"
@@ -265,6 +286,7 @@ function Test() {
 						variant="outlined"
 					/>
 				</Stack>
+				<ActionAreaCard />
 			</Container>
 		</div>
 	);

@@ -43,6 +43,7 @@ const theme = createTheme({
 			wine: "#B80020",
 			dark: "#16171D",
 			yellow: "#FBBE37",
+			darkMode: "#16171D",
 		},
 		neutral: {
 			main: "#999999",
