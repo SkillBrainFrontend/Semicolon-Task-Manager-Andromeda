@@ -9,9 +9,11 @@ import {
 	Stack,
 	Typography,
 } from "@mui/material";
+import CardContent from "@mui/material/CardContent";
 import { useTheme } from "@mui/material/styles";
 
-import { Alert, Button, Input } from "../components/shared";
+import { Alert, Button, Card, Input } from "../components/shared";
+import Vector from "../components/shared/card/Vector.png";
 
 import BasicTabs from "./TabTest";
 
@@ -218,6 +220,62 @@ function Test() {
 				</Stack>
 				<Input error label="Worjidjasi" />
 			</Grid>
+
+			<Box display="flex" sx={{ flexGrow: 0 }}>
+				<Grid container margin="20px">
+					<Card sx={{ minWidth: 248 }}>
+						<CardContent justifyContent="space-betweem">
+							<Stack
+								alignItems="flex-start"
+								direction="row"
+								justifyContent="space-between"
+							>
+								<Typography
+									color="#B9B9B9"
+									gutterBottom
+									sx={{ fontSize: 14, font: "gelion", fontWeight: 600 }}
+								>
+									T - 25
+								</Typography>
+								<Typography
+									backgroundColor="#F2F4FD;"
+									borderRadius={12}
+									color=" #3754DB;"
+									fontSize={14}
+									fontWeight={500}
+									padding="5px"
+								>
+									In Progress
+								</Typography>
+							</Stack>
+							<Typography
+								color="#16171D;"
+								component="div"
+								fontWeight={600}
+								margin="10px 0 10px 0"
+								variant="h6"
+							>
+								Create a Design System for <br />
+								Enum Workspace.
+							</Typography>
+
+							<Stack direction="row">
+								<Typography
+									color=" #3754DB;"
+									fontSize={12}
+									fontWeight={600}
+									variant="body2"
+								>
+									View Task
+								</Typography>
+								<Stack justifyContent="center" padding="0 20px">
+									<img alt="" src={Vector} />
+								</Stack>
+							</Stack>
+						</CardContent>
+					</Card>
+				</Grid>
+			</Box>
 		</div>
 	);
 }
