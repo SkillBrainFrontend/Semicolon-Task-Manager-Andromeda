@@ -90,6 +90,12 @@ const theme = createTheme({
               }
           `,
 		},
+		MuiCard: {
+			defaultProps: {
+				elevation: 0,
+			},
+		},
+
 		MuiButton: {
 			defaultProps: {
 				disableElevation: true,

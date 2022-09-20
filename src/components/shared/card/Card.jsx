@@ -1,9 +1,11 @@
 import { Card } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const StyledCard = styled(Card)(({ theme }) => ({
+const StyledCard = styled(Card)(() => ({
 	"&.MuiCard-root": {
-		borderRadius: 16,
+		borderRadius: "16px",
+		fontSize: 16,
+		padding: "24px",
 	},
 }));
 
