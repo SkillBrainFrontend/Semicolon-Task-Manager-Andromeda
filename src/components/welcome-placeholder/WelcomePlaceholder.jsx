@@ -59,7 +59,7 @@ function WelcomePlaceholder(props) {
 				sx={{
 					position: "absolute",
 					top: "40%",
-					paddingLeft: "50px",
+					padding: "0 50px",
 					color: "white",
 					width: "40%",
 				}}
@@ -72,7 +72,7 @@ function WelcomePlaceholder(props) {
 				sx={{
 					position: "absolute",
 					top: "90%",
-					paddingLeft: "50px",
+					padding: "0 50px",
 					color: "white",
 					width: "40%",
 				}}
