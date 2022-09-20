@@ -1,10 +1,21 @@
+/* eslint-disable react/destructuring-assignment */
 import React from "react";
+import { string } from "prop-types";
 
 import { Box, Typography } from "@mui/material";
 
 import PlacehoderBg from "../../assets/icons/screen-placeholder.svg";
 
 function WelcomePlaceholder(props) {
+	WelcomePlaceholder.propTypes = {
+		message: string,
+		licence: string,
+		position: string,
+	};
+	const positionImg = {
+		left: "scaleX(-1)",
+		right: "none",
+	};
 	return (
 		<Box
 			sx={{
@@ -23,7 +34,7 @@ function WelcomePlaceholder(props) {
 					backgroundColor: (t) => t.palette.primary.main,
 					backgroundSize: "cover",
 					backgroundPosition: "center",
-					transform: "scaleX(-1)",
+					transform: positionImg[props.position],
 					position: "relative",
 				}}
 			/>
@@ -52,7 +63,7 @@ function WelcomePlaceholder(props) {
 					width: "40%",
 				}}
 			>
-				{props.right}
+				{props.licence}
 			</Typography>
 		</Box>
 	);
