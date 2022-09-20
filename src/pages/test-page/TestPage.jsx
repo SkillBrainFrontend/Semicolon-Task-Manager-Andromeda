@@ -3,10 +3,10 @@ import React from "react";
 import { AlertTitle, Container, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-import { Alert, Button, Chip, Input } from "../components/shared";
-import ActionAreaCard from "../components/shared/card-component/CardComponent";
+import { Alert, Button, Chip, Input } from "../../components/shared";
+import BasicTabs from "../TabTest";
 
-import BasicTabs from "./TabTest";
+import ActionAreaCard from "./components/CardComponent";
 
 function Test() {
 	const theme = useTheme();
