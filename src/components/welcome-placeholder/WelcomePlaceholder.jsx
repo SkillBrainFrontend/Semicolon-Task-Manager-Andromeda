@@ -2,14 +2,28 @@
 import React from "react";
 import { string } from "prop-types";
 
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 
 import PlacehoderBg from "../../assets/icons/screen-placeholder.svg";
 
+function Copyright(props) {
+	return (
+		<Typography
+			align="center"
+			color="text.secondary"
+			variant="body2"
+			{...props}
+		>
+			<Link color="inherit" href="https://skillbrain.com/" target="_blank">
+				SkillBrain 2022 | All Right Reserved
+			</Link>{" "}
+			{new Date().getFullYear()}.
+		</Typography>
+	);
+}
 function WelcomePlaceholder(props) {
 	WelcomePlaceholder.propTypes = {
 		message: string,
-		licence: string,
 		position: string,
 	};
 	const positionImg = {
@@ -52,7 +66,7 @@ function WelcomePlaceholder(props) {
 			>
 				{props.message}
 			</Typography>
-			<Typography
+			<Copyright
 				component="h7"
 				variant="h7"
 				sx={{
@@ -62,9 +76,7 @@ function WelcomePlaceholder(props) {
 					color: "white",
 					width: "40%",
 				}}
-			>
-				{props.licence}
-			</Typography>
+			/>
 		</Box>
 	);
 }

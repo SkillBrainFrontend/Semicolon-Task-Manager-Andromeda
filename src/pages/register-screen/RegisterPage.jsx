@@ -12,7 +12,6 @@ export default function WelcomeScreen() {
 		<Grid component="main" container sx={{ height: "100vh" }}>
 			<Grid item md={6} sm={5} xs={false}>
 				<WelcomePlaceholder
-					licence="SkillBrain 2022 | All Right Reserved"
 					message="Take your productivity to the next level."
 					position="left"
 					actionButton={{
