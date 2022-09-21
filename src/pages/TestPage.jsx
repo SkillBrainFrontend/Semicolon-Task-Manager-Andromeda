@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-import { Alert, Button, Input } from "../components/shared";
+import { Alert, Button, Input, ForgotPass } from "../components/shared";
 
 import BasicTabs from "./TabTest";
 import SidebarRight from "../components/shared/sidebarright/SidebarRight";
@@ -204,6 +204,7 @@ function Test() {
 				</Stack>
 				<Input error label="Worjidjasi" />
 				<SidebarRight />
+				<ForgotPass />
 			</Container>
 		</div>
 	);
