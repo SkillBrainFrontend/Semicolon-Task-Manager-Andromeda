@@ -19,7 +19,6 @@ function App() {
 			<Routes>
 				<Route element={<TasksPage />} path="/" />
 				<Route element={<RecoverPasswordWrapper />} path="/recover" />
-
 				<Route element={<TestPage />} path="/test" />
 				<Route element={<SingInPage />} path="/login" />
 				<Route element={<RegisterPage />} path="/register" />
