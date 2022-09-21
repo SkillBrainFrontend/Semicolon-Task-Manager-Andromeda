@@ -1,6 +1,6 @@
 import Alert from "./alert/Alert";
 import Button from "./button/Button";
-import Card from "./card/CardContent";
+import Card from "./card/Card";
 import Chip from "./chip/Chip";
 import Input from "./input/Input";
 

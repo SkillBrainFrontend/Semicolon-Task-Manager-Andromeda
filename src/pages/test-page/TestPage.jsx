@@ -12,10 +12,12 @@ import {
 import CardContent from "@mui/material/CardContent";
 import { useTheme } from "@mui/material/styles";
 
-import { Alert, Button, Card, Chip, Input } from "../components/shared";
-import Vector from "../components/shared/card/Vector.png";
+import CreateTaskForm from "../../components/create-task-form/CreateTaskForm";
+import { Alert, Button, Card, Chip, Input } from "../../components/shared";
+import Vector from "../../components/shared/card/Vector.png";
+import BasicTabs from "../TabTest";
 
-import BasicTabs from "./TabTest";
+import ActionAreaCard from "./components/CardComponent";
 
 function Test() {
 	const theme = useTheme();
@@ -217,6 +219,7 @@ function Test() {
 					<Chip color="accent" label="Chip Outlined" />
 					<Chip color="accent" label="Chip Outlined" />
 				</Stack>
+
 				<Input error label="Worjidjasi" />
 
 				<Box display="flex" sx={{ flexGrow: 0 }}>
@@ -295,7 +298,17 @@ function Test() {
 						size="small"
 						variant="outlined"
 					/>
+					<CreateTaskForm />
 				</Stack>
+
+				<Chip extraColor="wine" label="23" size="small" variant="outlined" />
+				<Chip extraColor="primary" label="23" size="small" variant="outlined" />
+				<Chip
+					extraColor="primary"
+					label="Some Text Yunno"
+					size="small"
+					variant="outlined"
+				/>
 
 				<Stack
 					alignItems="center"
@@ -311,14 +324,17 @@ function Test() {
 						variant="contained"
 					/>
 					<Chip color="primary" label="23" size="small" variant="contained" />
+
+					<Chip color="secondary" label="23" size="small" variant="contained" />
+					<Chip color="primary" label="23" size="small" variant="contained" />
 					<Chip
-						extraColor="secondary"
+						color="secondary"
 						label="Some Text Yunno"
 						size="small"
 						variant="contained"
 					/>
 					<Chip
-						extraColor="primary"
+						color="primary"
 						label="Some Text Yunno"
 						size="small"
 						variant="contained"
@@ -369,6 +385,63 @@ function Test() {
 						variant="outlined"
 					/>
 				</Stack>
+				<ActionAreaCard />
+
+				<Box display="flex" sx={{ flexGrow: 0 }}>
+					<Grid container margin="20px">
+						<Card sx={{ minWidth: 248 }}>
+							<CardContent justifyContent="space-betweem">
+								<Stack
+									alignItems="flex-start"
+									direction="row"
+									justifyContent="space-between"
+								>
+									<Typography
+										color="#B9B9B9"
+										gutterBottom
+										sx={{ fontSize: 14, font: "gelion", fontWeight: 600 }}
+									>
+										T - 25
+									</Typography>
+									<Typography
+										backgroundColor="#F2F4FD;"
+										borderRadius={12}
+										color=" #3754DB;"
+										fontSize={14}
+										fontWeight={500}
+										padding="5px"
+									>
+										In Progress
+									</Typography>
+								</Stack>
+								<Typography
+									color="#16171D;"
+									component="div"
+									fontWeight={600}
+									margin="10px 0 10px 0"
+									variant="h6"
+								>
+									Create a Design System for <br />
+									Enum Workspace.
+								</Typography>
+
+								<Stack direction="row">
+									<Typography
+										color=" #3754DB;"
+										fontSize={12}
+										fontWeight={600}
+										variant="body2"
+									>
+										View Task
+									</Typography>
+									<Stack justifyContent="center" padding="0 20px">
+										<img alt="" src={Vector} />
+									</Stack>
+								</Stack>
+							</CardContent>
+						</Card>
+					</Grid>
+				</Box>
 			</Container>
 		</div>
 	);
