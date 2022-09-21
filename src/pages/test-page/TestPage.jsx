@@ -3,13 +3,9 @@ import React from "react";
 import { AlertTitle, Container, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-<<<<<<< HEAD:src/pages/TestPage.jsx
-import CreateTaskForm from "../components/create-task-form/CreateTaskForm";
-import { Alert, Button, Input } from "../components/shared";
-=======
+import CreateTaskForm from "../../components/create-task-form/CreateTaskForm";
 import { Alert, Button, Chip, Input } from "../../components/shared";
 import BasicTabs from "../TabTest";
->>>>>>> main:src/pages/test-page/TestPage.jsx
 
 import ActionAreaCard from "./components/CardComponent";
 
@@ -210,24 +206,17 @@ function Test() {
 					spacing={2}
 					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
 				>
-<<<<<<< HEAD:src/pages/TestPage.jsx
 					<CreateTaskForm />
 				</Stack>
-=======
-					<Chip extraColor="wine" label="23" size="small" variant="outlined" />
-					<Chip
-						extraColor="primary"
-						label="23"
-						size="small"
-						variant="outlined"
-					/>
-					<Chip
-						extraColor="primary"
-						label="Some Text Yunno"
-						size="small"
-						variant="outlined"
-					/>
-				</Stack>
+
+				<Chip extraColor="wine" label="23" size="small" variant="outlined" />
+				<Chip extraColor="primary" label="23" size="small" variant="outlined" />
+				<Chip
+					extraColor="primary"
+					label="Some Text Yunno"
+					size="small"
+					variant="outlined"
+				/>
 
 				<Stack
 					alignItems="center"
@@ -297,7 +286,6 @@ function Test() {
 					/>
 				</Stack>
 				<ActionAreaCard />
->>>>>>> main:src/pages/test-page/TestPage.jsx
 			</Container>
 		</div>
 	);

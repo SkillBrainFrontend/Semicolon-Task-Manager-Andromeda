@@ -1,12 +1,13 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import LoginForm from "./pages/login-page";
-import Tasks, {
+import {
 	RecoverPassword,
 	RecoverPasswordWrapper,
 	RegisterPage,
 	ResetPassword,
+	SingInPage,
+	TasksPage,
 	TestPage,
 } from "./pages";
 
@@ -16,10 +17,10 @@ function App() {
 	return (
 		<div>
 			<Routes>
-				<Route element={<Tasks />} path="/" />
+				<Route element={<TasksPage />} path="/" />
 				<Route element={<RecoverPasswordWrapper />} path="/recover" />
 				<Route element={<TestPage />} path="/test" />
-				<Route element={<LoginForm />} path="/login" />
+				<Route element={<SingInPage />} path="/login" />
 				<Route element={<RegisterPage />} path="/register" />
 				<Route element={<ResetPassword />} path="/reset-password" />
 				<Route element={<RecoverPassword />} path="/recover-password" />
