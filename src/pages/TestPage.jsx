@@ -11,10 +11,9 @@ import {
 import { useTheme } from "@mui/material/styles";
 
 import { Alert, Button, Input } from "../components/shared";
- 
-
 
 import BasicTabs from "./TabTest";
+import SidebarRight from "../components/shared/sidebarright/SidebarRight";
 
 function Test() {
 	const theme = useTheme();
@@ -204,7 +203,7 @@ function Test() {
 					<Chip color="accent" label="Chip Outlined" />
 				</Stack>
 				<Input error label="Worjidjasi" />
-			
+				<SidebarRight />
 			</Container>
 		</div>
 	);

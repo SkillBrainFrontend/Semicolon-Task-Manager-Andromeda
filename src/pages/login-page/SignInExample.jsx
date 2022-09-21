@@ -1,17 +1,11 @@
 import * as React from "react";
 
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import {
-	Avatar,
-	Box,
-	CssBaseline,
-	Grid,
-	Link,
-	Paper,
-	Typography,
-} from "@mui/material";
+import { Avatar, Box, Grid, Link, Typography } from "@mui/material";
 
-import LoginForm from "./components/LoginForm";
+import { WelcomePlaceholder } from "../../components";
+
+import LoginForm from "./components/loginForm/LoginForm";
 
 function Copyright(props) {
 	return (
@@ -33,24 +27,10 @@ function Copyright(props) {
 export default function SignInSide() {
 	return (
 		<Grid component="main" container sx={{ height: "100vh" }}>
-			<CssBaseline />
-			<Grid
-				item
-				md={7}
-				sm={4}
-				xs={false}
-				sx={{
-					backgroundImage: "url(https://source.unsplash.com/random)",
-					backgroundRepeat: "no-repeat",
-					backgroundColor: (t) =>
-						t.palette.mode === "light"
-							? t.palette.grey[50]
-							: t.palette.grey[900],
-					backgroundSize: "cover",
-					backgroundPosition: "center",
-				}}
-			/>
-			<Grid component={Paper} elevation={6} item md={5} sm={8} square xs={12}>
+			<Grid item md={6} sm={5} xs={false}>
+				<WelcomePlaceholder />
+			</Grid>
+			<Grid item md={6} sm={7} xs={12}>
 				<Box
 					sx={{
 						my: 8,
