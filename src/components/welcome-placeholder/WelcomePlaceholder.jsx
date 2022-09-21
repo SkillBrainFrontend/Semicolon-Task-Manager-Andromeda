@@ -2,7 +2,7 @@
 import React from "react";
 import { string } from "prop-types";
 
-import { Box, Link, Typography } from "@mui/material";
+import { Box, Grid, Link, Typography } from "@mui/material";
 
 import PlacehoderBg from "../../assets/icons/screen-placeholder.svg";
 
@@ -31,53 +31,54 @@ function WelcomePlaceholder(props) {
 		right: "none",
 	};
 	return (
-		<Box
-			sx={{
-				flex: 1,
-				height: "100%",
-				padding: "20px",
-			}}
-		>
+		<Grid>
 			<Box
 				sx={{
 					flex: 1,
-					height: "100%",
-					borderRadius: "32px",
-					backgroundImage: `url(${PlacehoderBg})`,
-					backgroundRepeat: "no-repeat",
-					backgroundColor: (t) => t.palette.primary.main,
-					backgroundSize: "cover",
-					backgroundPosition: "center",
-					transform: positionImg[props.position],
-					position: "relative",
-				}}
-			/>
-			<Typography
-				component="h4"
-				variant="h4"
-				xs={false}
-				sx={{
-					position: "absolute",
-					top: "40%",
-					padding: "0 50px",
-					color: "white",
-					width: "40%",
+					// height: "100vh",
+					padding: "20px",
 				}}
 			>
-				{props.message}
-			</Typography>
-			<Copyright
-				component="h7"
-				variant="h7"
-				sx={{
-					position: "absolute",
-					top: "90%",
-					padding: "0 50px",
-					color: "white",
-					width: "40%",
-				}}
-			/>
-		</Box>
+				<Box
+					sx={{
+						flex: 1,
+						height: "100vh",
+						borderRadius: "32px",
+						backgroundImage: `url(${PlacehoderBg})`,
+						backgroundRepeat: "no-repeat",
+						backgroundColor: (t) => t.palette.primary.main,
+						backgroundSize: "cover",
+						backgroundPosition: "center",
+						transform: positionImg[props.position],
+					}}
+				/>
+			</Box>
+
+			<Box>
+				<Typography
+					component="h4"
+					variant="h4"
+					xs={false}
+					sx={{
+						// zIndex: "1",
+						padding: "0 50px",
+						// color: "white",
+						width: "40%",
+					}}
+				>
+					{props.message}
+				</Typography>
+				<Copyright
+					component="h5"
+					variant="paragraph"
+					sx={{
+						padding: "0 50px",
+						// color: "white",
+						width: "40%",
+					}}
+				/>
+			</Box>
+		</Grid>
 	);
 }
 
