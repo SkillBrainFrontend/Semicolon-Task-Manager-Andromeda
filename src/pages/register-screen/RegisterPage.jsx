@@ -36,7 +36,7 @@ export default function WelcomeScreen() {
 				<Button
 					href="/login"
 					size="small"
-					sx={{ mx: 4, my: 3, fontWeight: 500 }}
+					sx={{ mx: 5, my: 8, fontWeight: 500 }}
 					variant="outlined"
 				>
 					Log In
@@ -45,7 +45,7 @@ export default function WelcomeScreen() {
 				<Box
 					sx={{
 						my: 8,
-						mx: 5,
+						mx: 4,
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "flex-start",
