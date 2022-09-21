@@ -3,7 +3,7 @@ import React from "react";
 import {
 	AlertTitle,
 	Box,
-	Chip,
+	Container,
 	Grid,
 	Paper,
 	Stack,
@@ -12,14 +12,8 @@ import {
 import CardContent from "@mui/material/CardContent";
 import { useTheme } from "@mui/material/styles";
 
-import { Alert, Button, Card, Input } from "../components/shared";
+import { Alert, Button, Card, Chip, Input } from "../components/shared";
 import Vector from "../components/shared/card/Vector.png";
-
-import { AlertTitle, Container, Paper, Stack, Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-
-import { Alert, Button, Chip, Input } from "../components/shared";
-
 
 import BasicTabs from "./TabTest";
 
@@ -28,8 +22,7 @@ function Test() {
 
 	return (
 		<div>
-			<Grid
-				container
+			<Container
 				sx={{
 					backgroundColor: theme.palette.background.surface,
 				}}
@@ -226,64 +219,61 @@ function Test() {
 				</Stack>
 				<Input error label="Worjidjasi" />
 
-			 </Grid>
-
-			 <Box display="flex" sx={{ flexGrow: 0 }}>
-				<Grid container margin="20px">
-					<Card sx={{ minWidth: 248 }}>
-						<CardContent justifyContent="space-betweem">
-							<Stack
-								alignItems="flex-start"
-								direction="row"
-								justifyContent="space-between"
-							>
-								<Typography
-									color="#B9B9B9"
-									gutterBottom
-									sx={{ fontSize: 14, font: "gelion", fontWeight: 600 }}
+				<Box display="flex" sx={{ flexGrow: 0 }}>
+					<Grid container margin="20px">
+						<Card sx={{ minWidth: 248 }}>
+							<CardContent justifyContent="space-betweem">
+								<Stack
+									alignItems="flex-start"
+									direction="row"
+									justifyContent="space-between"
 								>
-									T - 25
-								</Typography>
-								<Typography
-									backgroundColor="#F2F4FD;"
-									borderRadius={12}
-									color=" #3754DB;"
-									fontSize={14}
-									fontWeight={500}
-									padding="5px"
-								>
-									In Progress
-								</Typography>
-							</Stack>
-							<Typography
-								color="#16171D;"
-								component="div"
-								fontWeight={600}
-								margin="10px 0 10px 0"
-								variant="h6"
-							>
-								Create a Design System for <br />
-								Enum Workspace.
-							</Typography>
-
-							<Stack direction="row">
-								<Typography
-									color=" #3754DB;"
-									fontSize={12}
-									fontWeight={600}
-									variant="body2"
-								>
-									View Task
-								</Typography>
-								<Stack justifyContent="center" padding="0 20px">
-									<img alt="" src={Vector} />
+									<Typography
+										color="#B9B9B9"
+										gutterBottom
+										sx={{ fontSize: 14, font: "gelion", fontWeight: 600 }}
+									>
+										T - 25
+									</Typography>
+									<Typography
+										backgroundColor="#F2F4FD;"
+										borderRadius={12}
+										color=" #3754DB;"
+										fontSize={14}
+										fontWeight={500}
+										padding="5px"
+									>
+										In Progress
+									</Typography>
 								</Stack>
-							</Stack>
-						</CardContent>
-					</Card>
-				</Grid>
-		    	</Box>
+								<Typography
+									color="#16171D;"
+									component="div"
+									fontWeight={600}
+									margin="10px 0 10px 0"
+									variant="h6"
+								>
+									Create a Design System for <br />
+									Enum Workspace.
+								</Typography>
 
+								<Stack direction="row">
+									<Typography
+										color=" #3754DB;"
+										fontSize={12}
+										fontWeight={600}
+										variant="body2"
+									>
+										View Task
+									</Typography>
+									<Stack justifyContent="center" padding="0 20px">
+										<img alt="" src={Vector} />
+									</Stack>
+								</Stack>
+							</CardContent>
+						</Card>
+					</Grid>
+				</Box>
 
 				<Stack
 					alignItems="center"
@@ -293,8 +283,18 @@ function Test() {
 					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
 				>
 					<Chip extraColor="wine" label="23" size="small" variant="outlined" />
-					<Chip extraColor="primary" label="23" size="small" variant="outlined" />
-					<Chip extraColor="primary" label="Some Text Yunno" size="small" variant="outlined" />
+					<Chip
+						extraColor="primary"
+						label="23"
+						size="small"
+						variant="outlined"
+					/>
+					<Chip
+						extraColor="primary"
+						label="Some Text Yunno"
+						size="small"
+						variant="outlined"
+					/>
 				</Stack>
 
 				<Stack
@@ -304,12 +304,27 @@ function Test() {
 					spacing={2}
 					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
 				>
-					<Chip color="secondary" label="23" size="small" variant="contained"/>
-					<Chip color="primary" label="23" size="small"variant="contained"/>
-					<Chip color="secondary" label="Some Text Yunno" size="small" variant="contained"/>
-					<Chip color="primary" label="Some Text Yunno" size="small" variant="contained"/>
+					<Chip
+						extraColor="secondary"
+						label="23"
+						size="small"
+						variant="contained"
+					/>
+					<Chip color="primary" label="23" size="small" variant="contained" />
+					<Chip
+						extraColor="secondary"
+						label="Some Text Yunno"
+						size="small"
+						variant="contained"
+					/>
+					<Chip
+						extraColor="primary"
+						label="Some Text Yunno"
+						size="small"
+						variant="contained"
+					/>
 				</Stack>
-			
+
 				<Stack
 					alignItems="center"
 					direction="row"
@@ -355,7 +370,6 @@ function Test() {
 					/>
 				</Stack>
 			</Container>
-
 		</div>
 	);
 }
