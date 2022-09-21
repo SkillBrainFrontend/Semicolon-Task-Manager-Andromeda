@@ -11,9 +11,9 @@ import {
 import { useTheme } from "@mui/material/styles";
 
 import { Alert, Button, Input } from "../components/shared";
+import SidebarRight from "../components/shared/sidebarright/SidebarRight";
 
 import BasicTabs from "./TabTest";
-import SidebarRight from "../components/shared/sidebarright/SidebarRight";
 
 function Test() {
 	const theme = useTheme();
