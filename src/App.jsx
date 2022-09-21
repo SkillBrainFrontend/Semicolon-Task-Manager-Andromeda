@@ -23,8 +23,8 @@ function App() {
 				<Route element={<TestPage />} path="/test" />
 				<Route element={<SingInPage />} path="/login" />
 				<Route element={<RegisterPage />} path="/register" />
-				<Route element={<ResetPassword />} path="/reset" />
-				<Route element={<RecoverPassword />} path="/recoverPass" />
+				<Route element={<ResetPassword />} path="/reset-password" />
+				<Route element={<RecoverPassword />} path="/recover-password" />
 			</Routes>
 		</div>
 	);

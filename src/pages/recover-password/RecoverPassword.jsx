@@ -1,7 +1,6 @@
 import React from "react";
 
-import { Box } from "@mui/material";
-import Typography from "@mui/material/Typography";
+import { Box, Typography } from "@mui/material";
 
 import RecoverPasswordWrapper from "../components/recoverPasswordWrapper/RecoverPasswordWrapper";
 
