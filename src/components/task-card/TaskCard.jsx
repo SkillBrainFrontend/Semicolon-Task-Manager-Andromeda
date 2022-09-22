@@ -6,6 +6,23 @@ import { Card } from "../shared";
 
 import Vector from "./Vector.png";
 
+const date = [
+	{
+		id: 1,
+		task: "T-1",
+		status: "Pending",
+		message: "Create a Design System for Enum Worksace",
+		bottom: "View Task",
+	},
+	{
+		id: 2,
+		task: "T-2",
+		status: "Unassigned",
+		message: "Create a Design System for Enum Worksace",
+		bottom: "Assign Memember",
+	},
+];
+
 function TaskCard() {
 	return (
 		<Box
