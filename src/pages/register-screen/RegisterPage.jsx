@@ -11,7 +11,16 @@ export default function WelcomeScreen() {
 	return (
 		<Grid component="main" container sx={{ height: "100vh" }}>
 			<Grid item md={6} sm={5} xs={false}>
-				<WelcomePlaceholder />
+				<WelcomePlaceholder
+					message="Take your productivity to the next level."
+					position="left"
+					actionButton={{
+						buttonLabel: "Create account",
+						onActionClick: () => {
+							console.log("s-a dat click");
+						},
+					}}
+				/>
 			</Grid>
 			<Grid
 				item
@@ -27,7 +36,7 @@ export default function WelcomeScreen() {
 				<Button
 					href="/login"
 					size="small"
-					sx={{ mx: 4, my: 2, fontWeight: 500 }}
+					sx={{ mx: 5, my: 8, fontWeight: 500 }}
 					variant="outlined"
 				>
 					Log In
@@ -36,7 +45,7 @@ export default function WelcomeScreen() {
 				<Box
 					sx={{
 						my: 8,
-						mx: 5,
+						mx: 4,
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "flex-start",
