@@ -3,6 +3,7 @@ import React from "react";
 import { AlertTitle, Container, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
+import { TaskCard } from "../../components";
 import CreateTaskForm from "../../components/create-task-form/CreateTaskForm";
 import { Alert, Button, Chip, Input } from "../../components/shared";
 import BasicTabs from "../TabTest";
@@ -286,6 +287,8 @@ function Test() {
 					/>
 				</Stack>
 				<ActionAreaCard />
+
+				<TaskCard />
 			</Container>
 		</div>
 	);

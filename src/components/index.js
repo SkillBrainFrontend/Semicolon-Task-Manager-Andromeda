@@ -1,3 +1,4 @@
+import TaskCard from "./task-card/TaskCard";
 import WelcomePlaceholder from "./welcome-placeholder/WelcomePlaceholder";
 
-export { WelcomePlaceholder };
+export { TaskCard, WelcomePlaceholder };
