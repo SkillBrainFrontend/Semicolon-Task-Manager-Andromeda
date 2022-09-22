@@ -1,3 +1,4 @@
+export { default as AlertCircle } from "./AlertCircle";
 export { default as ChartFilled } from "./ChartFilled";
 export { default as ChartStroke } from "./ChartStroke";
 export { default as ChatFilled } from "./ChatFilled";
