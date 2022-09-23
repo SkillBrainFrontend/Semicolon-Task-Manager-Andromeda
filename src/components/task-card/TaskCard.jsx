@@ -1,13 +1,19 @@
 import * as React from "react";
+import PropTypes from "prop-types";
 
-import { Box, CardActions, CardContent, Typography } from "@mui/material";
-import { Stack } from "@mui/system";
+import {
+	Box,
+	CardActions,
+	CardContent,
+	Tooltip,
+	Typography,
+} from "@mui/material";
 
 import { Card } from "../shared";
 
 import Vector from "./Vector.png";
 
-function TaskCard(props) {
+function TaskCard({ id, name, status }) {
 	return (
 		<Box
 			sx={{
@@ -31,7 +37,7 @@ function TaskCard(props) {
 							style={{ width: 250, whiteSpace: "nowrap" }}
 							variant="body2"
 						>
-							{props.title}
+							{id}
 						</Typography>
 						<Typography
 							backgroundColor="#F2F4FD;"
@@ -40,28 +46,35 @@ function TaskCard(props) {
 							fontSize={14}
 							fontWeight={500}
 							padding="5px"
+							textAlign="center"
+							width={140}
 						>
-							{props.status}
+							{status}
 						</Typography>
 					</CardActions>
 
-					<Typography
-						component="div"
-						style={{ whiteSpace: "nowrap" }}
-						sx={{
-							textOverflow: "ellipsis",
-							overflow: "hidden",
-							my: 2,
-							p: 1,
-							fontWeight: "600",
-							color: "#16171D",
-							fontSize: "16px",
-							margin: "10px 0 10px -10px",
-							variant: "h6",
-						}}
+					<Tooltip
+						placement="bottom"
+						title="https://mui.com/material-ui/react-tooltip/#main-content"
 					>
-						{props.message}
-					</Typography>
+						<Typography
+							component="div"
+							sx={{
+								whiteSpace: "nowrap",
+								textOverflow: "ellipsis",
+								overflow: "hidden",
+								fontWeight: "600",
+								color: "#16171D",
+								fontSize: "16px",
+								margin: "10px 0 10px -10px",
+								variant: "h6",
+								my: 2,
+								p: 1,
+							}}
+						>
+							{name}
+						</Typography>
+					</Tooltip>
 				</CardContent>
 				<CardActions sx={{ justifyContent: "flex-start" }}>
 					<Typography
@@ -82,3 +95,9 @@ function TaskCard(props) {
 }
 
 export default TaskCard;
+
+TaskCard.propTypes = {
+	id: PropTypes.string,
+	name: PropTypes.string,
+	status: PropTypes.string,
+};

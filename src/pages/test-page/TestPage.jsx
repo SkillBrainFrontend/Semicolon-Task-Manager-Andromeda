@@ -293,20 +293,16 @@ function Test() {
 					<Grid container spacing={2}>
 						<Grid item lg={4} md={6} sm={6} xs={12}>
 							<TaskCard
-								message="Create a Design System for Enum Worksace. Create a Design System for Enum Worksace."
+								id="T - 10"
+								name="Create a Design System for Enum Worksace. Create a Design System for Enum Worksace."
 								status="Pending"
-								title="T - 10"
 							/>
 						</Grid>
 						<Grid item lg={4} md={6} sm={6} xs={12}>
-							<TaskCard message="Param." status="Completed" title="T - 20" />
+							<TaskCard id="T - 20" name="Param." status="Completed" />
 						</Grid>
 						<Grid item lg={4} md={6} sm={6} xs={12}>
-							<TaskCard
-								message="Well done!"
-								status="In Progress"
-								title="T - 30"
-							/>
+							<TaskCard id="T - 30" name="Well done! " status="In Progress" />
 						</Grid>
 					</Grid>
 				</Box>
