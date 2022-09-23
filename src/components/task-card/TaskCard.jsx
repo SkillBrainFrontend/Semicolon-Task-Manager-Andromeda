@@ -6,23 +6,6 @@ import { Card } from "../shared";
 
 import Vector from "./Vector.png";
 
-const date = [
-	{
-		id: 1,
-		task: "T-1",
-		status: "Pending",
-		message: "Create a Design System for Enum Worksace",
-		bottom: "View Task",
-	},
-	{
-		id: 2,
-		task: "T-2",
-		status: "Unassigned",
-		message: "Create a Design System for Enum Worksace",
-		bottom: "Assign Memember",
-	},
-];
-
 function TaskCard() {
 	return (
 		<Box
@@ -30,7 +13,7 @@ function TaskCard() {
 				display: "flex",
 				flexDirection: { xs: "column", md: "column" },
 				gap: 2,
-				backgroundColor: " #E5E5E5;",
+				padding: "30px 5px",
 				height: "100vh",
 			}}
 		>
@@ -63,6 +46,7 @@ function TaskCard() {
 					<Typography
 						color="#16171D;"
 						component="div"
+						fontSize="16px"
 						fontWeight={600}
 						margin="10px 0 10px 0"
 						variant="h6"

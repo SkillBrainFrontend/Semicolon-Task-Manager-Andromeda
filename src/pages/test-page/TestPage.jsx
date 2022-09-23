@@ -5,7 +5,7 @@ import { useTheme } from "@mui/material/styles";
 
 import { TaskCard } from "../../components";
 import CreateTaskForm from "../../components/create-task-form/CreateTaskForm";
-import { Alert, Button, Chip, Input } from "../../components/shared";
+import { Alert, Box, Button, Chip, Grid, Input } from "../../components/shared";
 import BasicTabs from "../TabTest";
 
 import ActionAreaCard from "./components/CardComponent";
@@ -286,6 +286,7 @@ function Test() {
 						variant="outlined"
 					/>
 				</Stack>
+
 				<ActionAreaCard />
 
 				<TaskCard />
