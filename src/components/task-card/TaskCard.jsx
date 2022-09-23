@@ -47,14 +47,13 @@ function TaskCard(props) {
 
 					<Typography
 						component="div"
-						style={{ width: 200, whiteSpace: "nowrap" }}
+						style={{ whiteSpace: "nowrap" }}
 						sx={{
 							textOverflow: "ellipsis",
 							overflow: "hidden",
 							my: 2,
 							p: 1,
 							fontWeight: "600",
-							width: "300px",
 							color: "#16171D",
 							fontSize: "16px",
 							margin: "10px 0 10px -10px",

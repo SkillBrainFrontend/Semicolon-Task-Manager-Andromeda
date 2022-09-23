@@ -293,7 +293,7 @@ function Test() {
 					<Grid container spacing={2}>
 						<Grid item lg={4} md={6} sm={6} xs={12}>
 							<TaskCard
-								message="Create a Design System for Enum Worksace."
+								message="Create a Design System for Enum Worksace. Create a Design System for Enum Worksace."
 								status="Pending"
 								title="T - 10"
 							/>
