@@ -4,6 +4,7 @@ import { AlertTitle, Container, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import CreateTaskForm from "../../components/create-task-form/CreateTaskForm";
+import withNavigationDrawer from "../../components/navigation-drawer/NavigationDrawer";
 import { Alert, Button, Chip, Input } from "../../components/shared";
 import BasicTabs from "../TabTest";
 
@@ -141,7 +142,7 @@ function Test() {
 					<Alert
 						onClose={() => {}}
 						severity="error"
-						variant="filled"
+						variant="outlined"
 						sx={{
 							width: 350,
 						}}
@@ -291,4 +292,4 @@ function Test() {
 	);
 }
 
-export default Test;
+export default withNavigationDrawer(Test);
