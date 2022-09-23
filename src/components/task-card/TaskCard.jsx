@@ -1,12 +1,13 @@
 import * as React from "react";
 
 import { Box, CardActions, CardContent, Typography } from "@mui/material";
+import { Stack } from "@mui/system";
 
 import { Card } from "../shared";
 
 import Vector from "./Vector.png";
 
-function TaskCard() {
+function TaskCard(props) {
 	return (
 		<Box
 			sx={{
@@ -14,10 +15,9 @@ function TaskCard() {
 				flexDirection: { xs: "column", md: "column" },
 				gap: 2,
 				padding: "30px 5px",
-				height: "100vh",
 			}}
 		>
-			<Card sx={{ maxWidth: 345 }}>
+			<Card sx={{ maxWidth: 345, minHeight: 230 }}>
 				<CardContent>
 					<CardActions
 						sx={{ justifyContent: "space-between", padding: "0 0 10px 0" }}
@@ -28,9 +28,10 @@ function TaskCard() {
 							fontSize="14px"
 							fontWeight={600}
 							gutterBottom
+							style={{ width: 250, whiteSpace: "nowrap" }}
 							variant="body2"
 						>
-							T - 25
+							{props.title}
 						</Typography>
 						<Typography
 							backgroundColor="#F2F4FD;"
@@ -40,18 +41,27 @@ function TaskCard() {
 							fontWeight={500}
 							padding="5px"
 						>
-							Pending
+							{props.status}
 						</Typography>
 					</CardActions>
+
 					<Typography
-						color="#16171D;"
 						component="div"
-						fontSize="16px"
-						fontWeight={600}
-						margin="10px 0 10px 0"
-						variant="h6"
+						style={{ width: 200, whiteSpace: "nowrap" }}
+						sx={{
+							textOverflow: "ellipsis",
+							overflow: "hidden",
+							my: 2,
+							p: 1,
+							fontWeight: "600",
+							width: "300px",
+							color: "#16171D",
+							fontSize: "16px",
+							margin: "10px 0 10px -10px",
+							variant: "h6",
+						}}
 					>
-						Create a Design System for Enum Worksace
+						{props.message}
 					</Typography>
 				</CardContent>
 				<CardActions sx={{ justifyContent: "flex-start" }}>
