@@ -1,13 +1,6 @@
 import React from "react";
 
-import {
-	AlertTitle,
-	Chip,
-	Container,
-	Paper,
-	Stack,
-	Typography,
-} from "@mui/material";
+import { AlertTitle, Container, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import CreateTaskForm from "../../components/create-task-form/CreateTaskForm";
