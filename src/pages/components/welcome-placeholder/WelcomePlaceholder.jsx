@@ -4,7 +4,7 @@ import { string } from "prop-types";
 
 import { Box, Grid, Link, Typography } from "@mui/material";
 
-import PlacehoderBg from "../../assets/icons/screen-placeholder.svg";
+import PlacehoderBg from "../../../assets/icons/screen-placeholder.svg";
 
 function Copyright(props) {
 	return (

@@ -62,7 +62,7 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 function NavigationDrawer() {
-	const [open, setOpen] = React.useState(false);
+	const [open, setOpen] = React.useState(true);
 
 	const toggleDrawer = () => {
 		setOpen((prev) => !prev);

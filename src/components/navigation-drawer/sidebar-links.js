@@ -21,7 +21,7 @@ export const sideBarLinks = [
 	{
 		label: "Tasks",
 		icon: { base: <TasksStroke />, selected: <TasksFilled /> },
-		link: "tasks",
+		link: "/tasks-board",
 	},
 	{
 		label: "Settings",
