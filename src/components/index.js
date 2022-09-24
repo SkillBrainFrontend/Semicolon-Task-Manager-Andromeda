@@ -1,3 +1,4 @@
-import WelcomePlaceholder from "./welcome-placeholder/WelcomePlaceholder";
+import CreateTaskForm from "./create-task-form/CreateTaskForm";
+import { withNavigationDrawer } from "./navigation-drawer/withNavigationDrawer";
 
-export { WelcomePlaceholder };
+export { CreateTaskForm, withNavigationDrawer };

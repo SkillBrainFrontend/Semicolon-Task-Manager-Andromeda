@@ -3,7 +3,7 @@ import * as React from "react";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { Avatar, Box, Grid, Link, Typography } from "@mui/material";
 
-import { WelcomePlaceholder } from "../../components";
+import { WelcomePlaceholder } from "../components";
 
 import LoginForm from "./components/loginForm/LoginForm";
 

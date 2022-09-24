@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import { alpha, createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 
 import GelionBold from "./assets/fonts/Gelion Bold.woff";
 import GelionLight from "./assets/fonts/Gelion Light.woff";
@@ -124,7 +123,7 @@ const theme = createTheme({
 				notched: false,
 			},
 			styleOverrides: {
-				root: ({ theme: appTheme, ownerState }) => ({
+				root: ({ ownerState }) => ({
 					borderRadius: `12px`,
 					background: ownerState.error ? "#FFFAFA" : "#FBFBFE",
 					"&.Mui-focused": {

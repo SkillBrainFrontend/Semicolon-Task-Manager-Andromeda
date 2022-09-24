@@ -3,7 +3,7 @@ import React from "react";
 import { AlertTitle, Container, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-import CreateTaskForm from "../../components/create-task-form/CreateTaskForm";
+import { CreateTaskForm, withNavigationDrawer } from "../../components";
 import { Alert, Button, Chip, Input } from "../../components/shared";
 import BasicTabs from "../TabTest";
 
@@ -14,14 +14,9 @@ function Test() {
 
 	return (
 		<div>
-			<Container
-				sx={{
-					backgroundColor: theme.palette.background.surface,
-				}}
-			>
+			<Container>
 				<Paper
 					sx={{
-						border: "1px solid blue",
 						"&:hover": {
 							backgroundColor: theme.palette.custom.purple,
 							opacity: [0.9, 0.8, 0.7],
@@ -79,9 +74,10 @@ function Test() {
 				<Stack
 					alignItems="center"
 					direction="row"
+					flexWrap="wrap"
 					justifyContent="flex-start"
 					spacing={2}
-					sx={{ width: "100%" }}
+					sx={{ width: "100%", gap: 1 }}
 				>
 					<Button size="large" variant="contained">
 						Large
@@ -99,9 +95,10 @@ function Test() {
 				<Stack
 					alignItems="center"
 					direction="row"
+					flexWrap="wrap"
 					justifyContent="flex-start"
 					spacing={2}
-					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+					sx={{ width: "100%", padding: theme.spacing(3, 0), gap: 1 }}
 				>
 					<Button size="large" variant="outlined">
 						Large
@@ -119,9 +116,10 @@ function Test() {
 				<Stack
 					alignItems="center"
 					direction="row"
+					flexWrap="wrap"
 					justifyContent="flex-start"
 					spacing={2}
-					sx={{ width: "100%" }}
+					sx={{ width: "100%", gap: 1 }}
 				>
 					<Button size="large" variant="text">
 						Large
@@ -141,7 +139,7 @@ function Test() {
 					<Alert
 						onClose={() => {}}
 						severity="error"
-						variant="filled"
+						variant="outlined"
 						sx={{
 							width: 350,
 						}}
@@ -291,4 +289,4 @@ function Test() {
 	);
 }
 
-export default Test;
+export default withNavigationDrawer(Test);

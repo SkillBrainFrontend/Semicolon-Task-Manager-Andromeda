@@ -1,18 +1,20 @@
 import * as React from "react";
 
-const SvgTimeFilled = (props) => (
-	<svg
-		width={24}
-		height={24}
-		fill="none"
-		xmlns="http://www.w3.org/2000/svg"
-		{...props}
-	>
-		<path
-			d="M12 2c5.53 0 10 4.48 10 10 0 5.53-4.47 10-10 10-5.52 0-10-4.47-10-10C2 6.48 6.48 2 12 2Zm-.35 4.93c-.41 0-.75.33-.75.75v5.05c0 .26.14.5.37.64l3.92 2.34a.742.742 0 0 0 1.03-.26c.21-.35.1-.81-.26-1.03L12.4 12.3V7.68c0-.42-.34-.75-.75-.75Z"
-			fill="#3754DB"
-		/>
-	</svg>
-);
+function SvgTimeFilled(props) {
+	return (
+		<svg
+			fill="none"
+			height={24}
+			width={24}
+			xmlns="http://www.w3.org/2000/svg"
+			{...props}
+		>
+			<path
+				d="M12 2c5.53 0 10 4.48 10 10 0 5.53-4.47 10-10 10-5.52 0-10-4.47-10-10C2 6.48 6.48 2 12 2Zm-.35 4.93c-.41 0-.75.33-.75.75v5.05c0 .26.14.5.37.64l3.92 2.34a.742.742 0 0 0 1.03-.26c.21-.35.1-.81-.26-1.03L12.4 12.3V7.68c0-.42-.34-.75-.75-.75Z"
+				fill="#3754DB"
+			/>
+		</svg>
+	);
+}
 
 export default SvgTimeFilled;
