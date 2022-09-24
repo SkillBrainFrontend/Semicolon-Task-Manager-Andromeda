@@ -10,7 +10,10 @@ import {
 
 function WidgetCalendar() {
 	return (
-		<Card sx={{ maxWidth: 345, backgroundColor: "#F5F7FE" }} variant="outlined">
+		<Card
+			sx={{ maxWidth: 345, backgroundColor: "#F5F7FE", marginTop: 10 }}
+			variant="outlined"
+		>
 			<CardContent>
 				<CardActions sx={{ display: "flex", flexDirection: "row" }}>
 					<Button size="large" variant="contained">

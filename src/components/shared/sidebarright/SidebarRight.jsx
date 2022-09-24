@@ -11,9 +11,10 @@ function SidebarRight() {
 			sx={{
 				width: "30%",
 				height: "100vh",
-				margin: 0,
+				margin: 5,
 				backgroundColor: "#FFFFFF",
 				border: "5px",
+				padding: 10,
 			}}
 		>
 			<Stack
@@ -29,6 +30,7 @@ function SidebarRight() {
 						height: 100,
 						width: 100,
 						fontsize: 100,
+						marginTop: 5,
 					}}
 				>
 					N
@@ -38,10 +40,20 @@ function SidebarRight() {
 				alignItems="center"
 				direction="column"
 				justifyContent="center"
-				spacing={2}
+				spacing={1}
 			>
-				<Typography variant="h6">Name</Typography>
-				<Typography variant="h6">Email</Typography>
+				<Typography
+					sx={{ fontWeight: 700, fontSize: 20, color: "#101C56" }}
+					variant="h6"
+				>
+					Name
+				</Typography>
+				<Typography
+					sx={{ fontWeight: 400, fontSize: 14, color: "#666666" }}
+					variant="h6"
+				>
+					Email
+				</Typography>
 			</Stack>
 			<Stack
 				alignItems="center"
