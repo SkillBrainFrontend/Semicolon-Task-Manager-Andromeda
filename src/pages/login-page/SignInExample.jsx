@@ -28,7 +28,10 @@ export default function SignInSide() {
 	return (
 		<Grid component="main" container sx={{ height: "100vh" }}>
 			<Grid item md={6} sm={5} xs={false}>
-				<WelcomePlaceholder />
+				<WelcomePlaceholder
+					message="Take your productivity to the next level."
+					position="right"
+				/>
 			</Grid>
 			<Grid item md={6} sm={7} xs={12}>
 				<Box

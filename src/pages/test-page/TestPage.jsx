@@ -10,9 +10,11 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-import { Alert, Button, Input } from "../components/shared";
+import CreateTaskForm from "../../components/create-task-form/CreateTaskForm";
+import { Alert, Button, Chip, Input } from "../../components/shared";
+import BasicTabs from "../TabTest";
 
-import BasicTabs from "./TabTest";
+import ActionAreaCard from "./components/CardComponent";
 
 function Test() {
 	const theme = useTheme();
@@ -201,8 +203,96 @@ function Test() {
 					<Chip color="accent" label="Chip Outlined" />
 					<Chip color="accent" label="Chip Outlined" />
 				</Stack>
+
 				<Input error label="Worjidjasi" />
-				{/* <SidebarRight /> */}
+
+				<Stack
+					alignItems="center"
+					direction="row"
+					justifyContent="flex-start"
+					spacing={2}
+					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+				>
+					<CreateTaskForm />
+				</Stack>
+
+				<Chip extraColor="wine" label="23" size="small" variant="outlined" />
+				<Chip extraColor="primary" label="23" size="small" variant="outlined" />
+				<Chip
+					extraColor="primary"
+					label="Some Text Yunno"
+					size="small"
+					variant="outlined"
+				/>
+
+				<Stack
+					alignItems="center"
+					direction="row"
+					justifyContent="flex-start"
+					spacing={2}
+					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+				>
+					<Chip color="secondary" label="23" size="small" variant="contained" />
+					<Chip color="primary" label="23" size="small" variant="contained" />
+					<Chip
+						color="secondary"
+						label="Some Text Yunno"
+						size="small"
+						variant="contained"
+					/>
+					<Chip
+						color="primary"
+						label="Some Text Yunno"
+						size="small"
+						variant="contained"
+					/>
+				</Stack>
+
+				<Stack
+					alignItems="center"
+					direction="row"
+					justifyContent="flex-start"
+					spacing={2}
+					sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+				>
+					<Chip
+						extraColor="yellow"
+						label="Pending"
+						size="small"
+						variant="outlined"
+					/>
+					<Chip
+						extraColor="primary"
+						label="In Progress"
+						size="small"
+						variant="outlined"
+					/>
+					<Chip
+						extraColor="accent"
+						label="In Review"
+						size="small"
+						variant="outlined"
+					/>
+					<Chip
+						extraColor="success"
+						label="Completed"
+						size="small"
+						variant="outlined"
+					/>
+					<Chip
+						extraColor="wine"
+						label="Unassigned"
+						size="small"
+						variant="outlined"
+					/>
+					<Chip
+						extraColor="gray"
+						label="Unassigned"
+						size="small"
+						variant="outlined"
+					/>
+				</Stack>
+				<ActionAreaCard />
 			</Container>
 		</div>
 	);
