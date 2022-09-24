@@ -29,7 +29,7 @@ function TaskCard({ id, name, status }) {
 						sx={{ justifyContent: "space-between", padding: "0 0 10px 0" }}
 					>
 						<Typography
-							color="#B9B9B9"
+							color="text.grey"
 							component="div"
 							fontSize="14px"
 							fontWeight={600}
@@ -40,9 +40,9 @@ function TaskCard({ id, name, status }) {
 							{id}
 						</Typography>
 						<Typography
-							backgroundColor="#F2F4FD;"
+							backgroundColor="background.ghost-white"
 							borderRadius={12}
-							color=" #3754DB;"
+							color="primary.main"
 							fontSize={14}
 							fontWeight={500}
 							padding="5px"
@@ -65,7 +65,7 @@ function TaskCard({ id, name, status }) {
 								WebkitLineClamp: 2,
 								WebkitBoxOrient: "vertical",
 								fontWeight: "600",
-								color: "#16171D",
+								color: "text.primary",
 								fontSize: "16px",
 								margin: "10px 0 10px -10px",
 								variant: "h6",
@@ -77,7 +77,7 @@ function TaskCard({ id, name, status }) {
 				</CardContent>
 				<CardActions sx={{ justifyContent: "flex-start" }}>
 					<Typography
-						color=" #3754DB;"
+						color="primary.main"
 						fontSize={14}
 						fontWeight={600}
 						variant="body2"
@@ -100,20 +100,3 @@ TaskCard.propTypes = {
 	name: PropTypes.string,
 	status: PropTypes.string,
 };
-
-/*	
-display: "-webkit-box",
-								WebkitLineClamp: 2,
-								WebkitBoxOriented: "verical",
-
-    letter-spacing: -0.02em;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-
-whiteSpace: "nowrap",
-								textOverflow: "ellipsis",
-								overflow: "hidden",
-
-								*/
