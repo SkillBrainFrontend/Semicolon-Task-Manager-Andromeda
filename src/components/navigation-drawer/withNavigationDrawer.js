@@ -1,25 +1,39 @@
 import React from "react";
 
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { Container } from "@mui/system";
+
+import SidebarRight from "../sidebar-right/SidebarRight";
 
 import NavigationSidebar from "./NavigationDrawer";
 
 export const withNavigationDrawer = (Component) => (props) =>
 	(
-		<Box sx={{ display: "flex", minHeight: "100vh" }}>
+		<Box
+			sx={{
+				display: "flex",
+				background: (theme) => theme.palette.background.surface,
+				padding: (t) => t.spacing(3),
+			}}
+		>
 			<NavigationSidebar />
-			<Box
-				component="main"
-				sx={{
-					flexGrow: 1,
-					p: 3,
-					background: (t) => t.palette.background.surface,
-				}}
-			>
-				<Container>
-					<Component {...props} />
-				</Container>
-			</Box>
+
+			<Grid container>
+				<Grid
+					item
+					xs
+					sx={{
+						flexGrow: 1,
+						overflowX: "auto",
+					}}
+				>
+					<Container>
+						<Component {...props} />
+					</Container>
+				</Grid>
+				<Grid item xs="auto">
+					<SidebarRight />
+				</Grid>
+			</Grid>
 		</Box>
 	);

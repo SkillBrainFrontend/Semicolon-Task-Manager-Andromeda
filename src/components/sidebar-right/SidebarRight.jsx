@@ -1,20 +1,21 @@
 import React from "react";
 
-import { Avatar, Button, Container, Stack, Typography } from "@mui/material";
+import { Avatar, Stack, Typography } from "@mui/material";
+
+import { Button, Card } from "../shared";
 
 import CardWidgetCalendar from "./CardWidgetCalendar";
 
 function SidebarRight() {
 	return (
-		<Container
+		<Card
 			variant="rounded"
 			sx={{
-				width: "30%",
-				height: "100vh",
-				margin: 5,
-				backgroundColor: "#FFFFFF",
-				border: "5px",
-				padding: 10,
+				width: "260px",
+				height: (theme) => `calc(100vh - 2 * ${theme.spacing(3)})`,
+				flexShrink: 0,
+				position: "sticky",
+				top: (t) => t.spacing(3),
 			}}
 		>
 			<Stack
@@ -61,13 +62,18 @@ function SidebarRight() {
 				justifyContent="center"
 				spacing={2}
 			>
-				<Button href="#contained-buttons" variant="contained">
+				<Button
+					href="#contained-buttons"
+					size="small"
+					sx={{ width: "100px" }}
+					variant="contained"
+				>
 					My profile
 				</Button>
 			</Stack>
 
 			<CardWidgetCalendar />
-		</Container>
+		</Card>
 	);
 }
 

@@ -1,6 +1,5 @@
 import CreateTaskForm from "../components/create-task-form/CreateTaskForm";
 
-import RecoverPasswordWrapper from "./components/recoverPasswordWrapper/RecoverPasswordWrapper";
 import SingInPage from "./login-page/SignInExample";
 import OverviewPage from "./overview-page/OverviewPage";
 import RecoverPassword from "./recover-password/RecoverPassword";
@@ -15,7 +14,6 @@ export {
 	CreateTaskForm,
 	OverviewPage,
 	RecoverPassword,
-	RecoverPasswordWrapper,
 	RegisterPage,
 	ResetPassword,
 	SettingsPage,
