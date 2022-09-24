@@ -1,13 +1,11 @@
 import React from "react";
 
-import {Avatar, Stack, Typography, Button, Container } from '@mui/material';
+import { Avatar, Stack, Typography, Button, Container } from "@mui/material";
 import CardWidgetCalendar from "./CardWidgetCalendar";
 
-
 function SidebarRight() {
-  
-return (
-  		<Container
+	return (
+		<Container
 			variant="rounded"
 			sx={{
 				width: "30%",
@@ -59,8 +57,5 @@ return (
 		</Container>
 	);
 }
-
-
-
 
 export default SidebarRight;
