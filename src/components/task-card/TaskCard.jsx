@@ -5,15 +5,31 @@ import {
 	Box,
 	CardActions,
 	CardContent,
+	Chip,
 	Tooltip,
 	Typography,
 } from "@mui/material";
 
 import { Card } from "../shared";
+import Badge from "../shared/badge/Badge";
 
 import Vector from "./Vector.png";
 
 function TaskCard({ id, name, status }) {
+	const getBadgeStyle = () => {
+		switch (status) {
+			case "Todo":
+				return "grey";
+			case "In Progress":
+				return "blue";
+			case "Completed":
+				return "green";
+			case "Pending":
+				return "orange";
+			default:
+				return "grey";
+		}
+	};
 	return (
 		<Box
 			sx={{
@@ -39,8 +55,9 @@ function TaskCard({ id, name, status }) {
 						>
 							{id}
 						</Typography>
+
 						<Typography
-							backgroundColor="background.ghost-white"
+							backgroundColor="background.ghostwhite"
 							borderRadius={12}
 							color="primary.main"
 							fontSize={14}
@@ -51,6 +68,12 @@ function TaskCard({ id, name, status }) {
 						>
 							{status}
 						</Typography>
+						<Chip
+							extraColor={getBadgeStyle()}
+							label={status}
+							size="small"
+							variant="outlined"
+						/>
 					</CardActions>
 
 					<Tooltip
@@ -99,4 +122,9 @@ TaskCard.propTypes = {
 	id: PropTypes.string,
 	name: PropTypes.string,
 	status: PropTypes.string,
+	label: PropTypes.string,
+	extraColor: PropTypes.string,
 };
+
+// <Chip label="Text de afisat" size="small" variant="outlined" extraColor={getBadgeStyle()} />
+//  <Badge label={props.status} color={getBadgeStyle()} />

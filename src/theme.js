@@ -56,7 +56,7 @@ const theme = createTheme({
 			surface: "#F5F7FE",
 			paper: "#FFFFFF",
 			default: "#FFFFFF",
-			"ghost-white": "#F2F4FD;",
+			ghostWhite: "#F2F4FD;",
 		},
 	},
 	typography: {
