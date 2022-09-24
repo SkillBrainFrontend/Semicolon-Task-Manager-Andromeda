@@ -1,4 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
 import React from "react";
 import { string } from "prop-types";
 
@@ -22,10 +21,7 @@ function Copyright(props) {
 	);
 }
 function WelcomePlaceholder(props) {
-	WelcomePlaceholder.propTypes = {
-		message: string,
-		position: string,
-	};
+	const { position, message } = props;
 	const positionImg = {
 		left: "scaleX(-1)",
 		right: "none",
@@ -54,7 +50,7 @@ function WelcomePlaceholder(props) {
 						backgroundColor: (t) => t.palette.primary.main,
 						backgroundSize: "cover",
 						backgroundPosition: "center",
-						transform: positionImg[props.position],
+						transform: positionImg[position],
 						display: "flex",
 						flexDirection: "column",
 						justifyContent: "flex-end",
@@ -64,7 +60,7 @@ function WelcomePlaceholder(props) {
 						sx={{
 							display: "flex",
 							flexDirection: "column",
-							alignItems: positionText[props.position],
+							alignItems: positionText[position],
 							justifyContent: "space-between",
 							height: "70%",
 							padding: "70px",
@@ -75,19 +71,19 @@ function WelcomePlaceholder(props) {
 							variant="h4"
 							xs={false}
 							sx={{
-								textAlign: props.position,
-								transform: positionImg[props.position],
+								textAlign: position,
+								transform: positionImg[position],
 								color: "white",
 								width: "80%",
 							}}
 						>
-							{props.message}
+							{message}
 						</Typography>
 						<Copyright
 							component="h6"
 							variant="paragraph"
 							sx={{
-								transform: positionImg[props.position],
+								transform: positionImg[position],
 								color: "white",
 								fontWeight: "400",
 							}}
@@ -98,5 +94,10 @@ function WelcomePlaceholder(props) {
 		</Grid>
 	);
 }
+
+WelcomePlaceholder.propTypes = {
+	message: string,
+	position: string,
+};
 
 export default WelcomePlaceholder;
