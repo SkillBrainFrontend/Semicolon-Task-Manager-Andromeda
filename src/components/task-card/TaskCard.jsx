@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import {
@@ -15,22 +15,20 @@ import { Card } from "../shared";
 import Vector from "./Vector.png";
 
 function TaskCard({ id, name, status }) {
-	const [handleColor, setHandleColor] = useState("");
-
 	const getBadgeStyle = () => {
 		switch (status) {
 			case "Pending":
-				return "yellow";
+				return "custom.yellow";
 			case "In Progress":
-				return "primary";
+				return "primary.main";
 			case "In Review":
-				return "accent";
+				return "accent.main";
 			case "Completed":
-				return "success";
+				return "success.main";
 			case "Unassigned":
-				return "wine";
+				return "custom.wine";
 			default:
-				return "grey";
+				return "custome.grey";
 		}
 	};
 
@@ -61,10 +59,13 @@ function TaskCard({ id, name, status }) {
 						</Typography>
 
 						<Chip
-							extracolor={getBadgeStyle()}
 							label={status}
 							size="small"
 							variant="outlined"
+							sx={{
+								color: getBadgeStyle(),
+								border: "none",
+							}}
 						/>
 					</CardActions>
 

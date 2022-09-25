@@ -304,6 +304,15 @@ function Test() {
 						<Grid item lg={4} md={6} sm={6} xs={12}>
 							<TaskCard id="T - 30" name="Well done! " status="In Progress" />
 						</Grid>
+						<Grid item lg={4} md={6} sm={6} xs={12}>
+							<TaskCard id="T - 40" name="Well done! " status="In Review" />
+						</Grid>
+						<Grid item lg={4} md={6} sm={6} xs={12}>
+							<TaskCard id="T - 50" name="Well done! " status="Unassigned" />
+						</Grid>
+						<Grid item lg={4} md={6} sm={6} xs={12}>
+							<TaskCard id="T - 60" name="Well done! " status="None" />
+						</Grid>
 					</Grid>
 				</Box>
 			</Container>
