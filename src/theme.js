@@ -57,6 +57,11 @@ const theme = createTheme({
 			paper: "#FFFFFF",
 			default: "#FFFFFF",
 			ghostWhite: "#F2F4FD;",
+			floralWhite: "#fbbe371a",
+			greenWhite: "#00c2711a",
+			blueWhite: "#3754db1a",
+			purpleWhite: "#8937db1a",
+			redWhite: "#b800201a",
 		},
 	},
 	typography: {

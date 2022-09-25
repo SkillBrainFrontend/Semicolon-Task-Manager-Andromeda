@@ -15,7 +15,7 @@ import { Card } from "../shared";
 import Vector from "./Vector.png";
 
 function TaskCard({ id, name, status }) {
-	const getBadgeStyle = () => {
+	const getBadgeStyleColor = () => {
 		switch (status) {
 			case "Pending":
 				return "custom.yellow";
@@ -27,6 +27,23 @@ function TaskCard({ id, name, status }) {
 				return "success.main";
 			case "Unassigned":
 				return "custom.wine";
+			default:
+				return "custome.grey";
+		}
+	};
+
+	const getBadgeStyleBackground = () => {
+		switch (status) {
+			case "Pending":
+				return "background.floralWhite";
+			case "In Progress":
+				return "background.blueWhite";
+			case "In Review":
+				return "background.purpleWhite";
+			case "Completed":
+				return "background.greenWhite";
+			case "Unassigned":
+				return "background.redWhite";
 			default:
 				return "custome.grey";
 		}
@@ -63,7 +80,8 @@ function TaskCard({ id, name, status }) {
 							size="small"
 							variant="outlined"
 							sx={{
-								color: getBadgeStyle(),
+								color: getBadgeStyleColor(),
+								backgroundColor: getBadgeStyleBackground(),
 								border: "none",
 							}}
 						/>
@@ -116,44 +134,3 @@ TaskCard.propTypes = {
 	name: PropTypes.string,
 	status: PropTypes.string,
 };
-
-// <Chip label="Text de afisat" size="small" variant="outlined" extraColor={getBadgeStyle()} />
-//  <Badge label={props.status} color={getBadgeStyle()} />
-
-/*
-
-const getBadgeStyle = () => {
-		switch (status) {
-			case "Todo":
-				return "grey";
-			case "In Progress":
-				return "blue";
-			case "Completed":
-				return "green";
-			case "Pending":
-				return "orange";
-			default:
-				return "grey";
-		}
-	};
-
-<Chip
-							borderRadius={12}
-							extraColor="success"
-							fontSize={14}
-							fontWeight={500}
-							label={status}
-							padding="5px"
-							size="small"
-							textAlign="center"
-							variant="outlined"
-							width={140}
-						/>
-
-
-
-
-
-
-
-	*/
