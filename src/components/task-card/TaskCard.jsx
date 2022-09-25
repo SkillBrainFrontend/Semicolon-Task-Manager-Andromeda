@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import {
@@ -11,25 +11,29 @@ import {
 } from "@mui/material";
 
 import { Card } from "../shared";
-import Badge from "../shared/badge/Badge";
 
 import Vector from "./Vector.png";
 
 function TaskCard({ id, name, status }) {
+	const [handleColor, setHandleColor] = useState("");
+
 	const getBadgeStyle = () => {
 		switch (status) {
-			case "Todo":
-				return "grey";
-			case "In Progress":
-				return "blue";
-			case "Completed":
-				return "green";
 			case "Pending":
-				return "orange";
+				return "yellow";
+			case "In Progress":
+				return "primary";
+			case "In Review":
+				return "accent";
+			case "Completed":
+				return "success";
+			case "Unassigned":
+				return "wine";
 			default:
 				return "grey";
 		}
 	};
+
 	return (
 		<Box
 			sx={{
@@ -56,20 +60,8 @@ function TaskCard({ id, name, status }) {
 							{id}
 						</Typography>
 
-						<Typography
-							backgroundColor="background.ghostwhite"
-							borderRadius={12}
-							color="primary.main"
-							fontSize={14}
-							fontWeight={500}
-							padding="5px"
-							textAlign="center"
-							width={140}
-						>
-							{status}
-						</Typography>
 						<Chip
-							extraColor={getBadgeStyle()}
+							extracolor={getBadgeStyle()}
 							label={status}
 							size="small"
 							variant="outlined"
@@ -122,9 +114,45 @@ TaskCard.propTypes = {
 	id: PropTypes.string,
 	name: PropTypes.string,
 	status: PropTypes.string,
-	label: PropTypes.string,
-	extraColor: PropTypes.string,
 };
 
 // <Chip label="Text de afisat" size="small" variant="outlined" extraColor={getBadgeStyle()} />
 //  <Badge label={props.status} color={getBadgeStyle()} />
+
+/*
+
+const getBadgeStyle = () => {
+		switch (status) {
+			case "Todo":
+				return "grey";
+			case "In Progress":
+				return "blue";
+			case "Completed":
+				return "green";
+			case "Pending":
+				return "orange";
+			default:
+				return "grey";
+		}
+	};
+
+<Chip
+							borderRadius={12}
+							extraColor="success"
+							fontSize={14}
+							fontWeight={500}
+							label={status}
+							padding="5px"
+							size="small"
+							textAlign="center"
+							variant="outlined"
+							width={140}
+						/>
+
+
+
+
+
+
+
+	*/
