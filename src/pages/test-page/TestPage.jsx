@@ -20,6 +20,7 @@ function Test() {
 						backgroundColor: theme.palette.custom.purple,
 						opacity: [0.9, 0.8, 0.7],
 					},
+					padding: 3,
 				}}
 			>
 				<Typography gutterBottom variant="h1">
@@ -74,9 +75,9 @@ function Test() {
 				alignItems="center"
 				direction="row"
 				flexWrap="wrap"
+				gap={1}
 				justifyContent="flex-start"
-				spacing={2}
-				sx={{ width: "100%", gap: 1 }}
+				sx={{ width: "100" }}
 			>
 				<Button size="large" variant="contained">
 					Large
@@ -95,9 +96,9 @@ function Test() {
 				alignItems="center"
 				direction="row"
 				flexWrap="wrap"
+				gap={1}
 				justifyContent="flex-start"
-				spacing={2}
-				sx={{ width: "100%", padding: theme.spacing(3, 0), gap: 1 }}
+				sx={{ width: "100%", padding: theme.spacing(3, 0) }}
 			>
 				<Button size="large" variant="outlined">
 					Large
@@ -116,9 +117,9 @@ function Test() {
 				alignItems="center"
 				direction="row"
 				flexWrap="wrap"
+				gap={1}
 				justifyContent="flex-start"
-				spacing={2}
-				sx={{ width: "100%", gap: 1 }}
+				sx={{ width: "100" }}
 			>
 				<Button size="large" variant="text">
 					Large

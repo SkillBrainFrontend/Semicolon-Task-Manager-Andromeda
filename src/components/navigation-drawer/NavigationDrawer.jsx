@@ -23,6 +23,7 @@ function NavigationDrawer() {
 					sx={{
 						width: workspaceArea,
 						background: (theme) => theme.palette.primary.main,
+						border: "none",
 					}}
 				/>
 				<Box>

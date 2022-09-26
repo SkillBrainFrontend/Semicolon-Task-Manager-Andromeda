@@ -40,13 +40,14 @@ export const Drawer = styled(MuiDrawer, {
 	flexShrink: 0,
 	whiteSpace: "nowrap",
 	boxSizing: "border-box",
+
 	...(open && {
 		...openedMixin(theme),
-		"& .MuiDrawer-paper": openedMixin(theme),
+		"& .MuiDrawer-paper": { ...openedMixin(theme), border: "none" },
 	}),
 	...(!open && {
 		...closedMixin(theme),
-		"& .MuiDrawer-paper": closedMixin(theme),
+		"& .MuiDrawer-paper": { ...closedMixin(theme), border: "none" },
 	}),
 }));
 
