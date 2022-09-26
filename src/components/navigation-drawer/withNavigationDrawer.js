@@ -13,7 +13,6 @@ export const withNavigationDrawer = (Component) => (props) =>
 			sx={{
 				display: "flex",
 				background: (theme) => theme.palette.background.surface,
-				padding: (t) => t.spacing(3),
 			}}
 		>
 			<NavigationSidebar />
@@ -25,13 +24,20 @@ export const withNavigationDrawer = (Component) => (props) =>
 					sx={{
 						flexGrow: 1,
 						overflowX: "auto",
+						padding: (t) => t.spacing(3),
 					}}
 				>
 					<Container>
 						<Component {...props} />
 					</Container>
 				</Grid>
-				<Grid item xs="auto">
+				<Grid
+					item
+					xs="auto"
+					sx={{
+						padding: (t) => t.spacing(3, 3, 0, 0),
+					}}
+				>
 					<SidebarRight />
 				</Grid>
 			</Grid>
