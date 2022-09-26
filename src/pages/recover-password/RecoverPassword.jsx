@@ -2,7 +2,7 @@ import React from "react";
 
 import { Box, Typography } from "@mui/material";
 
-import RecoverPasswordWrapper from "../components/recoverPasswordWrapper/RecoverPasswordWrapper";
+import { RecoverPasswordWrapper } from "../components";
 
 function RecoverPassword() {
 	return (

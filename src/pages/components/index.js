@@ -1,5 +1,4 @@
-import RecoverPassword from "../recover-password/RecoverPassword";
-
+import RecoverPasswordWrapper from "./recover-password-wrapper/RecoverPasswordWrapper";
 import WelcomePlaceholder from "./welcome-placeholder/WelcomePlaceholder";
 
-export { RecoverPassword, WelcomePlaceholder };
+export { RecoverPasswordWrapper, WelcomePlaceholder };

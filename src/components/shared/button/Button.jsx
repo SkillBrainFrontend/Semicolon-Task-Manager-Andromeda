@@ -7,6 +7,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 		fontSize: 16,
 		lineHeight: "19px",
 		fontWeight: 500,
+		whiteSpace: "nowrap",
 	},
 	"&.MuiButton-sizeLarge": {
 		padding: theme.spacing(2.3, 9.2),
