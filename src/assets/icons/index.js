@@ -19,5 +19,6 @@ export { default as UserFilled } from "./UserFilled";
 export { default as UsersFilled } from "./UsersFilled";
 export { default as UsersStroke } from "./UsersStroke";
 export { default as UserStroke } from "./UserStroke";
+export { default as VectorCard } from "./VectorCard";
 export { default as VolumeUpFilled } from "./VolumeUpFilled";
 export { default as VolumeUpStroke } from "./VolumeUpStroke";

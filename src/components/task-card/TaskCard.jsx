@@ -9,9 +9,8 @@ import {
 	Typography,
 } from "@mui/material";
 
+import VectorCard from "../../assets/icons/VectorCard";
 import { Card, Chip } from "../shared";
-
-import Vector from "./Vector.png";
 
 function TaskCard({ id, name, status }) {
 	const getBadgeStyle = () => {
@@ -98,7 +97,7 @@ function TaskCard({ id, name, status }) {
 						View Task
 					</Typography>
 					<Typography sx={{ padding: "0 20px" }}>
-						<img alt="" src={Vector} />
+						<VectorCard />
 					</Typography>
 				</CardActions>
 			</Card>
