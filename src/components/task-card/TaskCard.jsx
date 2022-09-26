@@ -14,35 +14,18 @@ import { Card, Chip } from "../shared";
 import Vector from "./Vector.png";
 
 function TaskCard({ id, name, status }) {
-	const getBadgeStyleColor = () => {
+	const getBadgeStyle = () => {
 		switch (status) {
 			case "Pending":
-				return "custom.yellow";
+				return "yellow";
 			case "In Progress":
-				return "primary.main";
+				return "primary";
 			case "In Review":
-				return "accent.main";
+				return "accent";
 			case "Completed":
-				return "success.main";
+				return "success";
 			case "Unassigned":
-				return "custom.wine";
-			default:
-				return "custome.grey";
-		}
-	};
-
-	const getBadgeStyleBackground = () => {
-		switch (status) {
-			case "Pending":
-				return "background.floralWhite";
-			case "In Progress":
-				return "background.blueWhite";
-			case "In Review":
-				return "background.purpleWhite";
-			case "Completed":
-				return "background.greenWhite";
-			case "Unassigned":
-				return "background.redWhite";
+				return "wine";
 			default:
 				return "custome.grey";
 		}
@@ -75,15 +58,10 @@ function TaskCard({ id, name, status }) {
 						</Typography>
 
 						<Chip
+							extraColor={getBadgeStyle()}
 							label={status}
 							size="small"
 							variant="outlined"
-							extraColor="primary"
-							// sx={{
-							// 	color: getBadgeStyleColor(),
-							// 	backgroundColor: getBadgeStyleBackground(),
-							// 	border: "none",
-							// }}
 						/>
 					</CardActions>
 
@@ -114,6 +92,7 @@ function TaskCard({ id, name, status }) {
 						color="primary.main"
 						fontSize={14}
 						fontWeight={600}
+						title={name}
 						variant="body2"
 					>
 						View Task
@@ -130,7 +109,7 @@ function TaskCard({ id, name, status }) {
 export default TaskCard;
 
 TaskCard.propTypes = {
-	id: PropTypes.string,
-	name: PropTypes.string,
-	status: PropTypes.string,
+	id: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	status: PropTypes.string.isRequired,
 };
