@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
+import { ModalContentWrapper } from "./components";
 import {
 	RecoverPassword,
 	RecoverPasswordWrapper,
@@ -25,6 +26,8 @@ function App() {
 				<Route element={<RegisterPage />} path="/register" />
 				<Route element={<ResetPassword />} path="/reset-password" />
 				<Route element={<RecoverPassword />} path="/recover-password" />
+
+				<Route element={<ModalContentWrapper />} path="modal" />
 			</Routes>
 		</div>
 	);

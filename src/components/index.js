@@ -1,3 +1,4 @@
+import ModalContentWrapper from "./modal-content-wrapper/ModalContentWrapper";
 import WelcomePlaceholder from "./welcome-placeholder/WelcomePlaceholder";
 
-export { WelcomePlaceholder };
+export { ModalContentWrapper, WelcomePlaceholder };
