@@ -1,4 +1,6 @@
+import CreateTaskForm from "./create-task-form/CreateTaskForm";
+import { withNavigationDrawer } from "./navigation-drawer/withNavigationDrawer";
+import SidebarRight from "./sidebar-right/SidebarRight";
 import TaskCard from "./task-card/TaskCard";
-import WelcomePlaceholder from "./welcome-placeholder/WelcomePlaceholder";
 
-export { TaskCard, WelcomePlaceholder };
+export { CreateTaskForm, SidebarRight, TaskCard, withNavigationDrawer };

@@ -2,8 +2,8 @@ import * as React from "react";
 
 import { Box, Grid, Typography } from "@mui/material";
 
-import { WelcomePlaceholder } from "../../components";
 import { Button } from "../../components/shared";
+import { WelcomePlaceholder } from "../components";
 
 import CreateAccountForm from "./components/createAccountForm/CreateAccountForm";
 

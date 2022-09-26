@@ -3,11 +3,13 @@ import { Route, Routes } from "react-router-dom";
 
 import { TaskCard } from "./components";
 import {
+	OverviewPage,
 	RecoverPassword,
-	RecoverPasswordWrapper,
 	RegisterPage,
 	ResetPassword,
+	SettingsPage,
 	SingInPage,
+	TasksBoardPage,
 	TasksPage,
 	TestPage,
 } from "./pages";
@@ -16,18 +18,18 @@ import "./App.css";
 
 function App() {
 	return (
-		<div>
-			<Routes>
-				<Route element={<TasksPage />} path="/" />
-				<Route element={<RecoverPasswordWrapper />} path="/recover" />
-				<Route element={<TestPage />} path="/test" />
-				<Route element={<SingInPage />} path="/login" />
-				<Route element={<RegisterPage />} path="/register" />
-				<Route element={<ResetPassword />} path="/reset-password" />
-				<Route element={<RecoverPassword />} path="/recover-password" />
-				<Route element={<TaskCard />} path="/task" />
-			</Routes>
-		</div>
+		<Routes>
+			<Route element={<TestPage />} path="/test" />
+			<Route element={<SingInPage />} path="/login" />
+			<Route element={<RegisterPage />} path="/register" />
+			<Route element={<ResetPassword />} path="/reset-password" />
+			<Route element={<RecoverPassword />} path="/recover-password" />
+			<Route element={<TasksBoardPage />} path="/tasks-board" />
+			<Route element={<SettingsPage />} path="/settings" />
+			<Route element={<OverviewPage />} path="/overview" />
+			<Route element={<TasksPage />} path="/" />
+			<Route element={<TaskCard />} path="/task" />
+		</Routes>
 	);
 }
 
