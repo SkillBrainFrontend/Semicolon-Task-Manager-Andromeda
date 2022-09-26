@@ -5,12 +5,11 @@ import {
 	Box,
 	CardActions,
 	CardContent,
-	Chip,
 	Tooltip,
 	Typography,
 } from "@mui/material";
 
-import { Card } from "../shared";
+import { Card, Chip } from "../shared";
 
 import Vector from "./Vector.png";
 
@@ -79,11 +78,12 @@ function TaskCard({ id, name, status }) {
 							label={status}
 							size="small"
 							variant="outlined"
-							sx={{
-								color: getBadgeStyleColor(),
-								backgroundColor: getBadgeStyleBackground(),
-								border: "none",
-							}}
+							extraColor="primary"
+							// sx={{
+							// 	color: getBadgeStyleColor(),
+							// 	backgroundColor: getBadgeStyleBackground(),
+							// 	border: "none",
+							// }}
 						/>
 					</CardActions>
 

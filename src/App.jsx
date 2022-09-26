@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { TaskCard } from "./components";
 import {
 	OverviewPage,
 	RecoverPassword,
@@ -28,7 +27,6 @@ function App() {
 			<Route element={<SettingsPage />} path="/settings" />
 			<Route element={<OverviewPage />} path="/overview" />
 			<Route element={<TasksPage />} path="/" />
-			<Route element={<TaskCard />} path="/task" />
 		</Routes>
 	);
 }
