@@ -2,7 +2,7 @@ import React from "react";
 
 import { Grid } from "@mui/material";
 
-import { ViewTaskCard } from "../../components/shared";
+import ViewTaskCard from "../components/view-task-card/ViewTaskCard";
 
 function ViewTaskCardPage() {
 	return (

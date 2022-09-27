@@ -5,6 +5,7 @@ import { useTheme } from "@mui/material/styles";
 
 import { CreateTaskForm, withNavigationDrawer } from "../../components";
 import { Alert, Button, Chip, Input } from "../../components/shared";
+import ViewTaskCard from "../components/view-task-card/ViewTaskCard";
 import BasicTabs from "../TabTest";
 
 import ActionAreaCard from "./components/CardComponent";
@@ -284,6 +285,8 @@ function Test() {
 				/>
 			</Stack>
 			<ActionAreaCard />
+
+			<ViewTaskCard />
 		</div>
 	);
 }

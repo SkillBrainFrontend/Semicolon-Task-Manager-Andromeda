@@ -12,6 +12,7 @@ import {
 	TasksBoardPage,
 	TasksPage,
 	TestPage,
+	ViewTaskCardPage,
 } from "./pages";
 
 import "./App.css";
@@ -28,6 +29,7 @@ function App() {
 			<Route element={<SettingsPage />} path="/settings" />
 			<Route element={<OverviewPage />} path="/overview" />
 			<Route element={<ModalContentWrapper />} path="/modal" />
+			<Route element={<ViewTaskCardPage />} path="/view" />
 			<Route element={<TasksPage />} path="/" />
 		</Routes>
 	);
