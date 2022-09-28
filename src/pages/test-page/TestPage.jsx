@@ -3,9 +3,12 @@ import React from "react";
 import { AlertTitle, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-import { CreateTaskForm, withNavigationDrawer } from "../../components";
+import {
+	CreateTaskForm,
+	ViewTaskCard,
+	withNavigationDrawer,
+} from "../../components";
 import { Alert, Button, Chip, Input } from "../../components/shared";
-import ViewTaskCard from "../components/view-task-card/ViewTaskCard";
 import BasicTabs from "../TabTest";
 
 import ActionAreaCard from "./components/CardComponent";

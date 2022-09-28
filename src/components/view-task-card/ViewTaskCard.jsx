@@ -12,19 +12,20 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
 import { styled } from "@mui/material/styles";
 
-import Chip from "../../../components/shared/chip/Chip";
+import Chip from "../shared/chip/Chip";
 
 function CustomizedTimeline() {
 	return (
-		<Box>
+		<Box sx={{ height: "100%", width: "170px" }}>
 			<Timeline
 				sx={{
 					display: "flex",
 					alignItems: "flex-end",
 					justifyContent: "flex-start",
+					height: "100%",
 				}}
 			>
-				<TimelineItem>
+				<TimelineItem sx={{ flexGrow: 1 }}>
 					<TimelineOppositeContent color="textSecondary">
 						<Box
 							sx={{
@@ -48,7 +49,10 @@ function CustomizedTimeline() {
 						</Box>
 					</TimelineOppositeContent>
 					<TimelineSeparator>
-						<FormControlLabel control={<Radio />} value="due-date" />
+						<FormControlLabel
+							control={<Radio checked disableRipple />}
+							value="due-date"
+						/>
 						<TimelineConnector sx={{ mr: 3.5, bgcolor: "neutral.main" }} />
 					</TimelineSeparator>
 				</TimelineItem>
@@ -70,7 +74,10 @@ function CustomizedTimeline() {
 						</Box>
 					</TimelineOppositeContent>
 					<TimelineSeparator>
-						<FormControlLabel control={<Radio />} value="due-date" />
+						<FormControlLabel
+							control={<Radio checked disableRipple />}
+							value="due-date"
+						/>
 					</TimelineSeparator>
 				</TimelineItem>
 			</Timeline>
@@ -90,7 +97,6 @@ export default function ViewTaskCard() {
 		<Box
 			sx={{
 				maxWidth: 750,
-				border: "1px solid #A8ABBD",
 				backgroundColor: "#FFFFFF",
 				display: "block",
 				justifyContent: "center",
@@ -130,21 +136,20 @@ export default function ViewTaskCard() {
 						I am to create a simple design system to use to teach aspiring UI /
 						UX Designers in my forth-coming cass on the 2nd of october 2020
 					</Typography>
-
-					<Stack alignItems="center" direction="row" spacing={1}>
-						<DoneButton variant="contained">Mark As Done</DoneButton>
-						<IconButton aria-label="delete" color="secondary">
-							<DeleteIcon />
-						</IconButton>
-						<IconButton aria-label="border-color" color="primary">
-							<BorderColorIcon />
-						</IconButton>
-					</Stack>
 				</Box>
 
 				<Box flex={1}>
 					<CustomizedTimeline />
 				</Box>
+			</Stack>
+			<Stack alignItems="center" direction="row" spacing={1}>
+				<DoneButton variant="contained">Mark As Done</DoneButton>
+				<IconButton aria-label="delete" color="secondary">
+					<DeleteIcon />
+				</IconButton>
+				<IconButton aria-label="border-color" color="primary">
+					<BorderColorIcon />
+				</IconButton>
 			</Stack>
 		</Box>
 	);
