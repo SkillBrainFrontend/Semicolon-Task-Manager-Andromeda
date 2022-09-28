@@ -1,3 +1,11 @@
-import WelcomePlaceholder from "./welcome-placeholder/WelcomePlaceholder";
+import CreateTaskForm from "./create-task-form/CreateTaskForm";
+import ModalContentWrapper from "./modal-content-wrapper/ModalContentWrapper";
+import { withNavigationDrawer } from "./navigation-drawer/withNavigationDrawer";
+import SidebarRight from "./sidebar-right/SidebarRight";
 
-export { WelcomePlaceholder };
+export {
+	CreateTaskForm,
+	ModalContentWrapper,
+	SidebarRight,
+	withNavigationDrawer,
+};
