@@ -5,6 +5,7 @@ import { string } from "prop-types";
 import { Box, Grid, Link, Typography } from "@mui/material";
 
 import PlacehoderBg from "../../assets/icons/screen-placeholder.svg";
+import { Button } from "../shared";
 
 function Copyright(props) {
 	return (
@@ -70,6 +71,16 @@ function WelcomePlaceholder(props) {
 							padding: "70px",
 						}}
 					>
+						<Button
+							actionButton={{
+								buttonLabel: "Create account",
+								onActionClick: () => {
+									console.log("s-a dat click");
+								},
+							}}
+						>
+							Some text{" "}
+						</Button>
 						<Typography
 							component="h4"
 							variant="h4"
