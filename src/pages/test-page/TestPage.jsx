@@ -288,28 +288,28 @@ function Test() {
 				/>
 			</Stack>
 			<ActionAreaCard />
-			<Box sx={{ flexGrow: 1 }}>
-				<Grid container spacing={2}>
-					<Grid item lg={4} md={6} sm={6} xs={12}>
+			<Box>
+				<Grid container justifyContent="space-between" spacing={2}>
+					<Grid item xs="auto">
 						<TaskCard
 							id="T - 10"
 							name="Create a Design System for Enum Worksace. Create a Design System for Enum Worksace."
 							status="Pending"
 						/>
 					</Grid>
-					<Grid item lg={4} md={6} sm={6} xs={12}>
+					<Grid item xs="auto">
 						<TaskCard id="T - 20" name="Param." status="Completed" />
 					</Grid>
-					<Grid item lg={4} md={6} sm={6} xs={12}>
+					<Grid item xs="auto">
 						<TaskCard id="T - 30" name="Well done! " status="In Progress" />
 					</Grid>
-					<Grid item lg={4} md={6} sm={6} xs={12}>
+					<Grid item xs="auto">
 						<TaskCard id="T - 40" name="Well done! " status="In Review" />
 					</Grid>
-					<Grid item lg={4} md={6} sm={6} xs={12}>
+					<Grid item xs="auto">
 						<TaskCard id="T - 50" name="Well done! " status="Unassigned" />
 					</Grid>
-					<Grid item lg={4} md={6} sm={6} xs={12}>
+					<Grid item xs="auto">
 						<TaskCard id="T - 60" name="Well done! " status="None" />
 					</Grid>
 				</Grid>
