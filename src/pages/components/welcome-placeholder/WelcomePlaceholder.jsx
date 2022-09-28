@@ -62,20 +62,10 @@ function WelcomePlaceholder(props) {
 							flexDirection: "column",
 							alignItems: positionText[position],
 							justifyContent: "space-between",
-							height: "80%",
+							height: "70%",
 							padding: "70px",
 						}}
 					>
-						<Button
-							actionButton={{
-								buttonLabel: "Create account",
-								onActionClick: () => {
-									console.log("s-a dat click");
-								},
-							}}
-						>
-							Some text{" "}
-						</Button>
 						<Typography
 							component="h4"
 							variant="h4"
