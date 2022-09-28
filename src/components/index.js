@@ -4,13 +4,10 @@ import { withNavigationDrawer } from "./navigation-drawer/withNavigationDrawer";
 import SidebarRight from "./sidebar-right/SidebarRight";
 import TaskCard from "./task-card/TaskCard";
 
-<<<<<<< HEAD
-export { CreateTaskForm, SidebarRight, TaskCard, withNavigationDrawer };
-=======
 export {
 	CreateTaskForm,
 	ModalContentWrapper,
 	SidebarRight,
+	TaskCard,
 	withNavigationDrawer,
 };
->>>>>>> bdb1dd2e47d143bbe494de8cbce835a80c3dcb7a
