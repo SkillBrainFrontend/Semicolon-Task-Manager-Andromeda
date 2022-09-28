@@ -1,7 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { CardActions, CardContent, Tooltip, Typography } from "@mui/material";
+import {
+	Box,
+	CardActions,
+	CardContent,
+	Tooltip,
+	Typography,
+} from "@mui/material";
 
 import VectorCard from "../../assets/icons/VectorCard";
 import { Card, Chip } from "../shared";
@@ -25,7 +31,7 @@ function TaskCard({ id, name, status }) {
 	};
 
 	return (
-		<Card sx={{ minHeight: 170, width: "250px" }}>
+		<Card sx={{ minHeight: 170, width: 250 }}>
 			<CardContent>
 				<CardActions
 					sx={{ justifyContent: "space-between", padding: "0 0 10px 0" }}
@@ -64,6 +70,8 @@ function TaskCard({ id, name, status }) {
 							color: "text.primary",
 							fontSize: "16px",
 							variant: "h6",
+							padding: "10px 0 0 0",
+							minHeight: "58px",
 						}}
 					>
 						{name}
@@ -75,6 +83,7 @@ function TaskCard({ id, name, status }) {
 					color="primary.main"
 					fontSize={14}
 					fontWeight={600}
+					padding="0 0 0 8px"
 					title={name}
 					variant="body2"
 				>
