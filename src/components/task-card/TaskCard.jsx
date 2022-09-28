@@ -31,77 +31,66 @@ function TaskCard({ id, name, status }) {
 	};
 
 	return (
-		<Box
-			sx={{
-				display: "flex",
-				flexDirection: { xs: "column", md: "column" },
-				gap: 2,
-				padding: "30px 5px",
-			}}
-		>
-			<Card sx={{ maxWidth: 345, minHeight: 230 }}>
-				<CardContent>
-					<CardActions
-						sx={{ justifyContent: "space-between", padding: "0 0 10px 0" }}
-					>
-						<Typography
-							color="text.grey"
-							component="div"
-							fontSize="14px"
-							fontWeight={600}
-							gutterBottom
-							style={{ width: 250, whiteSpace: "nowrap" }}
-							variant="body2"
-						>
-							{id}
-						</Typography>
-
-						<Chip
-							extraColor={getBadgeStyle()}
-							label={status}
-							size="small"
-							variant="outlined"
-						/>
-					</CardActions>
-
-					<Tooltip
-						placement="bottom"
-						title="https://mui.com/material-ui/react-tooltip/#main-content"
-					>
-						<Typography
-							component="div"
-							sx={{
-								overflow: "hidden",
-								display: "-WebkitBoxOriented",
-								WebkitLineClamp: 2,
-								WebkitBoxOrient: "vertical",
-								fontWeight: "600",
-								color: "text.primary",
-								fontSize: "16px",
-								margin: "10px 0 10px -10px",
-								variant: "h6",
-							}}
-						>
-							{name}
-						</Typography>
-					</Tooltip>
-				</CardContent>
-				<CardActions sx={{ justifyContent: "flex-start" }}>
+		<Card sx={{ minHeight: 170, width: "250px" }}>
+			<CardContent>
+				<CardActions
+					sx={{ justifyContent: "space-between", padding: "0 0 10px 0" }}
+				>
 					<Typography
-						color="primary.main"
-						fontSize={14}
+						color="text.grey"
+						component="div"
+						fontSize="14px"
 						fontWeight={600}
-						title={name}
+						gutterBottom
 						variant="body2"
 					>
-						View Task
+						{id}
 					</Typography>
-					<Typography sx={{ padding: "0 20px" }}>
-						<VectorCard />
-					</Typography>
+
+					<Chip
+						extraColor={getBadgeStyle()}
+						label={status}
+						size="small"
+						variant="outlined"
+					/>
 				</CardActions>
-			</Card>
-		</Box>
+
+				<Tooltip
+					placement="bottom"
+					title="https://mui.com/material-ui/react-tooltip/#main-content"
+				>
+					<Typography
+						component="div"
+						sx={{
+							overflow: "hidden",
+							display: "-WebkitBoxOriented",
+							WebkitLineClamp: 2,
+							WebkitBoxOrient: "vertical",
+							fontWeight: "600",
+							color: "text.primary",
+							fontSize: "16px",
+							variant: "h6",
+						}}
+					>
+						{name}
+					</Typography>
+				</Tooltip>
+			</CardContent>
+			<CardActions sx={{ justifyContent: "flex-start" }}>
+				<Typography
+					color="primary.main"
+					fontSize={14}
+					fontWeight={600}
+					title={name}
+					variant="body2"
+				>
+					View Task
+				</Typography>
+				<Typography>
+					<VectorCard />
+				</Typography>
+			</CardActions>
+		</Card>
 	);
 }
 
