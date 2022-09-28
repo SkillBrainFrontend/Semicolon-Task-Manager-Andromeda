@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
+import { ModalContentWrapper } from "./components";
 import {
 	OverviewPage,
 	RecoverPassword,
@@ -26,6 +27,7 @@ function App() {
 			<Route element={<TasksBoardPage />} path="/tasks-board" />
 			<Route element={<SettingsPage />} path="/settings" />
 			<Route element={<OverviewPage />} path="/overview" />
+			<Route element={<ModalContentWrapper />} path="/modal" />
 			<Route element={<TasksPage />} path="/" />
 		</Routes>
 	);
