@@ -14,6 +14,12 @@ export default function WelcomeScreen() {
 				<WelcomePlaceholder
 					message="Take your productivity to the next level."
 					position="left"
+					actionButton={{
+						buttonLabel: "Create account",
+						onActionClick: () => {
+							console.log("s-a dat click");
+						},
+					}}
 				/>
 			</Grid>
 			<Grid
