@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-import { Chip } from "../shared";
+import Chip from "../shared/chip/Chip";
 
-function ChipStatus(status) {
+function ChipStatus({ status }) {
 	const getBadgeStyle = () => {
 		switch (status) {
 			case "Pending":
@@ -22,11 +23,15 @@ function ChipStatus(status) {
 	return (
 		<Chip
 			extraColor={getBadgeStyle()}
+			label={status}
 			size="small"
-			status={status}
 			variant="outlined"
 		/>
 	);
 }
 
 export default ChipStatus;
+
+ChipStatus.propTypes = {
+	status: PropTypes.string.isRequired,
+};
