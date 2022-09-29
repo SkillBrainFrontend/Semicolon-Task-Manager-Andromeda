@@ -1,13 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {
-	Box,
-	CardActions,
-	CardContent,
-	Tooltip,
-	Typography,
-} from "@mui/material";
+import { CardActions, CardContent, Tooltip, Typography } from "@mui/material";
 
 import VectorCard from "../../assets/icons/VectorCard";
 import { Card, Chip } from "../shared";
