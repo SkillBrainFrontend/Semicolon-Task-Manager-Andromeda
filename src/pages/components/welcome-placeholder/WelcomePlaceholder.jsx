@@ -1,9 +1,11 @@
+/* eslint-disable no-undef */
 import React from "react";
 import { string } from "prop-types";
 
 import { Box, Grid, Link, Typography } from "@mui/material";
 
 import PlacehoderBg from "../../../assets/icons/screen-placeholder.svg";
+import { Button } from "../../../components/shared";
 
 function Copyright(props) {
 	return (
@@ -66,6 +68,9 @@ function WelcomePlaceholder(props) {
 							padding: "70px",
 						}}
 					>
+						<Button color="secondary" variant="outlined">
+							Label
+						</Button>
 						<Typography
 							component="h4"
 							variant="h4"
