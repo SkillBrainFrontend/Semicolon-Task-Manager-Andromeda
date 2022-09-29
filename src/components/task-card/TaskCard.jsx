@@ -2,15 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {
-	Box,
 	CardActions,
 	CardContent,
+	Stack,
 	Tooltip,
 	Typography,
 } from "@mui/material";
 
 import VectorCard from "../../assets/icons/VectorCard";
-import { Card, Chip } from "../shared";
+import { Button, Card, Chip } from "../shared";
 
 function TaskCard({ id, name, status }) {
 	const getBadgeStyle = () => {
@@ -31,67 +31,78 @@ function TaskCard({ id, name, status }) {
 	};
 
 	return (
-		<Card sx={{ minHeight: 170, width: 250 }}>
-			<CardContent>
-				<CardActions
-					sx={{ justifyContent: "space-between", padding: "0 0 10px 0" }}
+		<Card
+			sx={{
+				height: 170,
+				width: 250,
+				padding: "20px !important",
+				display: "flex",
+				flexDirection: "column",
+			}}
+		>
+			<Stack direction="row" sx={{ justifyContent: "space-between" }}>
+				<Typography
+					color="text.grey"
+					component="div"
+					fontSize="14px"
+					fontWeight={600}
+					gutterBottom
+					variant="body2"
 				>
-					<Typography
-						color="text.grey"
-						component="div"
-						fontSize="14px"
-						fontWeight={600}
-						gutterBottom
-						variant="body2"
-					>
-						{id}
-					</Typography>
+					{id}
+				</Typography>
 
-					<Chip
-						extraColor={getBadgeStyle()}
-						label={status}
-						size="small"
-						variant="outlined"
-					/>
-				</CardActions>
-
+				<Chip
+					extraColor={getBadgeStyle()}
+					label={status}
+					size="small"
+					variant="outlined"
+				/>
+			</Stack>
+			<CardContent sx={{ px: 0, flexGrow: 1 }}>
 				<Tooltip
+					disableInteractive
+					enterDelay={1000}
 					placement="bottom"
-					title="https://mui.com/material-ui/react-tooltip/#main-content"
+					title={name}
 				>
 					<Typography
-						component="div"
+						variant="title"
 						sx={{
 							overflow: "hidden",
 							display: "-WebkitBoxOriented",
 							WebkitLineClamp: 2,
 							WebkitBoxOrient: "vertical",
 							fontWeight: "600",
-							color: "text.primary",
-							fontSize: "16px",
-							variant: "h6",
-							padding: "10px 0 0 0",
-							minHeight: "58px",
 						}}
 					>
 						{name}
 					</Typography>
 				</Tooltip>
 			</CardContent>
-			<CardActions sx={{ justifyContent: "flex-start" }}>
-				<Typography
-					color="primary.main"
-					fontSize={14}
-					fontWeight={600}
-					padding="0 0 0 8px"
-					title={name}
-					variant="body2"
+			<CardActions sx={{ justifyContent: "flex-start", padding: 0 }}>
+				<Button
+					autoCapitalize={false}
+					endIcon={<VectorCard />}
+					size="small"
+					variant="text"
+					sx={{
+						gap: "5px",
+						marginLeft: "-3px",
+						fontWeight: "600 !important",
+						letterSpacing: "-0.02em",
+						borderRadius: "5px !important",
+						padding: "3px  !important",
+						textTransform: "none",
+						"&:hover": {
+							background: "transparent",
+
+							opacity: 0.7,
+						},
+					}}
 				>
 					View Task
-				</Typography>
-				<Typography>
-					<VectorCard />
-				</Typography>
+				</Button>
 			</CardActions>
 		</Card>
 	);

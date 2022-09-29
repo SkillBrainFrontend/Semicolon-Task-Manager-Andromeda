@@ -25,6 +25,11 @@ const StyledChip = styled(Chip, {
 			color: customColor,
 			border: "none",
 		},
+		"& .MuiChip-labelSmall": {
+			fontSize: 12,
+			paddingLeft: 10,
+			paddingRight: 10,
+		},
 	};
 });
 
