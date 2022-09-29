@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React from "react";
 import { string } from "prop-types";
 
@@ -23,7 +22,7 @@ function Copyright(props) {
 	);
 }
 function WelcomePlaceholder(props) {
-	const { position, message } = props;
+	const { position, message, actionButton } = props;
 	const positionImg = {
 		left: "scaleX(-1)",
 		right: "none",
@@ -64,18 +63,35 @@ function WelcomePlaceholder(props) {
 							flexDirection: "column",
 							alignItems: positionText[position],
 							justifyContent: "space-between",
-							height: "80%",
-							padding: "70px",
+							height: "100%",
+							padding: "60px",
 						}}
 					>
-						<Button color="secondary" variant="outlined">
-							Label
-						</Button>
+						{actionButton ? (
+							<Button
+								onClick={actionButton.onActionClick}
+								size="small"
+								variant="outlined"
+								sx={{
+									width: "30%",
+									disableElevation: "false",
+									background: (t) => t.palette.background.default,
+									"&:hover": {
+										backgroundColor: (t) => t.palette.background.default,
+									},
+								}}
+							>
+								{actionButton.buttonLabel}
+							</Button>
+						) : (
+							false
+						)}
 						<Typography
 							component="h4"
 							variant="h4"
 							xs={false}
 							sx={{
+								paddingBottom: 8,
 								textAlign: position,
 								transform: positionImg[position],
 								color: "white",

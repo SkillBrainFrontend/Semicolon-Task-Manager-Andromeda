@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Box, Grid, Typography } from "@mui/material";
 
@@ -7,6 +8,7 @@ import { WelcomePlaceholder } from "../components";
 import LoginForm from "./components/loginForm/LoginForm";
 
 export default function SignInSide() {
+	const navigate = useNavigate();
 	return (
 		<Box
 			sx={{
@@ -52,7 +54,7 @@ export default function SignInSide() {
 						actionButton={{
 							buttonLabel: "Create account",
 							onActionClick: () => {
-								console.log("s-a dat click");
+								navigate("/register");
 							},
 						}}
 					/>
