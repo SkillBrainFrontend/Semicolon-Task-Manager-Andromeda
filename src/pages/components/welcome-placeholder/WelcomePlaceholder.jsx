@@ -62,7 +62,7 @@ function WelcomePlaceholder(props) {
 							flexDirection: "column",
 							alignItems: positionText[position],
 							justifyContent: "space-between",
-							height: "70%",
+							height: "80%",
 							padding: "70px",
 						}}
 					>

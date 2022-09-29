@@ -2,7 +2,14 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import { Box, Checkbox, FormControlLabel, Grid, Link } from "@mui/material";
+import {
+	Box,
+	Checkbox,
+	FormControlLabel,
+	Grid,
+	Link,
+	Typography,
+} from "@mui/material";
 
 import { Button, Input } from "../../../../components/shared";
 
@@ -29,7 +36,7 @@ function LoginForm() {
 		<Box
 			component="form"
 			onSubmit={handleSubmit}
-			sx={{ boxShadow: "none", mt: 1 }}
+			sx={{ mt: 2, width: "90%", display: "flex", flexDirection: "column" }}
 		>
 			<Input
 				autoComplete="email"
@@ -60,7 +67,6 @@ function LoginForm() {
 				value={values.password}
 			/>
 			<FormControlLabel
-				label="Remember me"
 				control={
 					<Checkbox
 						checked={values.rememberMe.checked}
@@ -70,25 +76,31 @@ function LoginForm() {
 						value="remember"
 					/>
 				}
+				label={
+					<Typography sx={{ fontWeight: 600 }} variant="body2">
+						Keep me Signed in
+					</Typography>
+				}
+				sx={{
+					mt: 5,
+				}}
 			/>
 			<Button
 				disabled={!isValid}
-				fullWidth
-				sx={{ mt: 3, mb: 2 }}
+				sx={{ mt: 4, mb: 6, width: "40%" }}
 				type="submit"
 				variant="contained"
 			>
-				Sign In
+				Log In
 			</Button>
 			<Grid container>
 				<Grid item xs>
-					<Link href="#" variant="body2">
+					<Link
+						href="/recover-password"
+						sx={{ fontWeight: 600 }}
+						variant="body1"
+					>
 						Forgot password?
-					</Link>
-				</Grid>
-				<Grid item>
-					<Link href="#" variant="body2">
-						Don&apos;t have an account? Sign Up
 					</Link>
 				</Grid>
 			</Grid>
