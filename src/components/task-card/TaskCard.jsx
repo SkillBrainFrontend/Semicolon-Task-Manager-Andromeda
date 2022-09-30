@@ -82,7 +82,7 @@ function TaskCard({ id, name, status }) {
 			</CardContent>
 			<CardActions sx={{ justifyContent: "flex-start", padding: 0 }}>
 				<Button
-					autoCapitalize={false}
+					autoCapitalize="false"
 					endIcon={<VectorCard />}
 					size="small"
 					variant="text"

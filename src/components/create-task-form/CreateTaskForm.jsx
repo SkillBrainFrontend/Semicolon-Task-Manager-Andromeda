@@ -1,5 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
+import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 
 import {
@@ -13,6 +14,7 @@ import {
 import { useTheme } from "@mui/material/styles";
 import { Stack } from "@mui/system";
 
+import { createTask } from "../../store/task/task.slice";
 import { Button, Input } from "../shared";
 
 const priorityMock = [
@@ -34,7 +36,7 @@ const priorityMock = [
 
 const LoginFormSchema = Yup.object().shape({
 	taskName: Yup.string().min(5).required("Required"),
-	taskPriority: Yup.string().required("Required"),
+	// taskPriority: Yup.string().required("Required"),
 	date: Yup.string().required("Required"),
 	description: Yup.string().min(5).required("Required"),
 });
@@ -57,6 +59,7 @@ function SelectButton() {
 
 function CreateTaskForm() {
 	const theme = useTheme();
+	const dispatch = useDispatch();
 	const { handleChange, values, handleSubmit, errors, isValid } = useFormik({
 		initialValues: {
 			taskName: "",
@@ -68,6 +71,7 @@ function CreateTaskForm() {
 		validationSchema: LoginFormSchema,
 		onSubmit: (formValues) => {
 			console.log(formValues);
+			dispatch(createTask({ name: formValues.taskName }));
 		},
 	});
 
