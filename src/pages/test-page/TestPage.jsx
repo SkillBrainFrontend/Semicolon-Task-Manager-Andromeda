@@ -7,6 +7,7 @@ import { useTheme } from "@mui/material/styles";
 import {
 	CreateTaskForm,
 	TaskCard,
+	ViewTaskCard,
 	withNavigationDrawer,
 } from "../../components";
 import { Alert, Box, Button, Chip, Grid, Input } from "../../components/shared";
@@ -291,7 +292,10 @@ function Test() {
 				/>
 			</Stack>
 			<ActionAreaCard />
-			<Box>
+			<Box py={5}>
+				<ViewTaskCard />
+			</Box>
+			<Box py={5}>
 				<Grid container justifyContent="space-between" spacing={2}>
 					<Grid item xs="auto">
 						<TaskCard
