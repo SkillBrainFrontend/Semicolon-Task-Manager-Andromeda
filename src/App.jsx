@@ -1,7 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { ModalContentWrapper } from "./components";
+import { Box } from "@mui/material";
+
+import { Modal } from "./components";
 import {
 	OverviewPage,
 	RecoverPassword,
@@ -18,18 +20,20 @@ import "./App.css";
 
 function App() {
 	return (
-		<Routes>
-			<Route element={<TestPage />} path="/test" />
-			<Route element={<SingInPage />} path="/login" />
-			<Route element={<RegisterPage />} path="/register" />
-			<Route element={<ResetPassword />} path="/reset-password" />
-			<Route element={<RecoverPassword />} path="/recover-password" />
-			<Route element={<TasksBoardPage />} path="/tasks-board" />
-			<Route element={<SettingsPage />} path="/settings" />
-			<Route element={<OverviewPage />} path="/overview" />
-			<Route element={<ModalContentWrapper />} path="/modal" />
-			<Route element={<TasksPage />} path="/" />
-		</Routes>
+		<Box>
+			<Routes>
+				<Route element={<TestPage />} path="/test" />
+				<Route element={<SingInPage />} path="/login" />
+				<Route element={<RegisterPage />} path="/register" />
+				<Route element={<ResetPassword />} path="/reset-password" />
+				<Route element={<RecoverPassword />} path="/recover-password" />
+				<Route element={<TasksBoardPage />} path="/tasks-board" />
+				<Route element={<SettingsPage />} path="/settings" />
+				<Route element={<OverviewPage />} path="/overview" />
+				<Route element={<TasksPage />} path="/" />
+			</Routes>
+			<Modal />
+		</Box>
 	);
 }
 
