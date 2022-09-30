@@ -4,6 +4,7 @@ import { string } from "prop-types";
 import { Box, Grid, Link, Typography } from "@mui/material";
 
 import PlacehoderBg from "../../../assets/icons/screen-placeholder.svg";
+import { Button } from "../../../components/shared";
 
 function Copyright(props) {
 	return (
@@ -21,7 +22,7 @@ function Copyright(props) {
 	);
 }
 function WelcomePlaceholder(props) {
-	const { position, message } = props;
+	const { position, message, actionButton } = props;
 	const positionImg = {
 		left: "scaleX(-1)",
 		right: "none",
@@ -54,16 +55,36 @@ function WelcomePlaceholder(props) {
 						display: "flex",
 						flexDirection: "column",
 						justifyContent: "flex-end",
+						padding: "30px",
 					}}
 				>
+					{actionButton && (
+						<Button
+							onClick={actionButton.onActionClick}
+							size="small"
+							variant="outlined"
+							sx={{
+								width: "30%",
+								disableElevation: "false",
+								background: (t) => t.palette.background.default,
+								"&:hover": {
+									backgroundColor: (t) => t.palette.background.default,
+								},
+								alignSelf: "flex-end",
+							}}
+						>
+							{actionButton.buttonLabel}
+						</Button>
+					)}
 					<Grid
 						sx={{
 							display: "flex",
 							flexDirection: "column",
 							alignItems: positionText[position],
-							justifyContent: "space-between",
+							flexGrow: 1,
+							justifyContent: "space-evenly",
 							height: "70%",
-							padding: "70px",
+							padding: "60px",
 						}}
 					>
 						<Typography
@@ -71,6 +92,7 @@ function WelcomePlaceholder(props) {
 							variant="h4"
 							xs={false}
 							sx={{
+								paddingBottom: 8,
 								textAlign: position,
 								transform: positionImg[position],
 								color: "white",
