@@ -55,37 +55,38 @@ function WelcomePlaceholder(props) {
 						display: "flex",
 						flexDirection: "column",
 						justifyContent: "flex-end",
+						padding: "30px",
 					}}
 				>
+					{actionButton && (
+						<Button
+							onClick={actionButton.onActionClick}
+							size="small"
+							variant="outlined"
+							sx={{
+								width: "30%",
+								disableElevation: "false",
+								background: (t) => t.palette.background.default,
+								"&:hover": {
+									backgroundColor: (t) => t.palette.background.default,
+								},
+								alignSelf: "flex-end",
+							}}
+						>
+							{actionButton.buttonLabel}
+						</Button>
+					)}
 					<Grid
 						sx={{
 							display: "flex",
 							flexDirection: "column",
 							alignItems: positionText[position],
-							justifyContent: "space-between",
-							height: "100%",
+							flexGrow: 1,
+							justifyContent: "space-evenly",
+							height: "70%",
 							padding: "60px",
 						}}
 					>
-						{actionButton ? (
-							<Button
-								onClick={actionButton.onActionClick}
-								size="small"
-								variant="outlined"
-								sx={{
-									width: "30%",
-									disableElevation: "false",
-									background: (t) => t.palette.background.default,
-									"&:hover": {
-										backgroundColor: (t) => t.palette.background.default,
-									},
-								}}
-							>
-								{actionButton.buttonLabel}
-							</Button>
-						) : (
-							false
-						)}
 						<Typography
 							component="h4"
 							variant="h4"
