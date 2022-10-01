@@ -4,9 +4,10 @@ import Tooltip from "@mui/material/Tooltip";
 
 import Alert from "./alert/Alert";
 import Button from "./button/Button";
+import CustomActionBa from "./calendar/CustomActionBa";
 import Card from "./card/Card";
 import Chip from "./chip/Chip";
 import GlobalSearchBar from "./globalSearchBar/GlobalSearchBar";
 import Input from "./input/Input";
 
-export { Alert, Box, Button, Card, Chip, Grid, Input, Tooltip };
+export { Alert, Box, Button, Card, Chip, CustomActionBa, Grid, Input, Tooltip };

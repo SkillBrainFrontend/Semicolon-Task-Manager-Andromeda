@@ -8,11 +8,17 @@ import {
 	Typography,
 } from "@mui/material";
 
+import Calendar from "../calendar/Calendar";
+
 function WidgetCalendar() {
 	return (
 		<Card
-			sx={{ maxWidth: 345, backgroundColor: "#F5F7FE", marginTop: 10 }}
 			variant="outlined"
+			sx={{
+				maxWidth: 345,
+				backgroundColor: "#F5F7FE",
+				marginTop: 10,
+			}}
 		>
 			<CardContent>
 				<CardActions sx={{ display: "flex", flexDirection: "row" }}>
@@ -30,7 +36,7 @@ function WidgetCalendar() {
 			</CardContent>
 			<CardContent>
 				<Typography gutterBottom variant="h6">
-					Calendar widget
+					<Calendar />
 				</Typography>
 			</CardContent>
 		</Card>
