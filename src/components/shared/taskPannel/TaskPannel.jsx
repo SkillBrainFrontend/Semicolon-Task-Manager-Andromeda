@@ -13,8 +13,6 @@ export default function TaskPannel() {
 			alignItems="center"
 			direction="row"
 			justifyContent="space-between"
-			ml="2"
-			mr="2"
 			sx={{ width: "100%" }}
 		>
 			<Stack alignItems="flex-start" direction="column" justifyContent="center">
