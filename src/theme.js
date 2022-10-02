@@ -35,6 +35,7 @@ const theme = createTheme({
 			primary: "#16171D",
 			secondary: "#62667E",
 			disabled: "#C2C4CF",
+			grey: "#B9B9B9",
 		},
 		custom: {
 			purple: "#8937DB",
@@ -54,6 +55,7 @@ const theme = createTheme({
 			surface: "#F5F7FE",
 			paper: "#FFFFFF",
 			default: "#FFFFFF",
+			ghostWhite: "#F2F4FD;",
 		},
 	},
 	typography: {
