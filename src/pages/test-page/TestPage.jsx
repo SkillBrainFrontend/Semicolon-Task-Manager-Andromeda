@@ -355,8 +355,6 @@ function Test() {
 						Delete Task
 					</Button>
 				</Stack>
-
-				<Calendar />
 			</Box>
 		</div>
 	);

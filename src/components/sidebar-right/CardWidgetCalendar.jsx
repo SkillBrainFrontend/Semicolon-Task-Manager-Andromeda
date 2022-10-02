@@ -17,7 +17,7 @@ function WidgetCalendar() {
 			sx={{
 				maxWidth: 345,
 				backgroundColor: "#F5F7FE",
-				marginTop: 10,
+				marginTop: 5,
 			}}
 		>
 			<CardContent>
