@@ -173,7 +173,17 @@ const theme = createTheme({
 				},
 			},
 		},
+		MuiCalendarPicker: {
+			styleOverrides: {
+				root: {
+					showToolbar: false,
+					maxWidth: "55%",
+					height: "60%",
+					position: "relative",
+					right: "70px",
+				},
+			},
+		},
 	},
 });
-
 export default theme;
