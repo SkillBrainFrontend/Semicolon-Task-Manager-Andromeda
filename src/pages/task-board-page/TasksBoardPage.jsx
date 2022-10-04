@@ -1,28 +1,36 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { Box, Grid, Typography } from "@mui/material";
 
-import { TaskCard } from "../../components";
 import { withNavigationDrawer } from "../../components/navigation-drawer/withNavigationDrawer";
+import { Button } from "../../components/shared";
+import { openModal } from "../../store/app/app.slice";
+import { modalTypes } from "../../store/app/constants";
+import TaskViewer from "../components/task-viewer/TaskViewer";
 
 function TasksBoardPage() {
-	const tasks = useSelector((state) => state.entities.tasks);
-
+	const dispatch = useDispatch();
 	return (
 		<Box
 			sx={{
 				background: (t) => t.palette.background.surface,
 			}}
 		>
+			{" "}
+			<Box height="200px" sx={{ backgroundColor: "red" }} width="100%">
+				<Button
+					href="#contained-buttons"
+					onClick={() => dispatch(openModal(modalTypes.createTask))}
+					size="medium"
+					sx={{ marginTop: "24px", width: "213px" }}
+					variant="contained"
+				>
+					Create Task
+				</Button>
+			</Box>
 			<Typography variant="h3">Tasks</Typography>
-			<Grid container justifyContent="space-between" spacing={2}>
-				{tasks.map((item) => (
-					<Grid item key={item.id} xs="auto">
-						<TaskCard id={item.id} name={item.name} status={item.status} />
-					</Grid>
-				))}
-			</Grid>
+			<TaskViewer />
 		</Box>
 	);
 }
