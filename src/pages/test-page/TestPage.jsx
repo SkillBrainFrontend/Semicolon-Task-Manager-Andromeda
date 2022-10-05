@@ -6,6 +6,9 @@ import { useTheme } from "@mui/material/styles";
 
 import {
 	CreateTaskForm,
+	DeleteTask,
+	EditTaskForm,
+	LogOutModal,
 	TaskCard,
 	ViewTaskCard,
 	withNavigationDrawer,
@@ -210,9 +213,21 @@ function Test() {
 				direction="row"
 				justifyContent="flex-start"
 				spacing={2}
-				sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+				sx={{ width: "100%", padding: theme.spacing(3, 3) }}
 			>
 				<CreateTaskForm />
+				<EditTaskForm />
+			</Stack>
+
+			<Stack
+				alignItems="center"
+				direction="row"
+				justifyContent="flex-start"
+				spacing={2}
+				sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+			>
+				<DeleteTask />
+				<LogOutModal />
 			</Stack>
 
 			<Chip extraColor="wine" label="23" size="small" variant="outlined" />
@@ -352,6 +367,15 @@ function Test() {
 						variant="contained"
 					>
 						Delete Task
+					</Button>
+
+					<Button
+						color="accent"
+						onClick={() => dispatch(openModal(modalTypes.logOut))}
+						size="small"
+						variant="contained"
+					>
+						Log Out
 					</Button>
 				</Stack>
 			</Box>
