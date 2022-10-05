@@ -1,17 +1,22 @@
 import * as React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Box, IconButton, List, Stack } from "@mui/material";
+
+import { tooggleSidebar } from "../../store/app/app.slice";
 
 import { Drawer, DrawerHeader, drawerWidth, workspaceArea } from "./helpers";
 import NavigationListItem from "./NavigationListItem";
 import { sideBarLinks } from "./sidebar-links";
 
 function NavigationDrawer() {
-	const [open, setIsOpen] = React.useState(true);
+	const open = useSelector((state) => state.app.ui.sidebar.isOpen);
+	const dispatch = useDispatch();
+
 	const toggleDrawer = () => {
-		setIsOpen((prev) => !prev);
+		dispatch(tooggleSidebar());
 	};
 
 	return (
