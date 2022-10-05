@@ -173,6 +173,19 @@ const theme = createTheme({
 				},
 			},
 		},
+		MuiToggleButton: {
+			styleOverrides: {
+				root: {
+					"&.Mui-selected, &.Mui-selected:hover": {
+						color: "white",
+						backgroundColor: "#3754DB",
+						elevation: "24",
+					},
+					backgroundColor: "white",
+					border: "none",
+				},
+			},
+		},
 	},
 });
 
