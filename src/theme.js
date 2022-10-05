@@ -173,51 +173,16 @@ const theme = createTheme({
 				},
 			},
 		},
-
-		MuiCalendarPicker: {
+		MuiToggleButton: {
 			styleOverrides: {
 				root: {
-					showToolbar: false,
-					margin: 0,
-					display: "flex",
-					flexDirection: "column",
-					justifyContent: "space-evently",
-					textAlign: "start",
-					padding: "0px",
-					backgroundColor: "background.surface",
-				},
-			},
-		},
-		MuiPickersCalendarHeader: {
-			styleOverrides: {
-				labelContainer: {
-					fontSize: "13px",
-				},
-				root: {
-					paddingLeft: 0,
-					paddingRight: 0,
-				},
-			},
-		},
-
-		MuiPickersArrowSwitcher: {
-			styleOverrides: {
-				spacer: {
-					width: "0px",
-				},
-			},
-		},
-		MuiCardContent: {
-			styleOverrides: {
-				root: {
-					padding: "5px",
-				},
-			},
-		},
-		MuiPickersFadeTransitionGroup: {
-			styleOverrides: {
-				root: {
-					padding: "0 0 0 10px",
+					"&.Mui-selected, &.Mui-selected:hover": {
+						color: "white",
+						backgroundColor: "#3754DB",
+						elevation: "24",
+					},
+					backgroundColor: "white",
+					border: "none",
 				},
 			},
 		},

@@ -25,7 +25,7 @@ export default function ActionBarComponentProps() {
 						margin: 0,
 					},
 					"& .PrivatePickersSlideTransition-root": {
-						minHeight: DATE_SIZE * 6,
+						minHeight: DATE_SIZE * 7,
 					},
 					'& .PrivatePickersSlideTransition-root [role="row"]': {
 						margin: 0,
