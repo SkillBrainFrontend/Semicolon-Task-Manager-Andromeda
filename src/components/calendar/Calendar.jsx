@@ -15,7 +15,7 @@ export default function ActionBarComponentProps() {
 			<Box
 				sx={{
 					"& > div": {
-						minWidth: DATE_SIZE * 8,
+						minWidth: DATE_SIZE * 9,
 					},
 					"& > div > div, & > div > div > div, & .MuiCalendarPicker-root": {
 						width: DATE_SIZE * 8,
