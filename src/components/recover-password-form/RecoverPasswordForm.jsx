@@ -14,7 +14,7 @@ import {
 	Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { Container, Stack } from "@mui/system";
+import { Stack } from "@mui/system";
 
 import { Button } from "../shared";
 
