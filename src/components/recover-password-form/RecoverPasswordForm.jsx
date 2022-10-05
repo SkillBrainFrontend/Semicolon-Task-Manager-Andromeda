@@ -51,7 +51,7 @@ function RecoverPasswordForm() {
 
 	return (
 		<Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
-			<Stack display="flex" flexDirection="column">
+			<Stack alignItems="flex-start" display="flex" flexDirection="column">
 				<Typography sx={{ fontWeight: "bold", mb: 1 }} variant="h5">
 					Enter New Password
 				</Typography>
@@ -117,17 +117,16 @@ function RecoverPasswordForm() {
 					/>
 					<FormHelperText>{errors.confirmPassword}</FormHelperText>
 				</FormControl>
-				<Container sx={{ padding: theme.spacing(0, 0) }}>
-					<Button
-						disabled={!isValid}
-						size="medium"
-						sx={{ mt: 3, mb: 2 }}
-						type="submit"
-						variant="contained"
-					>
-						Save
-					</Button>
-				</Container>
+
+				<Button
+					disabled={!isValid}
+					size="medium"
+					sx={{ mt: 3, mb: 2 }}
+					type="submit"
+					variant="contained"
+				>
+					Save
+				</Button>
 			</Stack>
 		</Box>
 	);
