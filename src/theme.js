@@ -186,6 +186,63 @@ const theme = createTheme({
 				},
 			},
 		},
+		MuiCalendarPicker: {
+			styleOverrides: {
+				root: {
+					showToolbar: false,
+					margin: 0,
+					display: "flex",
+					flexDirection: "column",
+					justifyContent: "space-evently",
+					textAlign: "start",
+					padding: "0px",
+					backgroundColor: "background.surface",
+				},
+			},
+		},
+		MuiPickersCalendarHeader: {
+			styleOverrides: {
+				labelContainer: {
+					fontSize: "12.5px",
+				},
+				root: {
+					paddingLeft: 0,
+					paddingRight: 0,
+				},
+			},
+		},
+
+		MuiPickersArrowSwitcher: {
+			styleOverrides: {
+				spacer: {
+					width: "0px",
+				},
+			},
+		},
+		MuiCardContent: {
+			styleOverrides: {
+				root: {
+					padding: "5px",
+				},
+			},
+		},
+		MuiPickersFadeTransitionGroup: {
+			styleOverrides: {
+				root: {
+					padding: "0 0 0 10px",
+				},
+			},
+		},
+		MuiPickerStaticWrapper: {
+			styleOverrides: {
+				content: {
+					minWidth: "170px",
+				},
+				root: {
+					minWidth: "0",
+				},
+			},
+		},
 	},
 });
 export default theme;
