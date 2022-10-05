@@ -178,7 +178,6 @@ const theme = createTheme({
 			styleOverrides: {
 				root: {
 					showToolbar: false,
-					width: "60%",
 					margin: 0,
 					display: "flex",
 					flexDirection: "column",

@@ -1,27 +1,57 @@
 import * as React from "react";
 import dayjs from "dayjs";
 
-import { Box as Container, TextField } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
 
 export default function ActionBarComponentProps() {
 	const [value, setValue] = React.useState(() => dayjs());
+	const DATE_SIZE = 25;
 
 	return (
 		<LocalizationProvider dateAdapter={AdapterDayjs}>
-			<StaticDatePicker
-				onChange={(newValue) => setValue(newValue)}
-				renderInput={(params) => <TextField {...params} />}
-				showToolbar={false}
-				value={value}
-				componentsProps={{
-					actionBar: {
-						actions: ["disable"],
+			<Box
+				sx={{
+					"& > div": {
+						minWidth: DATE_SIZE * 8,
+					},
+					"& > div > div, & > div > div > div, & .MuiCalendarPicker-root": {
+						width: DATE_SIZE * 8,
+					},
+					"& .MuiTypography-caption": {
+						width: DATE_SIZE,
+						margin: 0,
+					},
+					"& .PrivatePickersSlideTransition-root": {
+						minHeight: DATE_SIZE * 6,
+					},
+					'& .PrivatePickersSlideTransition-root [role="row"]': {
+						margin: 0,
+					},
+					"& .MuiPickersDay-dayWithMargin": {
+						margin: 0,
+					},
+					"& .MuiPickersDay-root": {
+						width: DATE_SIZE,
+						height: DATE_SIZE,
 					},
 				}}
-			/>
+			>
+				<StaticDatePicker
+					displayStaticWrapperAs="desktop"
+					onChange={(newValue) => setValue(newValue)}
+					renderInput={(params) => <TextField {...params} />}
+					showToolbar={false}
+					value={value}
+					componentsProps={{
+						actionBar: {
+							actions: ["disable"],
+						},
+					}}
+				/>
+			</Box>
 		</LocalizationProvider>
 	);
 }
