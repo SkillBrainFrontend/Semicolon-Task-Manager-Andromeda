@@ -76,7 +76,7 @@ function EditTaskForm() {
 	});
 
 	return (
-		<Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+		<Box component="form" onSubmit={handleSubmit} padding="30px" sx={{ mt: 1 }}>
 			<Typography component="h1" sx={{ fontWeight: "bold" }} variant="h5">
 				Edit Task
 			</Typography>
