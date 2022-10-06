@@ -18,7 +18,7 @@ export default function ActionBarComponentProps() {
 						minWidth: DATE_SIZE * 9,
 					},
 					"& > div > div, & > div > div > div, & .MuiCalendarPicker-root": {
-						width: DATE_SIZE * 7,
+						width: DATE_SIZE * 6.6,
 					},
 					"& .MuiTypography-caption": {
 						width: DATE_SIZE,

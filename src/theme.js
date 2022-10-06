@@ -197,6 +197,7 @@ const theme = createTheme({
 					textAlign: "start",
 					padding: "0px",
 					backgroundColor: "background.surface",
+					width: "168px",
 				},
 			},
 		},
@@ -236,10 +237,17 @@ const theme = createTheme({
 		MuiPickerStaticWrapper: {
 			styleOverrides: {
 				content: {
-					minWidth: "170px",
+					minWidth: "167px",
 				},
 				root: {
 					minWidth: "0",
+				},
+			},
+		},
+		PrivatePickersSlideTransition: {
+			styleOverrides: {
+				root: {
+					margin: "0 0 0 -10px",
 				},
 			},
 		},
