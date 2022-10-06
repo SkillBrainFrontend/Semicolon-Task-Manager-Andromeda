@@ -174,6 +174,7 @@ const theme = createTheme({
 				},
 			},
 		},
+<<<<<<< HEAD
 		MuiTypography: {
 			styleOverrides: {
 				h6: {
@@ -186,6 +187,18 @@ const theme = createTheme({
 					fontWeight: 600,
 					fontSize: "28px",
 					lineHeight: "34px",
+=======
+		MuiToggleButton: {
+			styleOverrides: {
+				root: {
+					"&.Mui-selected, &.Mui-selected:hover": {
+						color: "white",
+						backgroundColor: "#3754DB",
+						elevation: "24",
+					},
+					backgroundColor: "white",
+					border: "none",
+>>>>>>> d1ba4e43518c90516b1cc8f3b91fd9d8c34c2734
 				},
 			},
 		},

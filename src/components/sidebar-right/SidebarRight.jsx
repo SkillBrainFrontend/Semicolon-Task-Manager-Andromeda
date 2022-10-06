@@ -4,7 +4,7 @@ import { Avatar, Stack, Typography } from "@mui/material";
 
 import { Button, Card } from "../shared";
 
-import CardWidgetCalendar from "./CardWidgetCalendar";
+import WidgetArea from "./WidgetArea";
 
 function SidebarRight() {
 	return (
@@ -72,7 +72,7 @@ function SidebarRight() {
 				</Button>
 			</Stack>
 
-			<CardWidgetCalendar />
+			<WidgetArea />
 		</Card>
 	);
 }
