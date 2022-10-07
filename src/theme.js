@@ -240,7 +240,7 @@ const theme = createTheme({
 					minWidth: "167px",
 				},
 				root: {
-					minWidth: "0",
+					minWidth: 0,
 				},
 			},
 		},
