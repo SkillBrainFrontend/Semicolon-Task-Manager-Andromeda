@@ -9,8 +9,10 @@ import { modalTypes } from "../../store/app/constants";
 import CreateTaskForm from "../create-task-form/CreateTaskForm";
 
 export default function Modal() {
-	const [fullWidth, setFullWidth] = React.useState(true);
-	const [maxWidth, setMaxWidth] = React.useState("sm");
+	const fullWidth = true;
+	const maxWidth = "sm";
+	// const [fullWidth, setFullWidth] = React.useState(true);
+	// const [maxWidth, setMaxWidth] = React.useState("sm");
 
 	const open = useSelector((state) => state.app.ui.modal.isOpen);
 	const modalType = useSelector((state) => state.app.ui.modal.modalType);
