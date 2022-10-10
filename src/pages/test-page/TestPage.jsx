@@ -10,7 +10,7 @@ import {
 	ViewTaskCard,
 	withNavigationDrawer,
 } from "../../components";
-import { Alert, Box, Button, Chip, Grid, Input } from "../../components/shared";
+import { Alert, Button, Chip, Grid, Input } from "../../components/shared";
 import { openModal } from "../../store/app/app.slice";
 import { modalTypes } from "../../store/app/constants";
 import BasicTabs from "../TabTest";
@@ -292,7 +292,6 @@ function Test() {
 				/>
 			</Stack>
 			<ActionAreaCard />
-<<<<<<< HEAD
 
 			<Box py={5}>
 				<ViewTaskCard
@@ -302,73 +301,74 @@ function Test() {
 					status="In Progress"
 					title="Create a Design System for Enum Workspace."
 				/>
-=======
-			<Box py={5}>
-				<ViewTaskCard />
-			</Box>
-			<Box py={5}>
-				<Grid container justifyContent="space-between" spacing={2}>
-					<Grid item xs="auto">
-						<TaskCard
-							id="T - 10"
-							name="Create a Design System for Enum Worksace. Create a Design System for Enum Worksace."
-							status="Pending"
-						/>
+				<Box py={5}>
+					<ViewTaskCard
+						dateCreated={new Date().toLocaleDateString()}
+						description="I am to create a simple design system to use to teach aspiring UI / UX Designers in my forth-coming cass on the 2nd of october 2021"
+						dueDate={new Date().toLocaleDateString()}
+						status="Completed"
+						title="Create a Design System for Enum Workspace."
+					/>
+				</Box>
+				<Box py={5}>
+					<Grid container justifyContent="space-between" spacing={2}>
+						<Grid item xs="auto">
+							<TaskCard
+								id="T - 10"
+								name="Create a Design System for Enum Worksace. Create a Design System for Enum Worksace."
+								status="Pending"
+							/>
+						</Grid>
+						<Grid item xs="auto">
+							<TaskCard id="T - 20" name="Param." status="Completed" />
+						</Grid>
+						<Grid item xs="auto">
+							<TaskCard id="T - 30" name="Well done! " status="In Progress" />
+						</Grid>
+						<Grid item xs="auto">
+							<TaskCard id="T - 40" name="Well done! " status="In Review" />
+						</Grid>
+						<Grid item xs="auto">
+							<TaskCard id="T - 50" name="Well done! " status="Unassigned" />
+						</Grid>
+						<Grid item xs="auto">
+							<TaskCard id="T - 60" name="Well done! " status="None" />
+						</Grid>
 					</Grid>
-					<Grid item xs="auto">
-						<TaskCard id="T - 20" name="Param." status="Completed" />
-					</Grid>
-					<Grid item xs="auto">
-						<TaskCard id="T - 30" name="Well done! " status="In Progress" />
-					</Grid>
-					<Grid item xs="auto">
-						<TaskCard id="T - 40" name="Well done! " status="In Review" />
-					</Grid>
-					<Grid item xs="auto">
-						<TaskCard id="T - 50" name="Well done! " status="Unassigned" />
-					</Grid>
-					<Grid item xs="auto">
-						<TaskCard id="T - 60" name="Well done! " status="None" />
-					</Grid>
-				</Grid>
-<<<<<<< HEAD
->>>>>>> 9557e9607118513b1664763399f807c3af36d537
-=======
-
-				<Stack
-					alignItems="center"
-					direction="row"
-					flexWrap="wrap"
-					gap={1}
-					justifyContent="flex-start"
-					sx={{ width: "100" }}
-				>
-					<Button
-						color="accent"
-						onClick={() => dispatch(openModal(modalTypes.createTask))}
-						size="small"
-						variant="contained"
+					<Stack
+						alignItems="center"
+						direction="row"
+						flexWrap="wrap"
+						gap={1}
+						justifyContent="flex-start"
+						sx={{ width: "100" }}
 					>
-						Create Task
-					</Button>
-					<Button
-						color="accent"
-						onClick={() => dispatch(openModal(modalTypes.editTask))}
-						size="small"
-						variant="contained"
-					>
-						Edit Task
-					</Button>
-					<Button
-						color="accent"
-						onClick={() => dispatch(openModal(modalTypes.deleteTask))}
-						size="small"
-						variant="contained"
-					>
-						Delete Task
-					</Button>
-				</Stack>
->>>>>>> d1ba4e43518c90516b1cc8f3b91fd9d8c34c2734
+						<Button
+							color="accent"
+							onClick={() => dispatch(openModal(modalTypes.createTask))}
+							size="small"
+							variant="contained"
+						>
+							Create Task
+						</Button>
+						<Button
+							color="accent"
+							onClick={() => dispatch(openModal(modalTypes.editTask))}
+							size="small"
+							variant="contained"
+						>
+							Edit Task
+						</Button>
+						<Button
+							color="accent"
+							onClick={() => dispatch(openModal(modalTypes.deleteTask))}
+							size="small"
+							variant="contained"
+						>
+							Delete Task
+						</Button>
+					</Stack>
+				</Box>
 			</Box>
 		</div>
 	);
