@@ -14,7 +14,6 @@ import {
 	TasksBoardPage,
 	TasksPage,
 	TestPage,
-	ViewTaskCardPage,
 } from "./pages";
 
 import "./App.css";
