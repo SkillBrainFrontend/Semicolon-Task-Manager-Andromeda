@@ -1,6 +1,6 @@
 import React from "react";
 
-import { AlertTitle, Paper, Stack, Typography } from "@mui/material";
+import { AlertTitle, Box, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import { CreateTaskForm, withNavigationDrawer } from "../../components";
@@ -286,7 +286,15 @@ function Test() {
 			</Stack>
 			<ActionAreaCard />
 
-			<ViewTaskCard />
+			<Box py={5}>
+				<ViewTaskCard
+					dateCreated={new Date().toLocaleDateString()}
+					description="I am to create a simple design system to use to teach aspiring UI / UX Designers in my forth-coming cass on the 2nd of october 2021"
+					dueDate={new Date().toLocaleDateString()}
+					status="In Progress"
+					title="Create a Design System for Enum Workspace."
+				/>
+			</Box>
 		</div>
 	);
 }
