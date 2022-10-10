@@ -15,7 +15,6 @@ function WidgetCalendar() {
 		<Card
 			variant="outlined"
 			sx={{
-				// maxWidth: 345,
 				backgroundColor: "#F5F7FE",
 				marginTop: 5,
 			}}

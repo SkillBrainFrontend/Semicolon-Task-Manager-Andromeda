@@ -5,7 +5,6 @@ import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import Calendar from "../calendar/Calendar";
 import { Card } from "../shared";
 
-import CalendarWidget from "./widgets/CalendarWidget";
 import ReminderWidget from "./widgets/ReminderWidget";
 
 function WidgetCalendar() {

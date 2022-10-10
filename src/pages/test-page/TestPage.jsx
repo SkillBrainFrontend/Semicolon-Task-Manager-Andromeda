@@ -5,7 +5,6 @@ import { AlertTitle, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import {
-	Calendar,
 	CreateTaskForm,
 	TaskCard,
 	ViewTaskCard,

@@ -37,6 +37,12 @@ export default function ActionBarComponentProps() {
 						width: DATE_SIZE,
 						height: DATE_SIZE,
 					},
+					"& .MuiPickerStaticWrapper-root": {
+						minWidth: "auto",
+					},
+					"& .MuiCalendarOrClockPicker-root  > div": {
+						width: "auto",
+					},
 				}}
 			>
 				<StaticDatePicker
