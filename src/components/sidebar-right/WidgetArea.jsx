@@ -35,10 +35,18 @@ function WidgetCalendar() {
 				sx={{}}
 				value={alignment}
 			>
-				<ToggleButton id="calendar" value="calendar">
+				<ToggleButton
+					id="calendar"
+					selected={tabId === "calendar"}
+					value="calendar"
+				>
 					Calendar
 				</ToggleButton>
-				<ToggleButton id="reminder" value="reminder">
+				<ToggleButton
+					id="reminder"
+					selected={tabId === "reminder"}
+					value="reminder"
+				>
 					Reminder
 				</ToggleButton>
 			</ToggleButtonGroup>
