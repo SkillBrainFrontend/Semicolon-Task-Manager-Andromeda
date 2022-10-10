@@ -9,6 +9,7 @@ import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
 export default function ActionBarComponentProps() {
 	const [value, setValue] = React.useState(() => dayjs());
 	const DATE_SIZE = 25;
+	const converted = { ".css-dyzc7t > div": { minWidth: "0" } };
 
 	return (
 		<LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -36,6 +37,10 @@ export default function ActionBarComponentProps() {
 					"& .MuiPickersDay-root": {
 						width: DATE_SIZE,
 						height: DATE_SIZE,
+					},
+					"& .MuiBox-root": {
+						width: converted,
+						backgroundColor: "red",
 					},
 				}}
 			>
