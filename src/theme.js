@@ -186,6 +186,10 @@ const theme = createTheme({
 					fontWeight: 600,
 					fontSize: "28px",
 					lineHeight: "34px",
+				},
+			},
+		},
+
 		MuiToggleButton: {
 			styleOverrides: {
 				root: {
@@ -196,7 +200,6 @@ const theme = createTheme({
 					},
 					backgroundColor: "white",
 					border: "none",
-
 				},
 			},
 		},
