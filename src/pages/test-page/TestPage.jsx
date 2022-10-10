@@ -3,9 +3,13 @@ import React from "react";
 import { AlertTitle, Box, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-import { CreateTaskForm, withNavigationDrawer } from "../../components";
-import { Alert, Button, Chip, Input } from "../../components/shared";
-import ViewTaskCard from "../components/view-task-card/ViewTaskCard";
+import {
+	CreateTaskForm,
+	TaskCard,
+	ViewTaskCard,
+	withNavigationDrawer,
+} from "../../components";
+import { Alert, Box, Button, Chip, Grid, Input } from "../../components/shared";
 import BasicTabs from "../TabTest";
 
 import ActionAreaCard from "./components/CardComponent";
@@ -285,6 +289,7 @@ function Test() {
 				/>
 			</Stack>
 			<ActionAreaCard />
+<<<<<<< HEAD
 
 			<Box py={5}>
 				<ViewTaskCard
@@ -294,6 +299,36 @@ function Test() {
 					status="In Progress"
 					title="Create a Design System for Enum Workspace."
 				/>
+=======
+			<Box py={5}>
+				<ViewTaskCard />
+			</Box>
+			<Box py={5}>
+				<Grid container justifyContent="space-between" spacing={2}>
+					<Grid item xs="auto">
+						<TaskCard
+							id="T - 10"
+							name="Create a Design System for Enum Worksace. Create a Design System for Enum Worksace."
+							status="Pending"
+						/>
+					</Grid>
+					<Grid item xs="auto">
+						<TaskCard id="T - 20" name="Param." status="Completed" />
+					</Grid>
+					<Grid item xs="auto">
+						<TaskCard id="T - 30" name="Well done! " status="In Progress" />
+					</Grid>
+					<Grid item xs="auto">
+						<TaskCard id="T - 40" name="Well done! " status="In Review" />
+					</Grid>
+					<Grid item xs="auto">
+						<TaskCard id="T - 50" name="Well done! " status="Unassigned" />
+					</Grid>
+					<Grid item xs="auto">
+						<TaskCard id="T - 60" name="Well done! " status="None" />
+					</Grid>
+				</Grid>
+>>>>>>> 9557e9607118513b1664763399f807c3af36d537
 			</Box>
 		</div>
 	);

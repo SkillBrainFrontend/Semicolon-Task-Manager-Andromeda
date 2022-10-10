@@ -10,7 +10,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 		whiteSpace: "nowrap",
 	},
 	"&.MuiButton-sizeLarge": {
-		padding: theme.spacing(2.3, 9.2),
+		padding: theme.spacing(2.3, 7.2),
 	},
 	"&.MuiButton-sizeMedium": {
 		padding: theme.spacing(2, 9.2),

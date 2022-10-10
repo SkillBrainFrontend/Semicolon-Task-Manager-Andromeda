@@ -13,8 +13,82 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Radio from "@mui/material/Radio";
 import { styled } from "@mui/material/styles";
 
-import Chip from "../../../components/shared/chip/Chip";
+import Chip from "../shared/chip/Chip";
 
+<<<<<<< HEAD:src/pages/components/view-task-card/ViewTaskCard.jsx
+=======
+function CustomizedTimeline() {
+	return (
+		<Box sx={{ height: "100%", width: "170px" }}>
+			<Timeline
+				sx={{
+					display: "flex",
+					alignItems: "flex-end",
+					justifyContent: "flex-start",
+					height: "100%",
+				}}
+			>
+				<TimelineItem sx={{ flexGrow: 1 }}>
+					<TimelineOppositeContent color="textSecondary">
+						<Box
+							sx={{
+								display: "flex",
+								flexDirection: "column",
+							}}
+						>
+							<Box sx={{ color: "text.secondary", fontSize: 10 }}>
+								Date Created
+							</Box>
+							<Box
+								sx={{
+									color: "text.primary",
+									display: "inline",
+									fontSize: 12,
+									fontWeight: "bold",
+								}}
+							>
+								21/01/2021
+							</Box>
+						</Box>
+					</TimelineOppositeContent>
+					<TimelineSeparator>
+						<FormControlLabel
+							control={<Radio checked disableRipple />}
+							value="due-date"
+						/>
+						<TimelineConnector sx={{ mr: 3.5, bgcolor: "neutral.main" }} />
+					</TimelineSeparator>
+				</TimelineItem>
+
+				<TimelineItem>
+					<TimelineOppositeContent color="textSecondary">
+						<Box sx={{ display: "flex", flexDirection: "column" }}>
+							<Box sx={{ color: "text.secondary", fontSize: 10 }}>Due Date</Box>
+							<Box
+								sx={{
+									color: "text.primary",
+									display: "inline",
+									fontSize: 12,
+									fontWeight: "bold",
+								}}
+							>
+								21/01/2021
+							</Box>
+						</Box>
+					</TimelineOppositeContent>
+					<TimelineSeparator>
+						<FormControlLabel
+							control={<Radio checked disableRipple />}
+							value="due-date"
+						/>
+					</TimelineSeparator>
+				</TimelineItem>
+			</Timeline>
+		</Box>
+	);
+}
+
+>>>>>>> 9557e9607118513b1664763399f807c3af36d537:src/components/view-task-card/ViewTaskCard.jsx
 const DoneButton = styled(Button)(({ theme }) => ({
 	"&.MuiButton-markAsDone": {
 		color: "white",
@@ -75,7 +149,10 @@ export default function ViewTaskCard({
 		<Box
 			sx={{
 				maxWidth: 750,
+<<<<<<< HEAD:src/pages/components/view-task-card/ViewTaskCard.jsx
 				minHeight: "100",
+=======
+>>>>>>> 9557e9607118513b1664763399f807c3af36d537:src/components/view-task-card/ViewTaskCard.jsx
 				backgroundColor: "#FFFFFF",
 				display: "block",
 				justifyContent: "center",
@@ -228,6 +305,7 @@ export default function ViewTaskCard({
 					</Timeline>
 				</Box>
 			</Stack>
+<<<<<<< HEAD:src/pages/components/view-task-card/ViewTaskCard.jsx
 			<Stack alignItems="center" direction="row" spacing={2}>
 				{getButtonStyle(status)}
 				<IconButton
@@ -249,6 +327,14 @@ export default function ViewTaskCard({
 						backgroundColor: "#F6F8FD",
 					}}
 				>
+=======
+			<Stack alignItems="center" direction="row" spacing={1}>
+				<DoneButton variant="contained">Mark As Done</DoneButton>
+				<IconButton aria-label="delete" color="secondary">
+					<DeleteIcon />
+				</IconButton>
+				<IconButton aria-label="border-color" color="primary">
+>>>>>>> 9557e9607118513b1664763399f807c3af36d537:src/components/view-task-card/ViewTaskCard.jsx
 					<BorderColorIcon />
 				</IconButton>
 			</Stack>
