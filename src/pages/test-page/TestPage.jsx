@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
 import { AlertTitle, Box, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -10,13 +11,15 @@ import {
 	withNavigationDrawer,
 } from "../../components";
 import { Alert, Box, Button, Chip, Grid, Input } from "../../components/shared";
+import { openModal } from "../../store/app/app.slice";
+import { modalTypes } from "../../store/app/constants";
 import BasicTabs from "../TabTest";
 
 import ActionAreaCard from "./components/CardComponent";
 
 function Test() {
 	const theme = useTheme();
-
+	const dispatch = useDispatch();
 	return (
 		<div>
 			<Paper
@@ -328,7 +331,44 @@ function Test() {
 						<TaskCard id="T - 60" name="Well done! " status="None" />
 					</Grid>
 				</Grid>
+<<<<<<< HEAD
 >>>>>>> 9557e9607118513b1664763399f807c3af36d537
+=======
+
+				<Stack
+					alignItems="center"
+					direction="row"
+					flexWrap="wrap"
+					gap={1}
+					justifyContent="flex-start"
+					sx={{ width: "100" }}
+				>
+					<Button
+						color="accent"
+						onClick={() => dispatch(openModal(modalTypes.createTask))}
+						size="small"
+						variant="contained"
+					>
+						Create Task
+					</Button>
+					<Button
+						color="accent"
+						onClick={() => dispatch(openModal(modalTypes.editTask))}
+						size="small"
+						variant="contained"
+					>
+						Edit Task
+					</Button>
+					<Button
+						color="accent"
+						onClick={() => dispatch(openModal(modalTypes.deleteTask))}
+						size="small"
+						variant="contained"
+					>
+						Delete Task
+					</Button>
+				</Stack>
+>>>>>>> d1ba4e43518c90516b1cc8f3b91fd9d8c34c2734
 			</Box>
 		</div>
 	);
