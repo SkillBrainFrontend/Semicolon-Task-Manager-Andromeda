@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 
-import Calendar from "../calendar/Calendar";
 import { Card } from "../shared";
 
+import CalendarWidget from "./widgets/CalendarWidget";
 import ReminderWidget from "./widgets/ReminderWidget";
 
 function WidgetCalendar() {
@@ -49,7 +49,7 @@ function WidgetCalendar() {
 					Reminder
 				</ToggleButton>
 			</ToggleButtonGroup>
-			{tabId === "calendar" ? <Calendar /> : <ReminderWidget />}
+			{tabId === "calendar" ? <CalendarWidget /> : <ReminderWidget />}
 		</Card>
 	);
 }
