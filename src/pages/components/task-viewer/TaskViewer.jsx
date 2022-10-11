@@ -13,6 +13,7 @@ function TaskViewer() {
 		<Box
 			sx={{
 				background: (t) => t.palette.background.surface,
+				mt: "20px",
 			}}
 		>
 			{tasks.length > 0 ? (
@@ -21,10 +22,11 @@ function TaskViewer() {
 					spacing={2}
 					sx={{
 						display: "grid",
-						maxHeight: "60vh",
-						overflow: "auto",
-						gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-						gridAutoRows: "minmax(min-content, max-content)",
+						maxHeight: "100vh",
+						overflow: "scroll",
+						gridAutoRows: "minmax(min-content,max-content)",
+						gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
+						scrollbarColor: "transparent transparent",
 					}}
 				>
 					{tasks.map((item) => (

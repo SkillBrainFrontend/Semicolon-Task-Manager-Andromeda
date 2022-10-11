@@ -13,6 +13,8 @@ export default function TaskStatusTabs() {
 		setValue(newValue);
 	};
 
+	const tabValues = ["All tasks", "Pending", "In progress", "Completed"];
+
 	return (
 		<Box sx={{ width: "100%" }}>
 			<Tabs
@@ -23,11 +25,11 @@ export default function TaskStatusTabs() {
 				textTransform="none"
 				value={value}
 			>
-				{["one", "two", "three", "four", "five"].map((item) => (
+				{tabValues.map((values, i) => (
 					<StyledTab
 						iconPosition="end"
-						label="Content"
-						value={item}
+						label={values}
+						value={i}
 						wrapped
 						icon={
 							<Box
