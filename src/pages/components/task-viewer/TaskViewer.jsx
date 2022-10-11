@@ -19,7 +19,13 @@ function TaskViewer() {
 				<Grid
 					container
 					spacing={2}
-					sx={{ maxHeight: "60vh", overflow: "auto" }}
+					sx={{
+						display: "grid",
+						maxHeight: "60vh",
+						overflow: "auto",
+						gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+						gridAutoRows: "minmax(min-content, max-content)",
+					}}
 				>
 					{tasks.map((item) => (
 						<Grid item key={item.id} xs="auto">
