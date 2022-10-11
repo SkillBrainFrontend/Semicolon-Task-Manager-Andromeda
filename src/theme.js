@@ -174,21 +174,6 @@ const theme = createTheme({
 				},
 			},
 		},
-		MuiTypography: {
-			styleOverrides: {
-				h6: {
-					fontWeight: 400,
-					fontSize: 14,
-					lineHeight: "19px",
-				},
-				h2: {
-					color: "#000000",
-					fontWeight: 600,
-					fontSize: "28px",
-					lineHeight: "34px",
-				},
-			},
-		},
 	},
 });
 
