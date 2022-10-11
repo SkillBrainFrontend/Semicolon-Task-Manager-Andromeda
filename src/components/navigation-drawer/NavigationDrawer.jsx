@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -18,6 +19,8 @@ function NavigationDrawer() {
 	const toggleDrawer = () => {
 		dispatch(tooggleSidebar());
 	};
+
+	const location = useLocation();
 
 	return (
 		<Drawer open={open} variant="permanent">
@@ -43,13 +46,13 @@ function NavigationDrawer() {
 					</DrawerHeader>
 
 					<List>
-						{sideBarLinks.map((item, index) => (
+						{sideBarLinks.map((item) => (
 							<NavigationListItem
 								icon={item.icon}
 								isOpen={open}
 								key={item.label}
 								link={item.link}
-								selected={index === 3}
+								selected={item.link === location.pathname}
 								text={item.label}
 							/>
 						))}
