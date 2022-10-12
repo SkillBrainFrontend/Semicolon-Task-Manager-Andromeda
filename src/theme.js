@@ -34,6 +34,7 @@ const theme = createTheme({
 		text: {
 			primary: "#16171D",
 			secondary: "#62667E",
+			neutralgrey: "#6D6C6C",
 			disabled: "#C2C4CF",
 			grey: "#B9B9B9",
 		},
@@ -170,19 +171,6 @@ const theme = createTheme({
 			styleOverrides: {
 				root: {
 					margin: 0,
-				},
-			},
-		},
-		MuiToggleButton: {
-			styleOverrides: {
-				root: {
-					"&.Mui-selected, &.Mui-selected:hover": {
-						color: "white",
-						backgroundColor: "#3754DB",
-						elevation: "24",
-					},
-					backgroundColor: "white",
-					border: "none",
 				},
 			},
 		},
