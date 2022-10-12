@@ -6,6 +6,9 @@ import { useTheme } from "@mui/material/styles";
 
 import {
 	CreateTaskForm,
+	DeleteTask,
+	EditTaskForm,
+	LogOutModal,
 	TaskCard,
 	ViewTaskCard,
 	withNavigationDrawer,
@@ -210,9 +213,21 @@ function Test() {
 				direction="row"
 				justifyContent="flex-start"
 				spacing={2}
-				sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+				sx={{ width: "100%", padding: theme.spacing(3, 3) }}
 			>
 				<CreateTaskForm />
+				<EditTaskForm />
+			</Stack>
+
+			<Stack
+				alignItems="center"
+				direction="row"
+				justifyContent="flex-start"
+				spacing={2}
+				sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+			>
+				<DeleteTask />
+				<LogOutModal />
 			</Stack>
 
 			<Chip extraColor="wine" label="23" size="small" variant="outlined" />
@@ -310,65 +325,75 @@ function Test() {
 						title="Create a Design System for Enum Workspace."
 					/>
 				</Box>
-				<Box py={5}>
-					<Grid container justifyContent="space-between" spacing={2}>
-						<Grid item xs="auto">
-							<TaskCard
-								id="T - 10"
-								name="Create a Design System for Enum Worksace. Create a Design System for Enum Worksace."
-								status="Pending"
-							/>
-						</Grid>
-						<Grid item xs="auto">
-							<TaskCard id="T - 20" name="Param." status="Completed" />
-						</Grid>
-						<Grid item xs="auto">
-							<TaskCard id="T - 30" name="Well done! " status="In Progress" />
-						</Grid>
-						<Grid item xs="auto">
-							<TaskCard id="T - 40" name="Well done! " status="In Review" />
-						</Grid>
-						<Grid item xs="auto">
-							<TaskCard id="T - 50" name="Well done! " status="Unassigned" />
-						</Grid>
-						<Grid item xs="auto">
-							<TaskCard id="T - 60" name="Well done! " status="None" />
-						</Grid>
+			</Box>
+			<Box py={5}>
+				<Grid container justifyContent="space-between" spacing={2}>
+					<Grid item xs="auto">
+						<TaskCard
+							id="T - 10"
+							name="Create a Design System for Enum Worksace. Create a Design System for Enum Worksace."
+							status="Pending"
+						/>
 					</Grid>
-					<Stack
-						alignItems="center"
-						direction="row"
-						flexWrap="wrap"
-						gap={1}
-						justifyContent="flex-start"
-						sx={{ width: "100" }}
+					<Grid item xs="auto">
+						<TaskCard id="T - 20" name="Param." status="Completed" />
+					</Grid>
+					<Grid item xs="auto">
+						<TaskCard id="T - 30" name="Well done! " status="In Progress" />
+					</Grid>
+					<Grid item xs="auto">
+						<TaskCard id="T - 40" name="Well done! " status="In Review" />
+					</Grid>
+					<Grid item xs="auto">
+						<TaskCard id="T - 50" name="Well done! " status="Unassigned" />
+					</Grid>
+					<Grid item xs="auto">
+						<TaskCard id="T - 60" name="Well done! " status="None" />
+					</Grid>
+				</Grid>
+
+				<Stack
+					alignItems="center"
+					direction="row"
+					flexWrap="wrap"
+					gap={1}
+					justifyContent="flex-start"
+					sx={{ width: "100" }}
+				>
+					<Button
+						color="accent"
+						onClick={() => dispatch(openModal(modalTypes.createTask))}
+						size="small"
+						variant="contained"
 					>
-						<Button
-							color="accent"
-							onClick={() => dispatch(openModal(modalTypes.createTask))}
-							size="small"
-							variant="contained"
-						>
-							Create Task
-						</Button>
-						<Button
-							color="accent"
-							onClick={() => dispatch(openModal(modalTypes.editTask))}
-							size="small"
-							variant="contained"
-						>
-							Edit Task
-						</Button>
-						<Button
-							color="accent"
-							onClick={() => dispatch(openModal(modalTypes.deleteTask))}
-							size="small"
-							variant="contained"
-						>
-							Delete Task
-						</Button>
-					</Stack>
-				</Box>
+						Create Task
+					</Button>
+					<Button
+						color="accent"
+						onClick={() => dispatch(openModal(modalTypes.editTask))}
+						size="small"
+						variant="contained"
+					>
+						Edit Task
+					</Button>
+					<Button
+						color="accent"
+						onClick={() => dispatch(openModal(modalTypes.deleteTask))}
+						size="small"
+						variant="contained"
+					>
+						Delete Task
+					</Button>
+
+					<Button
+						color="accent"
+						onClick={() => dispatch(openModal(modalTypes.logOut))}
+						size="small"
+						variant="contained"
+					>
+						Log Out
+					</Button>
+				</Stack>
 			</Box>
 		</div>
 	);
