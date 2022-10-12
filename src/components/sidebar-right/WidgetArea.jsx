@@ -8,8 +8,8 @@ import CalendarWidget from "./widgets/CalendarWidget";
 import ReminderWidget from "./widgets/ReminderWidget";
 
 function WidgetCalendar() {
-	const [tabId, setTabId] = useState();
-	const [alignment, setAlignment] = React.useState("calendar");
+	const [tabId, setTabId] = useState("calendar");
+	const [alignment, setAlignment] = useState();
 
 	const handleChange = (event, newAlignment) => {
 		setAlignment(newAlignment);
