@@ -34,6 +34,7 @@ const theme = createTheme({
 		text: {
 			primary: "#16171D",
 			secondary: "#62667E",
+			neutralgrey: "#6D6C6C",
 			disabled: "#C2C4CF",
 			grey: "#B9B9B9",
 		},
@@ -173,84 +174,7 @@ const theme = createTheme({
 				},
 			},
 		},
-		MuiToggleButton: {
-			styleOverrides: {
-				root: {
-					"&.Mui-selected, &.Mui-selected:hover": {
-						color: "white",
-						backgroundColor: "#3754DB",
-						elevation: "24",
-					},
-					backgroundColor: "white",
-					border: "none",
-				},
-			},
-		},
-		MuiCalendarPicker: {
-			styleOverrides: {
-				root: {
-					showToolbar: false,
-					margin: 0,
-					display: "flex",
-					flexDirection: "column",
-					justifyContent: "space-evently",
-					textAlign: "start",
-					padding: "0px",
-					backgroundColor: "background.surface",
-					width: "168px",
-				},
-			},
-		},
-		MuiPickersCalendarHeader: {
-			styleOverrides: {
-				labelContainer: {
-					fontSize: "12.5px",
-				},
-				root: {
-					paddingLeft: 0,
-					paddingRight: 0,
-				},
-			},
-		},
-
-		MuiPickersArrowSwitcher: {
-			styleOverrides: {
-				spacer: {
-					width: "0px",
-				},
-			},
-		},
-		MuiCardContent: {
-			styleOverrides: {
-				root: {
-					padding: "5px",
-				},
-			},
-		},
-		MuiPickersFadeTransitionGroup: {
-			styleOverrides: {
-				root: {
-					padding: "0 0 0 10px",
-				},
-			},
-		},
-		MuiPickerStaticWrapper: {
-			styleOverrides: {
-				content: {
-					minWidth: "167px",
-				},
-				root: {
-					minWidth: 0,
-				},
-			},
-		},
-		PrivatePickersSlideTransition: {
-			styleOverrides: {
-				root: {
-					margin: "0 0 0 -10px",
-				},
-			},
-		},
 	},
 });
+
 export default theme;
