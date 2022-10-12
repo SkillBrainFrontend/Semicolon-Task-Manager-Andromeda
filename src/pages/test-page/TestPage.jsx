@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { AlertTitle, Paper, Stack, Typography } from "@mui/material";
+import { AlertTitle, Box, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import {
@@ -13,7 +13,7 @@ import {
 	ViewTaskCard,
 	withNavigationDrawer,
 } from "../../components";
-import { Alert, Box, Button, Chip, Grid, Input } from "../../components/shared";
+import { Alert, Button, Chip, Grid, Input } from "../../components/shared";
 import { openModal } from "../../store/app/app.slice";
 import { modalTypes } from "../../store/app/constants";
 import BasicTabs from "../TabTest";
@@ -307,8 +307,24 @@ function Test() {
 				/>
 			</Stack>
 			<ActionAreaCard />
+
 			<Box py={5}>
-				<ViewTaskCard />
+				<ViewTaskCard
+					dateCreated={new Date().toLocaleDateString()}
+					description="I am to create a simple design system to use to teach aspiring UI / UX Designers in my forth-coming cass on the 2nd of october 2021"
+					dueDate={new Date().toLocaleDateString()}
+					status="In Progress"
+					title="Create a Design System for Enum Workspace."
+				/>
+				<Box py={5}>
+					<ViewTaskCard
+						dateCreated={new Date().toLocaleDateString()}
+						description="I am to create a simple design system to use to teach aspiring UI / UX Designers in my forth-coming cass on the 2nd of october 2021"
+						dueDate={new Date().toLocaleDateString()}
+						status="Completed"
+						title="Create a Design System for Enum Workspace."
+					/>
+				</Box>
 			</Box>
 			<Box py={5}>
 				<Grid container justifyContent="space-between" spacing={2}>
