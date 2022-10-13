@@ -1,10 +1,22 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
 import { Stack, Typography } from "@mui/material";
 
+import { closeModal, logOut } from "../../store/app/app.slice";
 import { Button, Card } from "../shared";
 
 function LogOutModal() {
+	const dispatch = useDispatch();
+
+	const handleCloseModal = () => {
+		dispatch(closeModal());
+	};
+
+	const onLogOutClick = () => {
+		dispatch(logOut());
+		handleCloseModal();
+	};
 	return (
 		<Card>
 			<Typography
@@ -22,12 +34,15 @@ function LogOutModal() {
 			<Stack
 				alignItems="center"
 				direction="row"
-				flexWrap="wrap"
 				gap={2}
 				justifyContent="flex-start"
+				sx={{
+					my: 5,
+				}}
 			>
 				<Button
-					sx={{ mt: 2, mb: 2, textTransform: "none" }}
+					onClick={handleCloseModal}
+					sx={{ textTransform: "none" }}
 					type="submit"
 					variant="contained"
 				>
@@ -36,7 +51,8 @@ function LogOutModal() {
 
 				<Button
 					color="secondary"
-					sx={{ mt: 3, mb: 2, textTransform: "none" }}
+					onClick={onLogOutClick}
+					sx={{ textTransform: "none" }}
 					type="submit"
 					variant="outlined"
 				>

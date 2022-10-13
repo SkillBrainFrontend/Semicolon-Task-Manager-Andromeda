@@ -1,5 +1,8 @@
-/* eslint-disable no-param-reassign */
+import axios from "axios";
+
 import { createSlice } from "@reduxjs/toolkit";
+
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 export const appSlice = createSlice({
 	name: "app",
@@ -9,8 +12,16 @@ export const appSlice = createSlice({
 				isOpen: true,
 			},
 			modal: {
-				isOpen: true,
+				isOpen: false,
 				modalType: null,
+			},
+		},
+		auth: {
+			isLoggedIn: false,
+			isLoading: false,
+			error: null,
+			loggedUser: {
+				accessToken: null,
 			},
 		},
 	},
@@ -35,6 +46,29 @@ export const appSlice = createSlice({
 			state.ui.modal.isOpen = false;
 			state.ui.modal.modalType = null;
 		},
+		loginStart: (state) => {
+			state.auth.isLoading = true;
+		},
+		loginError: (state, action) => {
+			state.auth.isLoading = false;
+			state.auth.error = action.payload;
+			state.auth.isLoggedIn = false;
+			state.auth.loggedUser = {
+				accessToken: null,
+			};
+		},
+		logInSuccess: (state, action) => {
+			state.auth.isLoggedIn = true;
+			state.auth.isLoading = false;
+			state.auth.error = null;
+			state.auth.loggedUser.accessToken = action.payload;
+		},
+		logOut: (state) => {
+			state.auth.isLoggedIn = false;
+			state.auth.loggedUser = {
+				accessToken: null,
+			};
+		},
 	},
 });
 
@@ -45,6 +79,23 @@ export const {
 	tooggleModal,
 	openModal,
 	closeModal,
+	logInSuccess,
+	loginStart,
+	loginError,
+	logOut,
 } = appSlice.actions;
+
+export const logInAction = (payload) => async (dispatch) => {
+	dispatch(loginStart());
+	try {
+		const response = await axios.post(`${API_BASE_URL}/auth/signin`, {
+			username: payload.email,
+			password: payload.password,
+		});
+		dispatch(logInSuccess(response.data));
+	} catch (e) {
+		dispatch(loginError(e.message));
+	}
+};
 
 export default appSlice.reducer;
