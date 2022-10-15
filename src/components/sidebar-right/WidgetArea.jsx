@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 
-import Calendar from "../calendar/Calendar";
 import { Card } from "../shared";
 
 import CalendarWidget from "./widgets/CalendarWidget";
@@ -35,14 +34,22 @@ function WidgetCalendar() {
 				sx={{}}
 				value={alignment}
 			>
-				<ToggleButton id="calendar" value="calendar">
+				<ToggleButton
+					id="calendar"
+					selected={tabId === "calendar"}
+					value="calendar"
+				>
 					Calendar
 				</ToggleButton>
-				<ToggleButton id="reminder" value="reminder">
+				<ToggleButton
+					id="reminder"
+					selected={tabId === "reminder"}
+					value="reminder"
+				>
 					Reminder
 				</ToggleButton>
 			</ToggleButtonGroup>
-			{tabId === "calendar" ? <Calendar /> : <ReminderWidget />}
+			{tabId === "calendar" ? <CalendarWidget /> : <ReminderWidget />}
 		</Card>
 	);
 }
