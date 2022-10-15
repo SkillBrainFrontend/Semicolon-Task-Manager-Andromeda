@@ -394,6 +394,17 @@ function Test() {
 						Log Out
 					</Button>
 				</Stack>
+
+				<Stack sx={{ marginTop: "10px" }}>
+					<Button
+						color="accent"
+						onClick={() => dispatch(openModal(modalTypes.createTask))}
+						size="small"
+						variant="contained"
+					>
+						Edit Profile
+					</Button>
+				</Stack>
 			</Box>
 		</div>
 	);
