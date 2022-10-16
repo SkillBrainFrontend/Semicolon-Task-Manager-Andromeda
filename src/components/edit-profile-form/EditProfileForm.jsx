@@ -28,7 +28,7 @@ function EditTaskForm() {
 		validationSchema: LoginFormSchema,
 		onSubmit: (formValues) => {
 			console.log(formValues);
-			dispatch(createTask({ name: formValues.dullName }));
+			dispatch(createTask({ dullName: formValues.dullName }));
 		},
 	});
 
@@ -43,7 +43,7 @@ function EditTaskForm() {
 				error={errors.dullname}
 				fullWidth
 				helperText={errors.dullname}
-				id="Task Name"
+				id="DullName"
 				label="Dullname"
 				margin="normal"
 				name="dullname"
