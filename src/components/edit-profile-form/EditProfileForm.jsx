@@ -3,74 +3,32 @@ import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 
-import {
-	Box,
-	FormControl,
-	InputLabel,
-	MenuItem,
-	Select,
-	Typography,
-} from "@mui/material";
-import { useTheme } from "@mui/material/styles";
+import { Box, Typography } from "@mui/material";
 
 import { createTask } from "../../store/task/task.slice";
 import { Button, Input } from "../shared";
 
-const priorityMock = [
-	{
-		id: 1,
-		priority: "Less important",
-	},
-
-	{
-		id: 2,
-		priority: "Important",
-	},
-
-	{
-		id: 3,
-		priority: "Very Important",
-	},
-];
-
 const LoginFormSchema = Yup.object().shape({
-	taskName: Yup.string().min(5).required("Required"),
+	dullName: Yup.string().min(5).required("Required"),
 	// taskPriority: Yup.string().required("Required"),
-	date: Yup.string().required("Required"),
-	description: Yup.string().min(5).required("Required"),
+	email: Yup.string().required("Required"),
+	password: Yup.string().min(5).required("Required"),
 });
-function SelectButton() {
-	return (
-		<Box sx={{ width: "auto" }}>
-			<FormControl fullWidth>
-				<InputLabel>Task Priority</InputLabel>
-				<Select id="Priority" label="Priority">
-					{priorityMock.map((item) => (
-						<MenuItem id={item.id} key={item.id} value={item.id}>
-							{`${item.priority}`}
-						</MenuItem>
-					))}
-				</Select>
-			</FormControl>
-		</Box>
-	);
-}
 
 function EditTaskForm() {
-	const theme = useTheme();
 	const dispatch = useDispatch();
 	const { handleChange, values, handleSubmit, errors, isValid } = useFormik({
 		initialValues: {
-			taskName: "",
-			date: "",
-			description: "",
+			dullName: "",
+			email: "",
+			password: "",
 			isValid: true,
 		},
 
 		validationSchema: LoginFormSchema,
 		onSubmit: (formValues) => {
 			console.log(formValues);
-			dispatch(createTask({ name: formValues.taskName }));
+			dispatch(createTask({ name: formValues.dullName }));
 		},
 	});
 
