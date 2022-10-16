@@ -10,7 +10,6 @@ import { Button, Input } from "../shared";
 
 const LoginFormSchema = Yup.object().shape({
 	dullName: Yup.string().min(5).required("Required"),
-	// taskPriority: Yup.string().required("Required"),
 	email: Yup.string().required("Required"),
 	password: Yup.string().min(5).required("Required"),
 });
@@ -38,19 +37,19 @@ function EditTaskForm() {
 				Edit Profile
 			</Typography>
 			<Input
-				autoComplete="dullname"
+				autoComplete="dullName"
 				autoFocus
-				error={errors.dullname}
+				error={errors.dullName}
 				fullWidth
-				helperText={errors.dullname}
-				id="DullName"
-				label="Dullname"
+				helperText={errors.dullName}
+				id="Dull Name"
+				label="Dull Name"
 				margin="normal"
-				name="dullname"
+				name="dullName"
 				onChange={handleChange}
 				placeholder="Type your name here..."
 				required
-				value={values.dullname}
+				value={values.dullName}
 			/>
 
 			<Input
