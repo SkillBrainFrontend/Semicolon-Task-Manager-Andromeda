@@ -6,7 +6,13 @@ import { Dialog, DialogActions, IconButton } from "@mui/material";
 
 import { closeModal } from "../../store/app/app.slice";
 import { modalTypes } from "../../store/app/constants";
-import { CreateTaskForm, DeleteTask, EditTaskForm, LogOutModal } from "..";
+import {
+	CreateTaskForm,
+	DeleteTask,
+	EditProfileForm,
+	EditTaskForm,
+	LogOutModal,
+} from "..";
 
 export default function Modal() {
 	const fullWidth = true;
@@ -28,6 +34,8 @@ export default function Modal() {
 				return <DeleteTask />;
 			case modalTypes.logOut:
 				return <LogOutModal />;
+			case modalTypes.editProfile:
+				return <EditProfileForm />;
 			default:
 				return null;
 		}

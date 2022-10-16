@@ -12,7 +12,6 @@ import {
 	Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { Stack } from "@mui/system";
 
 import { createTask } from "../../store/task/task.slice";
 import { Button, Input } from "../shared";
@@ -81,70 +80,51 @@ function EditTaskForm() {
 				Edit Profile
 			</Typography>
 			<Input
-				autoComplete="taskName"
+				autoComplete="dullname"
 				autoFocus
-				error={errors.taskName}
+				error={errors.dullname}
 				fullWidth
-				helperText={errors.taskName}
+				helperText={errors.dullname}
 				id="Task Name"
-				label="Task Name"
+				label="Dullname"
 				margin="normal"
-				name="taskName"
+				name="dullname"
 				onChange={handleChange}
+				placeholder="Type your name here..."
 				required
-				value={values.taskName}
+				value={values.dullname}
 			/>
-			<Stack
-				alignItems="center"
-				direction="row"
-				justifyContent="flex-start"
-				spacing={2}
-				sx={{ width: "100%", padding: theme.spacing(3, 0) }}
-			>
-				<SelectButton
-					autoComplete="Task Priority"
-					error={errors.taskPriority}
-					fullWidth
-					helperText={errors.taskPriority}
-					id="taskPriority"
-					label="Task Priority"
-					margin="normal"
-					name="taskPriority"
-					onChange={handleChange}
-					required
-					value={values.taskPriority}
-				/>
-
-				<Input
-					autoComplete="date"
-					error={errors.date}
-					fullWidth
-					helperText={errors.date}
-					id="date"
-					label="Select A Date"
-					margin="normal"
-					name="date"
-					onChange={handleChange}
-					required
-					type="date"
-					value={values.date}
-				/>
-			</Stack>
 
 			<Input
-				autoComplete="description"
-				error={errors.description}
+				autoComplete="email"
+				error={errors.email}
 				fullWidth
-				helperText={errors.description}
-				id="description"
-				label="Task Description"
+				helperText={errors.email}
+				id="email"
+				label="Email address"
 				margin="normal"
-				name="description"
+				name="email"
 				onChange={handleChange}
-				placeholder="Type your content here..."
+				placeholder="Type your email here..."
 				required
 				type="text"
-				value={values.description}
+				value={values.email}
+			/>
+
+			<Input
+				autoComplete="password"
+				error={errors.password}
+				fullWidth
+				helperText={errors.password}
+				id="password"
+				label="Password"
+				margin="normal"
+				name="password"
+				onChange={handleChange}
+				placeholder="Type your password here..."
+				required
+				type="password"
+				value={values.password}
 			/>
 
 			<Button
@@ -153,7 +133,7 @@ function EditTaskForm() {
 				type="submit"
 				variant="contained"
 			>
-				Create Task
+				Save
 			</Button>
 		</Box>
 	);

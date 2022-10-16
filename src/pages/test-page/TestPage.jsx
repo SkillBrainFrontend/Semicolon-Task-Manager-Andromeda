@@ -398,7 +398,7 @@ function Test() {
 				<Stack sx={{ marginTop: "10px" }}>
 					<Button
 						color="accent"
-						onClick={() => dispatch(openModal(modalTypes.createTask))}
+						onClick={() => dispatch(openModal(modalTypes.editProfile))}
 						size="small"
 						variant="contained"
 					>
