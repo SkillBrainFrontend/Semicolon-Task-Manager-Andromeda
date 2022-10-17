@@ -1,5 +1,6 @@
 import CreateTaskForm from "./create-task-form/CreateTaskForm";
 import DeleteTask from "./delete-task/DeleteTask";
+import EditProfileForm from "./edit-profile-form/EditProfileForm";
 import EditTaskForm from "./edit-task-form/EditTaskForm";
 import LogOutModal from "./log-out-modal/LogOutModal";
 import Modal from "./modal-content-wrapper/ModalContentWrapper";
@@ -12,6 +13,7 @@ import ViewTaskCard from "./view-task-card/ViewTaskCard";
 export {
 	CreateTaskForm,
 	DeleteTask,
+	EditProfileForm,
 	EditTaskForm,
 	LogOutModal,
 	Modal,

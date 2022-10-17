@@ -395,6 +395,17 @@ function Test() {
 						Log Out
 					</Button>
 				</Stack>
+
+				<Stack sx={{ marginTop: "10px" }}>
+					<Button
+						color="accent"
+						onClick={() => dispatch(openModal(modalTypes.editProfile))}
+						size="small"
+						variant="contained"
+					>
+						Edit Profile
+					</Button>
+				</Stack>
 			</Box>
 			<Box py={2}>
 				<TaskCardExtended
