@@ -1,16 +1,19 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { AlertTitle, Paper, Stack, Typography } from "@mui/material";
+import { AlertTitle, Box, Paper, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import {
 	CreateTaskForm,
+	DeleteTask,
+	EditTaskForm,
+	LogOutModal,
 	TaskCard,
 	ViewTaskCard,
 	withNavigationDrawer,
 } from "../../components";
-import { Alert, Box, Button, Chip, Grid, Input } from "../../components/shared";
+import { Alert, Button, Chip, Grid, Input } from "../../components/shared";
 import { openModal } from "../../store/app/app.slice";
 import { modalTypes } from "../../store/app/constants";
 import BasicTabs from "../TabTest";
@@ -210,9 +213,21 @@ function Test() {
 				direction="row"
 				justifyContent="flex-start"
 				spacing={2}
-				sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+				sx={{ width: "100%", padding: theme.spacing(3, 3) }}
 			>
 				<CreateTaskForm />
+				<EditTaskForm />
+			</Stack>
+
+			<Stack
+				alignItems="center"
+				direction="row"
+				justifyContent="flex-start"
+				spacing={2}
+				sx={{ width: "100%", padding: theme.spacing(3, 0) }}
+			>
+				<DeleteTask />
+				<LogOutModal />
 			</Stack>
 
 			<Chip extraColor="wine" label="23" size="small" variant="outlined" />
@@ -292,8 +307,24 @@ function Test() {
 				/>
 			</Stack>
 			<ActionAreaCard />
+
 			<Box py={5}>
-				<ViewTaskCard />
+				<ViewTaskCard
+					dateCreated={new Date().toLocaleDateString()}
+					description="I am to create a simple design system to use to teach aspiring UI / UX Designers in my forth-coming cass on the 2nd of october 2021"
+					dueDate={new Date().toLocaleDateString()}
+					status="In Progress"
+					title="Create a Design System for Enum Workspace."
+				/>
+				<Box py={5}>
+					<ViewTaskCard
+						dateCreated={new Date().toLocaleDateString()}
+						description="I am to create a simple design system to use to teach aspiring UI / UX Designers in my forth-coming cass on the 2nd of october 2021"
+						dueDate={new Date().toLocaleDateString()}
+						status="Completed"
+						title="Create a Design System for Enum Workspace."
+					/>
+				</Box>
 			</Box>
 			<Box py={5}>
 				<Grid container justifyContent="space-between" spacing={2}>
@@ -352,6 +383,15 @@ function Test() {
 						variant="contained"
 					>
 						Delete Task
+					</Button>
+
+					<Button
+						color="accent"
+						onClick={() => dispatch(openModal(modalTypes.logOut))}
+						size="small"
+						variant="contained"
+					>
+						Log Out
 					</Button>
 				</Stack>
 			</Box>
