@@ -89,7 +89,7 @@ export const logInAction = (payload) => async (dispatch) => {
 	dispatch(loginStart());
 	try {
 		const response = await axios.post(`${API_BASE_URL}/auth/signin`, {
-			username: payload.email,
+			email: payload.email,
 			password: payload.password,
 		});
 		dispatch(logInSuccess(response.data));
