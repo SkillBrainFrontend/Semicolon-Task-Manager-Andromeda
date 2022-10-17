@@ -13,6 +13,7 @@ import {
 	ResetPassword,
 	SettingsPage,
 	SingInPage,
+	TaskDetailsPage,
 	TasksBoardPage,
 	TasksPage,
 	TestPage,
@@ -48,6 +49,14 @@ function App() {
 					element={
 						<ProtectedRoute>
 							<TasksBoardPage />
+						</ProtectedRoute>
+					}
+				/>
+				<Route
+					path="/tasks-board/:id"
+					element={
+						<ProtectedRoute>
+							<TaskDetailsPage />
 						</ProtectedRoute>
 					}
 				/>
