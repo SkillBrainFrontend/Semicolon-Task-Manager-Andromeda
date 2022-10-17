@@ -1,7 +1,9 @@
 import React from "react";
 import { useFormik } from "formik";
+import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
 
+import { LoadingButton } from "@mui/lab";
 import {
 	Box,
 	Checkbox,
@@ -11,7 +13,8 @@ import {
 	Typography,
 } from "@mui/material";
 
-import { Button, Input } from "../../../../components/shared";
+import { Input } from "../../../../components/shared";
+import { logInAction } from "../../../../store/app/app.slice";
 
 const LoginFormSchema = Yup.object().shape({
 	email: Yup.string().email("Invalid email").required("Required"),
@@ -19,6 +22,8 @@ const LoginFormSchema = Yup.object().shape({
 });
 
 function LoginForm() {
+	const dispatch = useDispatch();
+	const isLoading = useSelector((state) => state.app.auth.isLoading);
 	const { handleChange, values, handleSubmit, errors, isValid } = useFormik({
 		initialValues: {
 			email: "",
@@ -28,7 +33,7 @@ function LoginForm() {
 
 		validationSchema: LoginFormSchema,
 		onSubmit: (formValues) => {
-			console.log(formValues);
+			dispatch(logInAction(formValues));
 		},
 	});
 
@@ -85,14 +90,15 @@ function LoginForm() {
 					mt: 5,
 				}}
 			/>
-			<Button
+			<LoadingButton
 				disabled={!isValid}
+				loading={isLoading}
 				sx={{ mt: 4, mb: 6, width: "40%" }}
 				type="submit"
 				variant="contained"
 			>
 				Log In
-			</Button>
+			</LoadingButton>
 			<Grid container>
 				<Grid item xs>
 					<Link

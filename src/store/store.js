@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
 import logger from "redux-logger";
 import { persistReducer, persistStore } from "redux-persist";
+import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
 import storage from "redux-persist/lib/storage";
+import thunk from "redux-thunk";
 
 import { configureStore } from "@reduxjs/toolkit";
 
@@ -19,13 +21,14 @@ const persistConfig = {
 	key: "root",
 	storage,
 	tasksReducer,
+	stateReconciler: autoMergeLevel2,
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
 export const store = configureStore({
 	reducer: persistedReducer,
-	middleware: [logger],
+	middleware: [logger, thunk],
 });
 
 export const persistor = persistStore(store);
