@@ -10,6 +10,7 @@ import {
 	EditTaskForm,
 	LogOutModal,
 	TaskCard,
+	TaskCardExtended,
 	ViewTaskCard,
 	withNavigationDrawer,
 } from "../../components";
@@ -394,6 +395,53 @@ function Test() {
 						Log Out
 					</Button>
 				</Stack>
+
+				<Stack sx={{ marginTop: "10px" }}>
+					<Button
+						color="accent"
+						onClick={() => dispatch(openModal(modalTypes.editProfile))}
+						size="small"
+						variant="contained"
+					>
+						Edit Profile
+					</Button>
+				</Stack>
+			</Box>
+			<Box py={2}>
+				<TaskCardExtended
+					dateCreated={new Date().toLocaleDateString()}
+					description="I am to create a simple design system to use to teach aspiring UI / UX Designers in my forth-coming cass on the 2nd of october 2021"
+					dueDate={new Date().toLocaleDateString()}
+					status="Unassigned"
+					title="Create a Design System for Enum Workspace."
+				/>
+			</Box>
+			<Box py={2}>
+				<TaskCardExtended
+					dateCreated={new Date().toLocaleDateString()}
+					description="I am to create a simple design system to use to teach aspiring UI / UX Designers in my forth-coming cass on the 2nd of october 2021"
+					dueDate={new Date().toLocaleDateString()}
+					status="Pending"
+					title="Create a Design System for Enum Workspace."
+				/>
+			</Box>
+			<Box py={2}>
+				<TaskCardExtended
+					dateCreated={new Date().toLocaleDateString()}
+					description="I am to create a simple design system to use to teach aspiring UI / UX Designers in my forth-coming cass on the 2nd of october 2021"
+					dueDate={new Date().toLocaleDateString()}
+					status="In Progress"
+					title="Create a Design System for Enum Workspace."
+				/>
+			</Box>
+			<Box py={2}>
+				<TaskCardExtended
+					dateCreated={new Date().toLocaleDateString()}
+					description="I am to create a simple design system to use to teach aspiring UI / UX Designers in my forth-coming cass on the 2nd of october 2021"
+					dueDate={new Date().toLocaleDateString()}
+					status="Completed"
+					title="Create a Design System for Enum Workspace."
+				/>
 			</Box>
 		</div>
 	);
