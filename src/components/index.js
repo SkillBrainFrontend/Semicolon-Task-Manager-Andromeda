@@ -6,6 +6,7 @@ import Modal from "./modal-content-wrapper/ModalContentWrapper";
 import { withNavigationDrawer } from "./navigation-drawer/withNavigationDrawer";
 import SidebarRight from "./sidebar-right/SidebarRight";
 import TaskCard from "./task-card/TaskCard";
+import TaskCardExtended from "./task-card-extended/TaskCardExtended";
 import ViewTaskCard from "./view-task-card/ViewTaskCard";
 
 export {
@@ -16,6 +17,7 @@ export {
 	Modal,
 	SidebarRight,
 	TaskCard,
+	TaskCardExtended,
 	ViewTaskCard,
 	withNavigationDrawer,
 };
