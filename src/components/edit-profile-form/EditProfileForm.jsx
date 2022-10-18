@@ -42,8 +42,8 @@ function EditTaskForm() {
 				error={errors.dullName}
 				fullWidth
 				helperText={errors.dullName}
-				id="Dull Name"
-				label="Dull Name"
+				id="Full name"
+				label="Full name"
 				margin="normal"
 				name="dullName"
 				onChange={handleChange}
