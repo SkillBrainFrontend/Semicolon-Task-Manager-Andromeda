@@ -70,4 +70,9 @@ export const fetchTasksAction =
 		}
 	};
 
+export const fetchTasks = createAsyncThunk("posts/fetchTasks", async () => {
+	const response = await axios.get("/fakeApi/posts");
+	return response.data;
+});
+
 export default taskSlice.reducer;
