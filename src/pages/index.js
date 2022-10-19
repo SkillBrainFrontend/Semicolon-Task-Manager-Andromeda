@@ -1,4 +1,4 @@
-import CreateTaskForm from "../components/create-task-form/CreateTaskForm";
+import CreateTaskForm from "../components/modal-content-wrapper/components/create-task-form/CreateTaskForm";
 
 import SingInPage from "./login-page/SignIn";
 import OverviewPage from "./overview-page/OverviewPage";

@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import { Avatar, Stack, Typography } from "@mui/material";
 
@@ -7,6 +8,10 @@ import { Button, Card } from "../shared";
 import WidgetArea from "./WidgetArea";
 
 function SidebarRight() {
+	const profileImage = useSelector(
+		(state) => state.entities.users.user.loggedUser?.profilePicture
+	);
+
 	return (
 		<Card
 			variant="rounded"
@@ -25,6 +30,7 @@ function SidebarRight() {
 				spacing={2}
 			>
 				<Avatar
+					src={profileImage}
 					variant="rounded"
 					sx={{
 						bgcolor: "black",

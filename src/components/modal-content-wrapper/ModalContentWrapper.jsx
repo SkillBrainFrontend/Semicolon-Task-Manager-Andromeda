@@ -14,6 +14,8 @@ import {
 	LogOutModal,
 } from "..";
 
+import UploadProfilePicture from "./components/upload-profile-picture/UploadProfilePicture";
+
 export default function Modal() {
 	const fullWidth = true;
 	const maxWidth = "sm";
@@ -36,6 +38,8 @@ export default function Modal() {
 				return <LogOutModal />;
 			case modalTypes.editProfile:
 				return <EditProfileForm />;
+			case modalTypes.uploadPicture:
+				return <UploadProfilePicture />;
 			default:
 				return null;
 		}

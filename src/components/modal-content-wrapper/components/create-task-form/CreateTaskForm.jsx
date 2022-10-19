@@ -14,8 +14,8 @@ import {
 import { useTheme } from "@mui/material/styles";
 import { Stack } from "@mui/system";
 
-import { createTask } from "../../store/task/task.slice";
-import { Button, Input } from "../shared";
+import { createTask } from "../../../../store/task/task.slice";
+import { Button, Input } from "../../../shared";
 
 const priorityMock = [
 	{

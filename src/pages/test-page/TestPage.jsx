@@ -388,6 +388,15 @@ function Test() {
 
 					<Button
 						color="accent"
+						onClick={() => dispatch(openModal(modalTypes.uploadPicture))}
+						size="small"
+						variant="contained"
+					>
+						Upload profile picture
+					</Button>
+
+					<Button
+						color="accent"
 						onClick={() => dispatch(openModal(modalTypes.logOut))}
 						size="small"
 						variant="contained"

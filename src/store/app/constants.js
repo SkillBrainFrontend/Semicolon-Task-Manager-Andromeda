@@ -4,4 +4,5 @@ export const modalTypes = {
 	deleteTask: "DELETE_TASK",
 	logOut: "LOG_OUT",
 	editProfile: "EDIT_PROFILE_FORM",
+	uploadPicture: "UPLOAD_PICTURE",
 };
