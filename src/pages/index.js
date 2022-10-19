@@ -7,6 +7,7 @@ import RegisterPage from "./register-screen/RegisterPage";
 import ResetPassword from "./reset-password/ResetPassword";
 import SettingsPage from "./settings-page/SettingsPage";
 import TasksBoardPage from "./task-board-page/TasksBoardPage";
+import TaskDetailsPage from "./task-details/TaskDetailsPage";
 import TestPage from "./test-page/TestPage";
 import ViewTaskCardPage from "./view-task-card/ViewTaskCardPage";
 import TasksPage from "./Tasks";
@@ -19,6 +20,7 @@ export {
 	ResetPassword,
 	SettingsPage,
 	SingInPage,
+	TaskDetailsPage,
 	TasksBoardPage,
 	TasksPage,
 	TestPage,

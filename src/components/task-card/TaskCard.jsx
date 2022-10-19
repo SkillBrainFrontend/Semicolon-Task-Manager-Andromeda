@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 import {
 	CardActions,
@@ -13,6 +14,7 @@ import VectorCard from "../../assets/icons/VectorCard";
 import { Button, Card, Chip } from "../shared";
 
 function TaskCard({ id, name, status }) {
+	const navigate = useNavigate();
 	const getBadgeStyle = () => {
 		switch (status) {
 			case "Pending":
@@ -28,6 +30,10 @@ function TaskCard({ id, name, status }) {
 			default:
 				return "custome.grey";
 		}
+	};
+
+	const navigateToTaskDetailsPage = () => {
+		navigate(`${id}`);
 	};
 
 	return (
@@ -49,7 +55,7 @@ function TaskCard({ id, name, status }) {
 					gutterBottom
 					variant="body2"
 				>
-					{id}
+					T-{id}
 				</Typography>
 
 				<Chip
@@ -84,6 +90,7 @@ function TaskCard({ id, name, status }) {
 				<Button
 					autoCapitalize="false"
 					endIcon={<VectorCard />}
+					onClick={navigateToTaskDetailsPage}
 					size="small"
 					variant="text"
 					sx={{

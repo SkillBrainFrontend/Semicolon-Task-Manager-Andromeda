@@ -8,10 +8,15 @@ import { Button, GlobalSearchBar } from "../../components/shared";
 import TaskStatusTabs from "../../components/shared/taskTabs/TaskStatusTabs";
 import { openModal } from "../../store/app/app.slice";
 import { modalTypes } from "../../store/app/constants";
+import { fetchTasksAction } from "../../store/task/task.slice";
 import TaskViewer from "../components/task-viewer/TaskViewer";
 
 function TasksBoardPage() {
 	const dispatch = useDispatch();
+	React.useEffect(() => {
+		dispatch(fetchTasksAction());
+	}, [dispatch]);
+
 	return (
 		<Grid
 			component="main"

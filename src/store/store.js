@@ -9,11 +9,13 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import appReducer from "./app/app.slice";
 import tasksReducer from "./task/task.slice";
+import userReducer from "./user/user.slice";
 
 const reducers = combineReducers({
 	app: appReducer,
 	entities: combineReducers({
 		tasks: tasksReducer,
+		users: userReducer,
 	}),
 });
 
