@@ -20,6 +20,8 @@
 			}
 		],
 		"react/prop-types": 1,
+		"consistent-return": 1,
+		"no-param-reassign": 0,
 		"no-underscore-dangle": 0,
 		"import/newline-after-import": "error",
 		"import/prefer-default-export": 0,
@@ -40,6 +42,7 @@
 		"simple-import-sort/imports": 1,
 		"simple-import-sort/exports": 1,
 		"jsx-a11y/anchor-is-valid": 1,
+		"import/no-cycle": 0,
 		"react/function-component-definition": [
 			"warn",
 			{

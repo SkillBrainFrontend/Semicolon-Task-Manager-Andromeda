@@ -7,7 +7,10 @@ import { TaskCard } from "../../../components";
 import EmptyTaskList from "../empty-task-list/EmptyTaskList";
 
 function TaskViewer() {
-	const tasks = useSelector((state) => state.entities.tasks);
+	const tasks = useSelector((state) => state.entities.tasks.data);
+	// .filter(
+	// 	(item) => item.status === "PENDING"
+	// );
 
 	return (
 		<Box
@@ -31,7 +34,7 @@ function TaskViewer() {
 				>
 					{tasks.map((item) => (
 						<Grid item key={item.id} xs="auto">
-							<TaskCard id={item.id} name={item.name} status={item.status} />
+							<TaskCard id={item.id} name={item.title} status={item.status} />
 						</Grid>
 					))}
 				</Grid>

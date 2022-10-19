@@ -1,5 +1,5 @@
 import React from "react";
-import { string } from "prop-types";
+import PropTypes, { string } from "prop-types";
 
 import { Box, Grid, Link, Typography } from "@mui/material";
 
@@ -120,6 +120,10 @@ function WelcomePlaceholder(props) {
 WelcomePlaceholder.propTypes = {
 	message: string,
 	position: string,
+	actionButton: PropTypes.objectOf({
+		buttonLabel: PropTypes.string,
+		onActionClick: PropTypes.func,
+	}),
 };
 
 export default WelcomePlaceholder;

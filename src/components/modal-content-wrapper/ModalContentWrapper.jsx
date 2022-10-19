@@ -2,11 +2,19 @@ import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import CloseIcon from "@mui/icons-material/Close";
-import { Dialog, DialogActions, IconButton, Typography } from "@mui/material";
+import { Dialog, DialogActions, IconButton } from "@mui/material";
 
 import { closeModal } from "../../store/app/app.slice";
 import { modalTypes } from "../../store/app/constants";
-import CreateTaskForm from "../create-task-form/CreateTaskForm";
+import {
+	CreateTaskForm,
+	DeleteTask,
+	EditProfileForm,
+	EditTaskForm,
+	LogOutModal,
+} from "..";
+
+import UploadProfilePicture from "./components/upload-profile-picture/UploadProfilePicture";
 
 export default function Modal() {
 	const fullWidth = true;
@@ -23,9 +31,15 @@ export default function Modal() {
 			case modalTypes.createTask:
 				return <CreateTaskForm />;
 			case modalTypes.editTask:
-				return <Typography>Edit Task</Typography>;
+				return <EditTaskForm />;
 			case modalTypes.deleteTask:
-				return <Typography>Delete Task</Typography>;
+				return <DeleteTask />;
+			case modalTypes.logOut:
+				return <LogOutModal />;
+			case modalTypes.editProfile:
+				return <EditProfileForm />;
+			case modalTypes.uploadPicture:
+				return <UploadProfilePicture />;
 			default:
 				return null;
 		}

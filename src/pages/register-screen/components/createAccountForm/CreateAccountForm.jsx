@@ -1,17 +1,59 @@
 import React from "react";
 import { useFormik } from "formik";
+import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 
-import { Box } from "@mui/material";
+import { AlertTitle, Box, Snackbar } from "@mui/material";
 
-import { Button, Input } from "../../../../components/shared";
+import { Alert, Button, Input } from "../../../../components/shared";
+import { registerAction } from "../../../../store/user/user.slice";
 
 const LoginFormSchema = Yup.object().shape({
 	email: Yup.string().email("Invalid email").required("Required"),
-	password: Yup.string().min(8, "Min lenght is 8!").required("Required"),
+	password: Yup.string()
+		.min(8, "Min lenght is 8!")
+		.matches(
+			/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+			"Password must contain at least 8 characters, one uppercase, one number and one special case character"
+		)
+		.required("Required"),
 });
 
 function CreateAccountForm() {
+	const dispatch = useDispatch();
+	const [open, setOpen] = React.useState(false);
+	const [alertBox, setAlertBox] = React.useState({
+		title: "Success",
+		type: "success",
+		message: "",
+	});
+
+	const handleClose = (event, reason) => {
+		if (reason === "clickaway") {
+			return;
+		}
+
+		setOpen(false);
+	};
+
+	const onSuccess = () => {
+		setOpen(true);
+		setAlertBox({
+			title: "Success",
+			message: "Account was created! Go to LogIn page to SingIn.",
+			type: "success",
+		});
+	};
+
+	const onError = (errorArray) => {
+		setOpen(true);
+		setAlertBox({
+			title: "Error",
+			message: errorArray,
+			type: "error",
+		});
+	};
+
 	const { handleChange, values, handleSubmit, errors, isValid } = useFormik({
 		initialValues: {
 			name: "",
@@ -22,7 +64,7 @@ function CreateAccountForm() {
 
 		validationSchema: LoginFormSchema,
 		onSubmit: (formValues) => {
-			console.log(formValues);
+			dispatch(registerAction({ ...formValues }, onSuccess, onError));
 		},
 	});
 
@@ -80,6 +122,25 @@ function CreateAccountForm() {
 			>
 				Create Account
 			</Button>
+			<Snackbar
+				onClose={handleClose}
+				open={open}
+				anchorOrigin={{
+					vertical: "bottom",
+					horizontal: "right",
+				}}
+			>
+				<Alert
+					onClose={handleClose}
+					severity={alertBox.type}
+					sx={{
+						width: 350,
+					}}
+				>
+					<AlertTitle>{alertBox.title}</AlertTitle>
+					{alertBox.message}
+				</Alert>
+			</Snackbar>
 		</Box>
 	);
 }

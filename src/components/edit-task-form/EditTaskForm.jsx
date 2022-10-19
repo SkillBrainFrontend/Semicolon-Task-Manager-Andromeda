@@ -14,7 +14,7 @@ import {
 import { useTheme } from "@mui/material/styles";
 import { Stack } from "@mui/system";
 
-import { createTask } from "../../store/task/task.slice";
+import { editTask } from "../../store/task/task.slice";
 import { Button, Input } from "../shared";
 
 const priorityMock = [
@@ -57,7 +57,7 @@ function SelectButton() {
 	);
 }
 
-function CreateTaskForm() {
+function EditTaskForm() {
 	const theme = useTheme();
 	const dispatch = useDispatch();
 	const { handleChange, values, handleSubmit, errors, isValid } = useFormik({
@@ -71,14 +71,14 @@ function CreateTaskForm() {
 		validationSchema: LoginFormSchema,
 		onSubmit: (formValues) => {
 			console.log(formValues);
-			dispatch(createTask({ name: formValues.taskName }));
+			dispatch(editTask({ name: formValues.taskName }));
 		},
 	});
 
 	return (
-		<Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+		<Box component="form" onSubmit={handleSubmit} padding="30px" sx={{ mt: 1 }}>
 			<Typography component="h1" sx={{ fontWeight: "bold" }} variant="h5">
-				Create Task
+				Edit Task
 			</Typography>
 			<Input
 				autoComplete="taskName"
@@ -153,9 +153,9 @@ function CreateTaskForm() {
 				type="submit"
 				variant="contained"
 			>
-				Create Task
+				Edit Task
 			</Button>
 		</Box>
 	);
 }
-export default CreateTaskForm;
+export default EditTaskForm;
