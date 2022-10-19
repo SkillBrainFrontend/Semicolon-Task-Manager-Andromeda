@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const API_BASE_URL = process.env.REACT_APP_API_URL;
 
