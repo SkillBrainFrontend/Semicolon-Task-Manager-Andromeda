@@ -18,7 +18,7 @@ function EditTaskForm() {
 	const dispatch = useDispatch();
 	const { handleChange, values, handleSubmit, errors, isValid } = useFormik({
 		initialValues: {
-			dullName: "",
+			fullName: "",
 			email: "",
 			password: "",
 			isValid: true,
@@ -27,7 +27,7 @@ function EditTaskForm() {
 		validationSchema: LoginFormSchema,
 		onSubmit: (formValues) => {
 			console.log(formValues);
-			dispatch(createTask({ dullName: formValues.dullName }));
+			dispatch(createTask({ dullName: formValues.fullName }));
 		},
 	});
 
@@ -39,9 +39,9 @@ function EditTaskForm() {
 			<Input
 				autoComplete="dullName"
 				autoFocus
-				error={errors.dullName}
+				error={errors.fullName}
 				fullWidth
-				helperText={errors.dullName}
+				helperText={errors.fullName}
 				id="Full name"
 				label="Full name"
 				margin="normal"
@@ -49,7 +49,7 @@ function EditTaskForm() {
 				onChange={handleChange}
 				placeholder="Type your name here..."
 				required
-				value={values.dullName}
+				value={values.fullName}
 			/>
 
 			<Input
