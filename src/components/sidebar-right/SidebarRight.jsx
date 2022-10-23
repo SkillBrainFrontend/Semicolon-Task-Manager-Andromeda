@@ -8,9 +8,13 @@ import { Button, Card } from "../shared";
 import WidgetArea from "./WidgetArea";
 
 function SidebarRight() {
-	const profileImage = useSelector(
-		(state) => state.entities.users.user.loggedUser?.profilePicture
-	);
+	const loggedUser = useSelector((state) => state.app.auth.loggedUser.userInfo);
+
+	const getInitials = () =>
+		loggedUser?.fullName
+			.split(" ")
+			.map((item) => item[0])
+			.join(".");
 
 	return (
 		<Card
@@ -30,7 +34,7 @@ function SidebarRight() {
 				spacing={2}
 			>
 				<Avatar
-					src={profileImage}
+					src={loggedUser?.profilePicture}
 					variant="rounded"
 					sx={{
 						bgcolor: "black",
@@ -40,7 +44,7 @@ function SidebarRight() {
 						marginTop: 5,
 					}}
 				>
-					N
+					{getInitials()}
 				</Avatar>
 			</Stack>
 			<Stack
@@ -53,13 +57,13 @@ function SidebarRight() {
 					sx={{ fontWeight: 700, fontSize: 20, color: "#101C56" }}
 					variant="h6"
 				>
-					Name
+					{loggedUser?.fullName}
 				</Typography>
 				<Typography
 					sx={{ fontWeight: 400, fontSize: 14, color: "#666666" }}
 					variant="h6"
 				>
-					Email
+					{loggedUser?.email}
 				</Typography>
 			</Stack>
 			<Stack
