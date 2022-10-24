@@ -80,6 +80,18 @@ export const appSlice = createSlice({
 				userInfo: null,
 			};
 		},
+		updateUserStart: (state) => {
+			state.auth.isLoading = true;
+		},
+		updateUserError: (state, action) => {
+			state.auth.isLoading = false;
+			state.auth.error = action.payload;
+		},
+		updateUserSuccess: (state, action) => {
+			state.auth.isLoading = false;
+			state.auth.error = null;
+			state.auth.loggedUser.userInfo = action.payload;
+		},
 	},
 });
 
@@ -96,6 +108,9 @@ export const {
 	logOut,
 	getLoggUsersSuccess,
 	uploadPictureSuccess,
+	updateUserStart,
+	updateUserError,
+	updateUserSuccess,
 } = appSlice.actions;
 
 export const getLoggedUserAction = () => async (dispatch, getState) => {
@@ -113,6 +128,35 @@ export const getLoggedUserAction = () => async (dispatch, getState) => {
 		dispatch(loginError(e.message));
 	}
 };
+
+export const updateLoggedUser =
+	(payload, onSuccess, onError) => async (dispatch, getState) => {
+		dispatch(updateUserStart());
+		const state = getState();
+		const token = state.app.auth.loggedUser.accessToken.accessToken;
+		try {
+			const response = await axios.patch(
+				`${API_BASE_URL}/user/update`,
+				{
+					...payload,
+				},
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
+				}
+			);
+			dispatch(updateUserSuccess(response.data));
+			if (onSuccess) {
+				onSuccess();
+			}
+		} catch (e) {
+			dispatch(updateUserError(e.response.data.message));
+			if (onError) {
+				onError(e.message);
+			}
+		}
+	};
 
 export const logInAction = (payload) => async (dispatch) => {
 	dispatch(loginStart());
