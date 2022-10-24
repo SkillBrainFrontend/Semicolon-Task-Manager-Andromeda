@@ -22,6 +22,7 @@ export const appSlice = createSlice({
 			error: null,
 			loggedUser: {
 				accessToken: null,
+				userInfo: null,
 			},
 		},
 	},
@@ -63,10 +64,20 @@ export const appSlice = createSlice({
 			state.auth.error = null;
 			state.auth.loggedUser.accessToken = action.payload;
 		},
+		getLoggUsersSuccess: (state, action) => {
+			state.auth.isLoading = false;
+			state.auth.loggedUser.userInfo = action.payload;
+		},
+		uploadPictureSuccess: (state, action) => {
+			state.auth.isLoading = false;
+			state.auth.error = null;
+			state.auth.loggedUser.userInfo = action.payload;
+		},
 		logOut: (state) => {
 			state.auth.isLoggedIn = false;
 			state.auth.loggedUser = {
 				accessToken: null,
+				userInfo: null,
 			};
 		},
 	},
@@ -83,7 +94,25 @@ export const {
 	loginStart,
 	loginError,
 	logOut,
+	getLoggUsersSuccess,
+	uploadPictureSuccess,
 } = appSlice.actions;
+
+export const getLoggedUserAction = () => async (dispatch, getState) => {
+	dispatch(loginStart());
+	const state = getState();
+	const token = state.app.auth.loggedUser.accessToken.accessToken;
+	try {
+		const response = await axios.get(`${API_BASE_URL}/user/logged-user`, {
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		});
+		dispatch(getLoggUsersSuccess(response.data));
+	} catch (e) {
+		dispatch(loginError(e.message));
+	}
+};
 
 export const logInAction = (payload) => async (dispatch) => {
 	dispatch(loginStart());
@@ -92,7 +121,8 @@ export const logInAction = (payload) => async (dispatch) => {
 			email: payload.email,
 			password: payload.password,
 		});
-		dispatch(logInSuccess(response.data));
+		await dispatch(logInSuccess(response.data));
+		dispatch(getLoggedUserAction());
 	} catch (e) {
 		dispatch(loginError(e.message));
 	}
