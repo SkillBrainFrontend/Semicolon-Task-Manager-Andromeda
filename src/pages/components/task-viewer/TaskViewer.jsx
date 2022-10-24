@@ -26,7 +26,8 @@ function TaskViewer() {
 					sx={{
 						display: "grid",
 						maxHeight: "100vh",
-						overflow: "scroll",
+						overflowY: "scroll",
+						overflowX: "hidden",
 						gridAutoRows: "minmax(min-content,max-content)",
 						gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))",
 						scrollbarColor: "transparent transparent",

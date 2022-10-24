@@ -13,7 +13,13 @@ export default function TaskStatusTabs() {
 		setValue(newValue);
 	};
 
-	const tabValues = ["All tasks", "Pending", "In progress", "Completed"];
+	const tabValues = [
+		"All tasks",
+		"Pending",
+		"In progress",
+		"Completed",
+		"Unnasigned",
+	];
 
 	return (
 		<Box sx={{ width: "100%" }}>

@@ -4,35 +4,38 @@ import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 
 import {
+	AlertTitle,
 	Box,
-	FormControl,
-	InputLabel,
-	MenuItem,
-	Select,
+	// FormControl,
+	// InputLabel,
+	// MenuItem,
+	// Select,
+	Snackbar,
 	Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Stack } from "@mui/system";
 
-import { createTask } from "../../../../store/task/task.slice";
-import { Button, Input } from "../../../shared";
+import { closeModal } from "../../../../store/app/app.slice";
+import { createTaskAction } from "../../../../store/task/task.slice";
+import { Alert, Button, Input } from "../../../shared";
 
-const priorityMock = [
-	{
-		id: 1,
-		priority: "Less important",
-	},
+// const priorityMock = [
+// 	{
+// 		id: 1,
+// 		priority: "Less important",
+// 	},
 
-	{
-		id: 2,
-		priority: "Important",
-	},
+// 	{
+// 		id: 2,
+// 		priority: "Important",
+// 	},
 
-	{
-		id: 3,
-		priority: "Very Important",
-	},
-];
+// 	{
+// 		id: 3,
+// 		priority: "Very Important",
+// 	},
+// ];
 
 const LoginFormSchema = Yup.object().shape({
 	taskName: Yup.string().min(5).required("Required"),
@@ -40,26 +43,60 @@ const LoginFormSchema = Yup.object().shape({
 	date: Yup.string().required("Required"),
 	description: Yup.string().min(5).required("Required"),
 });
-function SelectButton() {
-	return (
-		<Box sx={{ width: "auto" }}>
-			<FormControl fullWidth>
-				<InputLabel>Task Priority</InputLabel>
-				<Select id="Priority" label="Priority">
-					{priorityMock.map((item) => (
-						<MenuItem id={item.id} key={item.id} value={item.id}>
-							{`${item.priority}`}
-						</MenuItem>
-					))}
-				</Select>
-			</FormControl>
-		</Box>
-	);
-}
+
+// function SelectButton() {
+// 	return (
+// 		<Box sx={{ width: "auto" }}>
+// 			<FormControl fullWidth>
+// 				<InputLabel>Task Priority</InputLabel>
+// 				<Select id="Priority" label="Priority">
+// 					{priorityMock.map((item) => (
+// 						<MenuItem id={item.id} key={item.id} value={item.id}>
+// 							{`${item.priority}`}
+// 						</MenuItem>
+// 					))}
+// 				</Select>
+// 			</FormControl>
+// 		</Box>
+// 	);
+// }
 
 function CreateTaskForm() {
 	const theme = useTheme();
 	const dispatch = useDispatch();
+	const [open, setOpen] = React.useState(false);
+	const [alertBox, setAlertBox] = React.useState({
+		title: "Success",
+		type: "success",
+		message: "",
+	});
+
+	const handleClose = (event, reason) => {
+		if (reason === "clickaway") {
+			return;
+		}
+
+		setOpen(false);
+	};
+
+	const onSuccess = () => {
+		setOpen(true);
+		setAlertBox({
+			title: "Success",
+			message: "Task was created!",
+			type: "success",
+		});
+		dispatch(closeModal());
+	};
+
+	const onError = (errorArray) => {
+		setOpen(true);
+		setAlertBox({
+			title: "Error",
+			message: errorArray,
+			type: "error",
+		});
+	};
 	const { handleChange, values, handleSubmit, errors, isValid } = useFormik({
 		initialValues: {
 			taskName: "",
@@ -70,8 +107,7 @@ function CreateTaskForm() {
 
 		validationSchema: LoginFormSchema,
 		onSubmit: (formValues) => {
-			console.log(formValues);
-			dispatch(createTask({ name: formValues.taskName }));
+			dispatch(createTaskAction({ ...formValues }, onSuccess, onError));
 		},
 	});
 
@@ -101,7 +137,7 @@ function CreateTaskForm() {
 				spacing={2}
 				sx={{ width: "100%", padding: theme.spacing(3, 0) }}
 			>
-				<SelectButton
+				{/* <SelectButton
 					autoComplete="Task Priority"
 					error={errors.taskPriority}
 					fullWidth
@@ -113,7 +149,7 @@ function CreateTaskForm() {
 					onChange={handleChange}
 					required
 					value={values.taskPriority}
-				/>
+				/> */}
 
 				<Input
 					autoComplete="date"
@@ -155,6 +191,25 @@ function CreateTaskForm() {
 			>
 				Create Task
 			</Button>
+			<Snackbar
+				onClose={handleClose}
+				open={open}
+				anchorOrigin={{
+					vertical: "bottom",
+					horizontal: "right",
+				}}
+			>
+				<Alert
+					onClose={handleClose}
+					severity={alertBox.type}
+					sx={{
+						width: 350,
+					}}
+				>
+					<AlertTitle>{alertBox.title}</AlertTitle>
+					{alertBox.message}
+				</Alert>
+			</Snackbar>
 		</Box>
 	);
 }
