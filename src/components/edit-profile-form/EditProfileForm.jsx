@@ -1,35 +1,43 @@
 import React from "react";
 import { useFormik } from "formik";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
 
 import { Box, Typography } from "@mui/material";
 
-import { createTask } from "../../store/task/task.slice";
+import { closeModal, updateLoggedUser } from "../../store/app/app.slice";
 import { Button, Input } from "../shared";
 
 const LoginFormSchema = Yup.object().shape({
-	dullName: Yup.string().min(5).required("Required"),
-	email: Yup.string().required("Required"),
-	password: Yup.string().min(5).required("Required"),
+	fullName: Yup.string().min(5).required("Required"),
+	email: Yup.string().email().required("Required"),
 });
 
 function EditTaskForm() {
 	const dispatch = useDispatch();
+	const loggedUser = useSelector((state) => state.app.auth.loggedUser.userInfo);
+	const onSuccess = () => {
+		dispatch(closeModal());
+	};
+
+	const onError = () => {};
 	const { handleChange, values, handleSubmit, errors, isValid } = useFormik({
 		initialValues: {
-			dullName: "",
-			email: "",
-			password: "",
+			fullName: loggedUser.fullName,
+			email: loggedUser.email,
 			isValid: true,
 		},
 
 		validationSchema: LoginFormSchema,
 		onSubmit: (formValues) => {
-			console.log(formValues);
-			dispatch(createTask({ dullName: formValues.dullName }));
+			dispatch(updateLoggedUser({ ...formValues }, onSuccess, onError));
 		},
 	});
+
+	const isUpdateButtonDisabled =
+		!isValid ||
+		(values.fullName === loggedUser.fullName &&
+			values.email === loggedUser.email);
 
 	return (
 		<Box component="form" onSubmit={handleSubmit} padding="30px" sx={{ mt: 1 }}>
@@ -39,17 +47,17 @@ function EditTaskForm() {
 			<Input
 				autoComplete="dullName"
 				autoFocus
-				error={errors.dullName}
+				error={errors.fullName}
 				fullWidth
-				helperText={errors.dullName}
-				id="Dull Name"
-				label="Dull Name"
+				helperText={errors.fullName}
+				id="Full Name"
+				label="Full Name"
 				margin="normal"
-				name="dullName"
+				name="fullName"
 				onChange={handleChange}
 				placeholder="Type your name here..."
 				required
-				value={values.dullName}
+				value={values.fullName}
 			/>
 
 			<Input
@@ -68,24 +76,8 @@ function EditTaskForm() {
 				value={values.email}
 			/>
 
-			<Input
-				autoComplete="password"
-				error={errors.password}
-				fullWidth
-				helperText={errors.password}
-				id="password"
-				label="Password"
-				margin="normal"
-				name="password"
-				onChange={handleChange}
-				placeholder="Type your password here..."
-				required
-				type="password"
-				value={values.password}
-			/>
-
 			<Button
-				disabled={!isValid}
+				disabled={isUpdateButtonDisabled}
 				sx={{ mt: 3, mb: 2 }}
 				type="submit"
 				variant="contained"
