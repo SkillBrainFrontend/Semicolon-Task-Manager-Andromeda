@@ -1,8 +1,11 @@
 import React from "react";
 
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 import { withNavigationDrawer } from "../../components/navigation-drawer/withNavigationDrawer";
+import { GlobalSearchBar } from "../../components/shared";
+
+import QuoteOfTheDay from "./components/QuoteOfTheDay";
 
 function OverviewPage() {
 	return (
@@ -11,7 +14,8 @@ function OverviewPage() {
 				background: (t) => t.palette.background.surface,
 			}}
 		>
-			<Typography variant="h3">Overview</Typography>
+			<GlobalSearchBar />
+			<QuoteOfTheDay />
 		</Box>
 	);
 }
