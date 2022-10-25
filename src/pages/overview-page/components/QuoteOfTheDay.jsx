@@ -12,6 +12,7 @@ export default function QuoteOfTheDay() {
 	const loggedUser = useSelector((state) => state.app.auth.loggedUser.userInfo);
 	const [quote, setQuote] = useState("");
 	const [backgroundQoute, setBackgroundQoute] = useState("");
+
 	// Fetch Data
 	useEffect(() => {
 		const getData = async () => {
@@ -47,7 +48,7 @@ export default function QuoteOfTheDay() {
 
 				<Box>
 					<Typography variant="h4" sx={{ fontWeight: "bold" }}>
-						Hi {loggedUser?.fullname},
+						Hi {loggedUser?.fullName},
 					</Typography>
 					<Typography variant="h6">
 						Welcome To Semicolon Task Manager
@@ -97,7 +98,7 @@ export default function QuoteOfTheDay() {
 					>
 						<CloseIcon fontSize="large" />
 						<Button size="small" variant="contained">
-							Small
+							Get started
 						</Button>
 					</Box>
 				</Box>
