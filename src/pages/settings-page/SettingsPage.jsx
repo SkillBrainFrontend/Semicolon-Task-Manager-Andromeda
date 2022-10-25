@@ -1,14 +1,25 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import EmailIcon from "@mui/icons-material/Email";
-import PasswordIcon from "@mui/icons-material/Password";
 import PersonIcon from "@mui/icons-material/Person";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, InputAdornment, Typography } from "@mui/material";
 
 import { withNavigationDrawer } from "../../components/navigation-drawer/withNavigationDrawer";
 import { Button, Card, GlobalSearchBar, Input } from "../../components/shared";
+import { openModal } from "../../store/app/app.slice";
+import { modalTypes } from "../../store/app/constants";
 
 function SettingsPage() {
+	const dispatch = useDispatch();
+	const loggedUser = useSelector((state) => state.app.auth.loggedUser.userInfo);
+	const onLogOutClick = () => {
+		dispatch(openModal(modalTypes.logOut));
+	};
+	const onEditProfileClick = () => {
+		dispatch(openModal(modalTypes.editProfile));
+	};
+
 	return (
 		<Box
 			sx={{
@@ -35,7 +46,12 @@ function SettingsPage() {
 					alignItems: "flex-end",
 				}}
 			>
-				<Button color="secondary" size="small" variant="contained">
+				<Button
+					color="secondary"
+					onClick={onLogOutClick}
+					size="small"
+					variant="contained"
+				>
 					Log Out
 				</Button>
 			</Box>
@@ -50,12 +66,39 @@ function SettingsPage() {
 						justifyContent: "space-evenly",
 					}}
 				>
-					<Input margin="normal" placeholder="Fullname " />{" "}
-					<PersonIcon color="primary" />
-					<Input margin="normal" placeholder="Email Address " />
-					<EmailIcon color="primary" />
-					<Input margin="normal" placeholder="Password " type="password" />
-					<PasswordIcon color="primary" />
+					<Input
+						id="input-with-icon-adornment"
+						margin="normal"
+						placeholder="Fullname"
+						value={loggedUser.fullName}
+						InputProps={{
+							startAdornment: (
+								<InputAdornment position="start">
+									<PersonIcon color="primary" />
+								</InputAdornment>
+							),
+						}}
+					/>
+					<Input
+						margin="normal"
+						placeholder="Email Address"
+						value={loggedUser.email}
+						InputProps={{
+							startAdornment: (
+								<InputAdornment position="start">
+									<EmailIcon color="primary" />
+								</InputAdornment>
+							),
+						}}
+					/>
+
+					<Input
+						disabled
+						margin="normal"
+						placeholder="Password "
+						type="password"
+						value="************"
+					/>
 				</Box>
 
 				<Box
@@ -66,7 +109,12 @@ function SettingsPage() {
 						alignItems: "flex-end",
 					}}
 				>
-					<Button size="small" type="submit" variant="contained">
+					<Button
+						onClick={onEditProfileClick}
+						size="small"
+						type="submit"
+						variant="contained"
+					>
 						Edit
 					</Button>
 				</Box>
