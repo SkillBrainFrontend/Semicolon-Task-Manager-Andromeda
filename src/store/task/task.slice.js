@@ -37,6 +37,14 @@ const taskSlice = createSlice({
 			state.error = null;
 			state.data = action.payload;
 		},
+		createTasksStart: (state) => {
+			state.isLoading = true;
+		},
+		createTaskSuccess: (state, action) => {
+			state.isLoading = false;
+			state.error = null;
+			state.data.push(action.payload);
+		},
 	},
 });
 export const {
@@ -45,6 +53,8 @@ export const {
 	fetchTasksStart,
 	fetchTasksError,
 	fetchTasksSuccess,
+	createTaskSuccess,
+	createTasksStart,
 } = taskSlice.actions;
 
 export const fetchTasksAction =
@@ -74,5 +84,40 @@ export const fetchTasks = createAsyncThunk("posts/fetchTasks", async () => {
 	const response = await axios.get("/fakeApi/posts");
 	return response.data;
 });
+
+export const createTaskAction =
+	(payload, onSuccess, onError) => async (dispatch, getState) => {
+		dispatch(createTasksStart());
+		const state = getState();
+		const token = state.app.auth.loggedUser.accessToken.accessToken;
+		try {
+			const response = await axios.post(
+				`${API_BASE_URL}/tasks`,
+				{
+					title: payload.taskName,
+					description: payload.description,
+					dueDate: payload.date,
+				},
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
+				}
+			);
+			dispatch(createTaskSuccess(response.data));
+			if (onSuccess) {
+				onSuccess();
+			}
+		} catch (e) {
+			dispatch(fetchTasksError(e.response.data.message));
+			if (onError) {
+				onError(e.response.data.message);
+			}
+		}
+	};
+
+// export const deleteTaskAction = () => async (dispatch) => {
+
+// }
 
 export default taskSlice.reducer;

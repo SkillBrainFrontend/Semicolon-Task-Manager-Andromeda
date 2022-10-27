@@ -15,6 +15,12 @@ export const appSlice = createSlice({
 				isOpen: false,
 				modalType: null,
 			},
+			taskStatus: {
+				UNNASIGNED: "UNNASIGNED",
+				PENDING: "PENDING",
+				IN_PROGRESS: "IN_PROGRESS",
+				COMPLETED: "COMPLETED",
+			},
 		},
 		auth: {
 			isLoggedIn: false,
