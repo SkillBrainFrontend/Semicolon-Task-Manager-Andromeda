@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import { alpha, createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 
 import GelionBold from "./assets/fonts/Gelion Bold.woff";
 import GelionLight from "./assets/fonts/Gelion Light.woff";
@@ -43,6 +42,7 @@ const theme = createTheme({
 			wine: "#B80020",
 			dark: "#16171D",
 			yellow: "#FBBE37",
+			darkMode: "#16171D",
 		},
 		neutral: {
 			main: "#999999",
@@ -89,6 +89,12 @@ const theme = createTheme({
               }
           `,
 		},
+		MuiCard: {
+			defaultProps: {
+				elevation: 0,
+			},
+		},
+
 		MuiButton: {
 			defaultProps: {
 				disableElevation: true,
@@ -117,7 +123,7 @@ const theme = createTheme({
 				notched: false,
 			},
 			styleOverrides: {
-				root: ({ theme: appTheme, ownerState }) => ({
+				root: ({ ownerState }) => ({
 					borderRadius: `12px`,
 					background: ownerState.error ? "#FFFAFA" : "#FBFBFE",
 					"&.Mui-focused": {

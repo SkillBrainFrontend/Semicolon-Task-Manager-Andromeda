@@ -14,7 +14,6 @@ import { Alert, Button, Input } from "../components/shared";
 
 import BasicTabs from "./TabTest";
 import SidebarRight from "../components/shared/sidebarright/SidebarRight";
-import ForgotPage from "../components/shared/forgotpass/ForgotPass";
 
 function Test() {
 	const theme = useTheme();
@@ -205,7 +204,6 @@ function Test() {
 				</Stack>
 				<Input error label="Worjidjasi" />
 				<SidebarRight />
-				<ForgotPass />
 			</Container>
 		</div>
 	);
