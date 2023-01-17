@@ -9,7 +9,7 @@ import ReminderWidget from "./widgets/ReminderWidget";
 
 function WidgetCalendar() {
 	const [tabId, setTabId] = useState("calendar");
-	const [alignment, setAlignment] = useState();
+	const [alignment, setAlignment] = useState("calendar");
 
 	const handleChange = (event, newAlignment) => {
 		setAlignment(newAlignment);
@@ -31,8 +31,12 @@ function WidgetCalendar() {
 				exclusive
 				onChange={handleChange}
 				size="small"
-				sx={{}}
 				value={alignment}
+				sx={{
+					"&.Mui-select": {
+						backgroundColor: "black",
+					},
+				}}
 			>
 				<ToggleButton
 					id="calendar"

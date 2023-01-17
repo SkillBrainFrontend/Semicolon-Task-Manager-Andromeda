@@ -106,6 +106,7 @@ const theme = createTheme({
 				root: ({ ownerState, theme: appTheme }) => ({
 					"&:hover.MuiButton-contained": {
 						boxShadow: appTheme.shadows[5],
+						color: "red",
 						backgroundColor: appTheme.palette[ownerState.color].main,
 					},
 				}),
@@ -171,6 +172,22 @@ const theme = createTheme({
 			styleOverrides: {
 				root: {
 					margin: 0,
+				},
+			},
+		},
+		// MuiToggleButton-root.Mui-selected
+
+		MuiToggleButton: {
+			styleOverrides: {
+				root: {
+					"&:hover.Mui-selected": {
+						backgroundColor: "#3754DB",
+						color: "white",
+					},
+					"&.Mui-selected": {
+						backgroundColor: "#3754DB",
+						color: "white",
+					},
 				},
 			},
 		},
