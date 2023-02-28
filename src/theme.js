@@ -103,12 +103,15 @@ const theme = createTheme({
 				disableElevation: true,
 			},
 			styleOverrides: {
-				root: ({ ownerState, theme: appTheme }) => ({
-					"&:hover.MuiButton-contained": {
-						boxShadow: appTheme.shadows[5],
-						backgroundColor: appTheme.palette[ownerState.color].main,
-					},
-				}),
+				root: ({ ownerState, theme: appTheme }) => {
+					console.log(ownerState);
+					return {
+						"&:hover.MuiButton-contained": {
+							boxShadow: appTheme.shadows[5],
+							backgroundColor: appTheme.palette[ownerState.color].main,
+						},
+					};
+				},
 			},
 		},
 		MuiAlertTitle: {
